@@ -219,6 +219,8 @@ Error message and password prompt
 
 <li>$:/SaveToGitHub/Button</li>
 
+<li>$:/SaveToGitHub/Button/GitHubLink</li>
+
 <li>$:/SaveToGitHub/Caption</li>
 
 <li>$:/SaveToGitHub/CommitMessage/Modal</li>
@@ -439,6 +441,8 @@ Error message and password prompt
 
 <li>New Tiddler</li>
 
+<li>New Tiddler 1</li>
+
 <li>right-story</li>
 
 <li>SVG inline</li>
@@ -526,7 +530,7 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div created="20210908152838707" modified="20210921232123138" title="$:/config/AutoSave">
+<div created="20210908152838707" modified="20210921233450060" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
 <div created="20210908160520283" modified="20210908160521340" title="$:/config/flibbles/relink-titles/relink/$:/plugins/flibbles/relink-titles/rules/directory">
@@ -10436,8 +10440,8 @@ $:/TiddlyTweaks</pre>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div created="20210921232125203" modified="20210921232219465" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
-<pre>Updated $:/ThemeTweaks/style/external_link to use $:/core/images/open-window instead</pre>
+<div created="20210921232125203" modified="20210921233505412" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
+<pre>Updated target branch</pre>
 </div>
 <div created="20210313134122939" modified="20210907002010666" tags="$:/tags/Macro $:/tagging/template" title="$:/macro/href-filter">
 <pre>\define href-filter(filter, text=&quot;open all&quot;) &lt;a href=&quot;#:[$filter$]&quot; target=&quot;_blank&quot;&gt;$text$&lt;/a&gt;</pre>
@@ -13307,6 +13311,14 @@ fill:&lt;&lt;color tiddler-subtitle-foreground&gt;&gt;;
 &lt;/span&gt;
 &lt;/$button&gt;</pre>
 </div>
+<div caption="{{$:/core/images/right-arrow}} {{$:/ThemeTweaks/caption/right_story}}" created="20210921232322676" description="Button to get the github page url of a tiddler" modified="20210921232626568" tags="$:/SaveToGitHub $:/tags/ViewToolbar" title="$:/SaveToGitHub/Button/GitHubLink">
+<pre>\whitespace trim
+\define right-story-toggle() &lt;$action-listops $field=&quot;tags&quot; $subfilter=&quot;+[toggle[right-story]]&quot;/&gt;
+&lt;$button actions=&lt;&lt;right-story-toggle&gt;&gt; class=&quot;tc-btn-invisible display&quot; tooltip={{$:/ThemeTweaks/caption/right_story}}&gt;
+&lt;$list filter=&quot;[all[current]tag[right-story]]&quot;&gt;{{$:/core/images/left-arrow}}&lt;/$list&gt;
+&lt;$list filter=&quot;[all[current]!tag[right-story]]&quot;&gt;{{$:/core/images/right-arrow}}&lt;/$list&gt;
+&lt;/$button&gt;</pre>
+</div>
 <div created="20210806021049086" modified="20210813030810346" tags="$:/SaveToGitHub" title="$:/SaveToGitHub/Caption">
 <pre>save to github</pre>
 </div>
@@ -13356,7 +13368,7 @@ public
 -[tag[private]] -$:/HistoryList -[search:title[$:/state/folded]] -[search:title[$:/GitHub]] -[search:title[$:/SaveToGitHub/private]]
 </pre>
 </div>
-<div ask-commit="true" caption="Github" created="20210805131146320" modified="20210906223835787" tags="$:/SaveToGitHub $:/tags/SideBar" title="$:/SaveToGitHub/Settings">
+<div ask-commit="true" caption="Github" created="20210805131146320" modified="20210921232931353" tags="$:/SaveToGitHub $:/tags/SideBar" title="$:/SaveToGitHub/Settings">
 <pre>\define lingo-base() $:/language/ControlPanel/Saving/GitService/
 \define service-name() ~GitHub
 
@@ -13382,7 +13394,7 @@ public
 
 !!! ~GitHub Pages url
 
-&lt;$set name=&quot;GithubPageUrl&quot; filter=&quot;[{$:/GitHub/Repo}removeprefix{$:/SaveToGitHub/private/username}removeprefix[/]addprefix[.github.io/]addprefix{$:/SaveToGitHub/private/username}addprefix[https://]addsuffix{$:/GitHub/Path}addsuffix{$:/GitHub/Filename}]&quot;&gt;
+&lt;$set name=GithubPageUrl filter=&quot;[{$:/GitHub/Repo}removeprefix{$:/SaveToGitHub/private/username}removeprefix[/]addprefix[.github.io/]addprefix{$:/SaveToGitHub/private/username}addprefix[https://]addsuffix{$:/GitHub/Path}addsuffix{$:/GitHub/Filename}]&quot;&gt;
 
 &lt;&lt;GithubPageUrl&gt;&gt;
 
@@ -13593,19 +13605,19 @@ padding-bottom: 10px;
 &lt;/$reveal&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20210906235949815" modified="20210921221305273" title="$:/state/advancedsearch/currentTab">
-<pre>$:/core/ui/AdvancedSearch/Shadows</pre>
+<div created="20210906235949815" modified="20210921232457028" title="$:/state/advancedsearch/currentTab">
+<pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20210906235650195" modified="20210907180809320" title="$:/state/commander/log-tiddler">
 <pre>$:/temp/commander/logs/tid-2</pre>
 </div>
-<div created="20210908152937905" modified="20210908152942045" title="$:/state/commander/reveal/$:/plugins/kookma/commander/log/ui-607722857">
-<pre>closed</pre>
+<div created="20210908152937905" modified="20210921233328890" title="$:/state/commander/reveal/$:/plugins/kookma/commander/log/ui-607722857">
+<pre>open</pre>
 </div>
-<div created="20210907181028428" modified="20210908152935780" title="$:/state/commander/snr/select-tiddler">
+<div created="20210907181028428" modified="20210921233324839" title="$:/state/commander/snr/select-tiddler">
 <pre></pre>
 </div>
-<div created="20210907181028428" modified="20210908152935780" title="$:/state/compInspect/temp/commander/selectState-tiddler">
+<div created="20210907181028428" modified="20210921233324839" title="$:/state/compInspect/temp/commander/selectState-tiddler">
 <pre></pre>
 </div>
 <div created="20210908155838435" modified="20210908155935205" title="$:/state/flibbles/relink/tables/Core--657194722">
@@ -13623,8 +13635,8 @@ padding-bottom: 10px;
 <div created="20210908160455948" modified="20210908160714259" title="$:/state/plugin-info--381224194-$:/plugins/flibbles/relink-titles--744984950">
 <pre>contents</pre>
 </div>
-<div created="20210908161318090" modified="20210921231517371" title="$:/state/showeditpreview">
-<pre>no</pre>
+<div created="20210908161318090" modified="20210921232953538" title="$:/state/showeditpreview">
+<pre>yes</pre>
 </div>
 <div created="20210907145913059" modified="20210919155251673" title="$:/state/sidebar">
 <pre>yes</pre>
@@ -13632,8 +13644,8 @@ padding-bottom: 10px;
 <div created="20210907180739978" modified="20210907180739978" title="$:/state/tab--103319216">
 <pre>$:/plugins/kookma/commander/field/uicomp/remove-fields</pre>
 </div>
-<div created="20210906235949815" modified="20210921221305274" title="$:/state/tab--1498284803">
-<pre>$:/core/ui/AdvancedSearch/Shadows</pre>
+<div created="20210906235949815" modified="20210921232457028" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20210908155713655" modified="20210908160400991" title="$:/state/tab--1862192285">
 <pre>$:/plugins/flibbles/relink/ui/configuration/Attributes</pre>
@@ -13665,7 +13677,7 @@ padding-bottom: 10px;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="$:/ThemeTweaks/style/external_link" title="$:/StoryList">
+<div created="20210921232453079" list="$:/SaveToGitHub/private/username $:/SaveToGitHub/private/state [[New Tiddler 1]] $:/SaveToGitHub/Button/GitHubLink" modified="20210921233320745" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210907002753004" list="$:/tagging $:/tagging/style $:/tagging/openTiddlers $:/tagging/template $:/tagging/template/after $:/tagging/template/before" modified="20210907134252168" tagging="after" tags="$:/tagging" title="$:/tagging">
@@ -14728,6 +14740,11 @@ Drag&amp;Drop the tweak you want into your wiki. That's it !
 </div>
 <div created="20210919173606877" modified="20210919173656249" tags="" title="New Tiddler">
 <pre>&lt;span class=&quot;icon-svg add-comment&quot;&gt;test&lt;/span&gt;</pre>
+</div>
+<div created="20210921232637237" modified="20210921233017907" tags="" title="New Tiddler 1">
+<pre>&lt;$set name=GithubPageTiddlerUrl filter=&quot;[{$:/GitHub/Repo}removeprefix{$:/SaveToGitHub/private/username}removeprefix[/]addprefix[.github.io/]addprefix{$:/SaveToGitHub/private/username}addprefix[https://]addsuffix{$:/GitHub/Path}addsuffix{$:/GitHub/Filename}]&quot;&gt;
+
+&lt;&lt;GithubPageTiddlerUrl&gt;&gt;</pre>
 </div>
 <div created="20210907123952800" modified="20210907124008305" tagging="after" tags="" title="right-story">
 <pre></pre>
