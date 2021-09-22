@@ -47,10 +47,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
-<title>.site-title-link{
-text-decoration:none;
-color:#a89984!important;
-}TiddlyTweaks — Small tweaks for TiddlyWiki</title>
+<title>TiddlyTweaks — Small tweaks for TiddlyWiki</title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
 
 <!--~~ Raw markup ~~-->
@@ -294,6 +291,8 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/SiteTitle/style</li>
+
 <li>$:/spoiler</li>
 
 <li>$:/spoiler/Button</li>
@@ -492,8 +491,6 @@ Error message and password prompt
 
 <li>Index</li>
 
-<li>System image gallery</li>
-
 <li>task</li>
 
 </ul>
@@ -522,7 +519,7 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div created="20210908152838707" modified="20210922040327633" title="$:/config/AutoSave">
+<div created="20210908152838707" modified="20210922040859559" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
 <div created="20210908160520283" modified="20210908160521340" title="$:/config/flibbles/relink-titles/relink/$:/plugins/flibbles/relink-titles/rules/directory">
@@ -13860,14 +13857,16 @@ $subfilter=&quot;+[toggle[yes],[no]]&quot;/&gt;
 <div created="20210906233115255" modified="20210908154300780" tags="" title="$:/SiteSubtitle">
 <pre>Small tweaks for &lt;a class=&quot;tc-tiddlylink&quot; href=&quot;https://tiddlywiki.com/&quot;&gt;~TiddlyWiki&lt;/a&gt;</pre>
 </div>
-<div created="20210906233004035" modified="20210922040250254" tags="" title="$:/SiteTitle">
+<div created="20210906233004035" modified="20210922040832053" tags="$:/SiteTitle" title="$:/SiteTitle">
 <pre>\whitespace trim
-&lt;style&gt;
+&lt;a href={{{[{$:/GitHub/Repo}removeprefix{$:/SaveToGitHub/private/username}removeprefix[/]addprefix[.github.io/]addprefix{$:/SaveToGitHub/private/username}addprefix[https://]addsuffix{$:/GitHub/Path}addsuffix{$:/GitHub/Filename}]}}} class=&quot;site-title-link&quot;&gt;~TiddlyTweaks&lt;/a&gt;</pre>
+</div>
+<div created="20210922040756912" modified="20210922040850025" tags="$:/SiteTitle $:/tags/Stylesheet" title="$:/SiteTitle/style">
+<pre>&lt;pre&gt;
 .site-title-link{
 text-decoration:none;
 color:&lt;&lt;color site-title-foreground&gt;&gt;!important;
-}
-&lt;/style&gt;&lt;a href={{{[{$:/GitHub/Repo}removeprefix{$:/SaveToGitHub/private/username}removeprefix[/]addprefix[.github.io/]addprefix{$:/SaveToGitHub/private/username}addprefix[https://]addsuffix{$:/GitHub/Path}addsuffix{$:/GitHub/Filename}]}}} class=&quot;site-title-link&quot;&gt;~TiddlyTweaks&lt;/a&gt;</pre>
+}</pre>
 </div>
 <div created="20210907154245443" modified="20210922032235674" tagging="after" tags="$:/TiddlyTweaks $:/spoiler spoiler [[ $:/ThemeTweaks/style/warning]]" title="$:/spoiler">
 <pre>This is a spoiler !</pre>
@@ -14020,8 +14019,8 @@ padding-bottom: 10px;
 <div created="20210907003143193" modified="20210907003143193" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20210906235850481" modified="20210922035426138" title="$:/state/tab/sidebar--595412856">
-<pre>$:/SaveToGitHub/Settings</pre>
+<div created="20210906235850481" modified="20210922040505274" title="$:/state/tab/sidebar--595412856">
+<pre>$:/About</pre>
 </div>
 <div created="20210922000529400" modified="20210922000537152" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/ViewToolbar</pre>
@@ -15172,27 +15171,6 @@ span.transclude-edit:hover .transclude-edit-button{
 <pre>! How to use
 
 Drag&amp;Drop the tweak you want (open all link) into your wiki.</pre>
-</div>
-<div created="20140809113603449" modified="20210922034953276" tags="tip" title="System image gallery" type="text/vnd.tiddlywiki">
-<pre>Grid of all system images (ie, tiddlers tagged [[$:/tags/Image]]).
-
-&lt;style&gt;
-.my-gallery svg {
-width: 6em;
-height: 6em;
-margin: 1em;
-}
-&lt;/style&gt;
-&lt;div class=&quot;my-gallery&quot;&gt;
-&lt;$list filter=&quot;[all[tiddlers+shadows]tag[$:/tags/Image]]&quot;&gt;
-&lt;span title=&lt;&lt;currentTiddler&gt;&gt;&gt;
-&lt;$link to=&lt;&lt;currentTiddler&gt;&gt;&gt;
-&lt;$transclude/&gt;
-&lt;/$link&gt;
-&lt;/span&gt;
-&lt;/$list&gt;
-&lt;/div&gt;
-</pre>
 </div>
 <div created="20210907001351123" list="$:/showInfo/search/template $:/ThemeTweaks/SwitchPalette/button $:/Tasker/ui/Buttons/tasker" modified="20210922035119148" title="task">
 <pre></pre>
