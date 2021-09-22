@@ -227,6 +227,8 @@ Error message and password prompt
 
 <li>$:/Reading-time/wpm</li>
 
+<li>$:/SaveToGitHub</li>
+
 <li>$:/SaveToGitHub/Button</li>
 
 <li>$:/SaveToGitHub/Button/GitHubPermalink</li>
@@ -272,6 +274,8 @@ Error message and password prompt
 <li>$:/showInfo/search/SystemImage</li>
 
 <li>$:/showInfo/search/SystemImage/search/style</li>
+
+<li>$:/showInfo/search/template</li>
 
 <li>$:/showInfo/source/style</li>
 
@@ -459,6 +463,8 @@ Error message and password prompt
 
 <li>$:/ThemeTweaks/SwitchPalette</li>
 
+<li>$:/ThemeTweaks/SwitchPalette/button</li>
+
 <li>$:/ThemeTweaks/SwitchPalette/image</li>
 
 <li>$:/ThemeTweaks/SwitchPalette/tags</li>
@@ -557,7 +563,7 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div created="20210908152838707" modified="20210922030334599" title="$:/config/AutoSave">
+<div created="20210908152838707" modified="20210922030706688" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
 <div created="20210908160520283" modified="20210908160521340" title="$:/config/flibbles/relink-titles/relink/$:/plugins/flibbles/relink-titles/rules/directory">
@@ -10493,8 +10499,8 @@ $:/TiddlyTweaks</pre>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div created="20210921232125203" modified="20210922025726754" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
-<pre>Added title icon for public wiki</pre>
+<div created="20210921232125203" modified="20210922030740201" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
+<pre>Tweaked the GitHub filter to allow the tiddler with a task to be posted</pre>
 </div>
 <div created="20210313134122939" modified="20210907002010666" tags="$:/tags/Macro $:/tagging/template" title="$:/macro/href-filter">
 <pre>\define href-filter(filter, text=&quot;open all&quot;) &lt;a href=&quot;#:[$filter$]&quot; target=&quot;_blank&quot;&gt;$text$&lt;/a&gt;</pre>
@@ -13335,6 +13341,9 @@ fill:&lt;&lt;color tiddler-subtitle-foreground&gt;&gt;;
 <div created="20210803153449372" description="Reading speed (word per minutes)" modified="20210907180810917" tags="$:/Reading-time" title="$:/Reading-time/wpm">
 <pre>195</pre>
 </div>
+<div created="20210907001445052" modified="20210922022446066" tagging="after" tags="$:/SaveToGitHub $:/TiddlyTweaks" task="todo" title="$:/SaveToGitHub">
+<pre></pre>
+</div>
 <div created="20210813013650836" modified="20210813014331880" tags="$:/tags/PageControls $:/SaveToGitHub" title="$:/SaveToGitHub/Button">
 <pre>&lt;$button tooltip={{$:/SaveToGitHub/Hint}} aria-label={{$:/SaveToGitHub/Caption}}  class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
 &lt;$action-setfield $tiddler=&quot;$:/config/AutoSave&quot; text=&quot;no&quot;/&gt;
@@ -13364,14 +13373,17 @@ fill:&lt;&lt;color tiddler-subtitle-foreground&gt;&gt;;
 &lt;/span&gt;
 &lt;/$button&gt;</pre>
 </div>
-<div caption="GitHub permalink" created="20210921232322676" description="Button to get the GitHub Page url of a tiddler" hint="Click to copy the GitHub Page url of this tiddler to the clipboard" modified="20210922025215121" tags="$:/SaveToGitHub $:/tags/ViewToolbar" title="$:/SaveToGitHub/Button/GitHubPermalink">
+<div caption="GitHub permalink" created="20210921232322676" description="Button to get the GitHub Page url of a tiddler" hint="Click to copy the GitHub Page url of this tiddler to the clipboard" modified="20210922030602486" tags="$:/SaveToGitHub $:/tags/ViewToolbar" title="$:/SaveToGitHub/Button/GitHubPermalink">
 <pre>\whitespace trim
+&lt;$vars separator-start=&quot;:[[&quot; separator-end=&quot;]]&quot;&gt;
 &lt;$set name=GithubPageTiddlerUrl filter=&quot;
 [[https://]][{$:/SaveToGitHub/private/username}][[.github.io/]]
 [{$:/GitHub/Repo}removeprefix{$:/SaveToGitHub/private/username}removeprefix[/]]
 [{$:/GitHub/Path}addsuffix{$:/GitHub/Filename}]
 [[#]]
+[&lt;separator-start&gt;]
 [all[current]]
+[&lt;separator-end&gt;]
 +[join[]encodeuri[]]
 &quot;&gt;
 &lt;$button class=tc-btn-invisible message=&quot;tm-copy-to-clipboard&quot; 
@@ -13385,7 +13397,9 @@ param=&lt;&lt;GithubPageTiddlerUrl&gt;&gt; tooltip={{!!hint}}&gt;
 &lt;$text text={{$:/SaveToGitHub/Button/GitHubPermalink!!caption}}/&gt;
 &lt;/span&gt;
 &lt;/$list&gt;
-&lt;/$button&gt;</pre>
+&lt;/$button&gt;
+&lt;/$set&gt;
+&lt;/$vars&gt;</pre>
 </div>
 <div caption="GitHub permaview" created="20210922001530951" description="Button to get the GitHub Page url of this story" hint="Click to copy the GitHub Page url of this story to the clipboard" modified="20210922025408557" tags="$:/SaveToGitHub $:/tags/ViewToolbar" title="$:/SaveToGitHub/Button/GitHubPermaView">
 <pre>\whitespace trim
@@ -13484,9 +13498,8 @@ all
 public
 &lt;/$button&gt;</pre>
 </div>
-<div created="20210806130312321" description="If no filter is specified, ALL tiddlers will be uploaded when saving to github." modified="20210922025908208" tags="$:/SaveToGitHub" title="$:/SaveToGitHub/PublishFilter">
-<pre>-[has[task]] 
--[tag[private]] -$:/HistoryList -[search:title[$:/state/folded]] -[search:title[$:/GitHub]] -[search:title[$:/SaveToGitHub/private]]
+<div created="20210806130312321" description="If no filter is specified, ALL tiddlers will be uploaded when saving to github." modified="20210922030704122" tags="$:/SaveToGitHub" title="$:/SaveToGitHub/PublishFilter">
+<pre>-[tag[private]] -$:/HistoryList -[search:title[$:/state/folded]] -[search:title[$:/GitHub]] -[search:title[$:/SaveToGitHub/private]]
 </pre>
 </div>
 <div ask-commit="true" caption="Github" created="20210805131146320" modified="20210922004303808" tags="$:/SaveToGitHub $:/tags/SideBar" title="$:/SaveToGitHub/Settings">
@@ -13680,6 +13693,51 @@ fill:&lt;&lt;color foreground&gt;&gt;;
 	-webkit-appearance: none;
 }</pre>
 </div>
+<div created="20210911022445519" modified="20210922021256650" tags="$:/showInfo/search $:/showInfo" task="todo" title="$:/showInfo/search/template">
+<pre>&lt;span class=&quot;system-image-search&quot;&gt;
+&lt;div class=&quot;search-list-container&quot;&gt;
+&lt;$edit-text tiddler=&lt;&lt;qualify $:/temp/search&gt;&gt; field=&quot;text&quot; tag=&quot;input&quot; default=&quot;&quot; placeholder=&quot;type to search the list..&quot; class=&quot;tc-edit-texteditor&quot;/&gt;
+&lt;$reveal state=&lt;&lt;qualify $:/temp/search&gt;&gt; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot; tooltip=&quot;cancel search&quot;&gt; 
+&lt;$action-setfield $tiddler=&lt;&lt;qualify $:/temp/search&gt;&gt; text=&quot;&quot;/&gt;
+{{$:/core/images/close-button}}
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot; tooltip=&quot;advanced search&quot;&gt; 
+&lt;$action-listops 
+$tiddler=&lt;&lt;qualify $:/temp/advanced-search/show&gt;&gt; 
+$field=&quot;text&quot; 
+$subfilter=&quot;+[toggle[yes],[no]]&quot;/&gt;
+{{$:/core/images/advanced-search-button}}
+&lt;/$button&gt;
+&lt;/div&gt;
+
+&lt;$reveal default={{{ [[$:/temp/advanced-search/show]addsuffix&lt;qualify&gt;get[text]] }}} type=&quot;match&quot; text=&quot;yes&quot;&gt;
+&lt;h3&gt;Advanced search&lt;/h3&gt;
+&lt;div class=&quot;search-list-container&quot;&gt;
+&lt;$edit-text tiddler=&lt;&lt;qualify $:/temp/filter&gt;&gt; field=&quot;text&quot; tag=&quot;input&quot; default=&quot;[search:[]]&quot; placeholder=&quot;write an additional filter here&quot; class=&quot;tc-edit-texteditor&quot;/&gt;
+&lt;$reveal state=&lt;&lt;qualify $:/temp/filter&gt;&gt; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot;&gt;
+&lt;$action-setfield $tiddler=&lt;&lt;qualify $:/temp/filter&gt;&gt; text=&quot;[search:[]]&quot;/&gt;
+{{$:/core/images/close-button}}
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;/div&gt;
+&lt;/$reveal&gt;
+
+
+&lt;$set name=search tiddler=&lt;&lt;qualify $:/temp/search&gt;&gt; field=&quot;text&quot;&gt;
+&lt;$set name=filter tiddler=&lt;&lt;qualify $:/temp/filter&gt;&gt; field=&quot;text&quot;&gt;
+&lt;$set name=filter value={{{ [&lt;filter&gt;match[]then[+]else&lt;filter&gt;] }}}&gt;
+
+
+&lt;$list filter=&quot;[enlist&lt;search-list&gt;filter&lt;filter&gt;]+[search:*&lt;search&gt;]&quot; variable=&quot;item&quot; template=&lt;&lt;item-template&gt;&gt; /&gt;
+
+&lt;/$set&gt;
+&lt;/$set&gt;
+&lt;/$set&gt;
+&lt;/span&gt;</pre>
+</div>
 <div created="20210907003321241" modified="20210907003427828" tags="$:/showInfo $:/tags/Stylesheet" title="$:/showInfo/source/style" type="text/css">
 <pre>.view-source .solo~*{
 	display:inline-flex;
@@ -13856,7 +13914,7 @@ padding-bottom: 10px;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="Index $:/TiddlyTweaks" title="$:/StoryList">
+<div created="20210922030635143" list="Index $:/TiddlyTweaks $:/SaveToGitHub" modified="20210922030635143" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210907002753004" list="$:/tagging $:/tagging/style $:/tagging/openTiddlers $:/tagging/template $:/tagging/template/after $:/tagging/template/before" modified="20210907134252168" tagging="after" tags="$:/tagging" title="$:/tagging">
@@ -14882,6 +14940,44 @@ margin-right:1ch;
 </div>
 <div created="20210811020158840" modified="20210907112217403" tagging="after" tags="$:/ThemeTweaks/SwitchPalette" title="$:/ThemeTweaks/SwitchPalette">
 <pre></pre>
+</div>
+<div created="20201210171047824" description="Toggle between grey/beige colour palette" modified="20210907112633134" source="https://nicolas.petton.fr/tw/notebook.html" tags="$:/tags/PageControls $:/ThemeTweaks/SwitchPalette" task="todo" title="$:/ThemeTweaks/SwitchPalette/button" type="text/vnd.tiddlywiki">
+<pre>\whitespace trim
+&lt;$vars
+    palettes=&quot;[all[tiddlers+shadows]tag[$:/ThemeTweaks/SwitchPalette/tags]]&quot;
+    popupTiddler=&lt;&lt;qualify &quot;$:/state/palette-dropdown&quot;&gt;&gt;
+  &gt;
+    &lt;$button
+      popup=&lt;&lt;popupTiddler&gt;&gt;
+      tooltip=&quot;Switch colours&quot;
+      aria-label=&quot;Switch colours&quot;
+      class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
+    &gt;
+      &lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
+	{{$:/ThemeTweaks/SwitchPalette/image}}
+      &lt;/$list&gt;
+
+      &lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
+	&lt;span class=&quot;tc-btn-text&quot;&gt;Switch colours&lt;/span&gt;
+      &lt;/$list&gt;
+
+      &lt;$reveal state=&lt;&lt;popupTiddler&gt;&gt; type=&quot;popup&quot; position=&quot;belowleft&quot; class=&quot;tc-drop-down&quot;&gt;
+	&lt;$list filter=&lt;&lt;palettes&gt;&gt;&gt;
+	  &lt;$button class=&quot;tc-btn-invisible&quot;&gt;
+      &lt;$list filter=&quot;[&lt;currentTiddler&gt;match{$:/palette}]&quot;&gt;
+	    &lt;li&gt;{{!!name}}&lt;/li&gt;
+     &lt;/$list&gt;
+      &lt;$list filter=&quot;[&lt;currentTiddler&gt;!match{$:/palette}]&quot;&gt;
+	    {{!!name}}
+     &lt;/$list&gt;
+
+	    &lt;$action-setfield $tiddler=&quot;$:/palette&quot; text={{!!title}}/&gt;
+	  &lt;/$button&gt;
+	&lt;/$list&gt;
+      &lt;/$reveal&gt;
+
+    &lt;/$button&gt;
+  &lt;/$vars&gt;</pre>
 </div>
 <div created="20201210170859810" modified="20210907112503276" tags="$:/ThemeTweaks/SwitchPalette" title="$:/ThemeTweaks/SwitchPalette/image" type="text/vnd.tiddlywiki">
 <pre>&lt;svg width=&quot;20px&quot; height=&quot;20px&quot; viewBox=&quot;0 0 16 16&quot; class=&quot;bi bi-circle-half&quot; fill=&quot;currentColor&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
