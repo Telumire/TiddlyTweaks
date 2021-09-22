@@ -507,6 +507,8 @@ Error message and password prompt
 
 <li>Index</li>
 
+<li>Modified this session</li>
+
 <li>task</li>
 
 </ul>
@@ -578,7 +580,7 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div created="20210908152838707" modified="20210922220518324" title="$:/config/AutoSave">
+<div created="20210908152838707" modified="20210922221823845" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
 <div created="20210908160520283" modified="20210908160521340" title="$:/config/flibbles/relink-titles/relink/$:/plugins/flibbles/relink-titles/rules/directory">
@@ -14131,8 +14133,8 @@ padding-bottom: 10px;
 <div created="20210908160455948" modified="20210908160714259" title="$:/state/plugin-info--381224194-$:/plugins/flibbles/relink-titles--744984950">
 <pre>contents</pre>
 </div>
-<div created="20210908161318090" modified="20210922034837640" title="$:/state/showeditpreview">
-<pre>no</pre>
+<div created="20210908161318090" modified="20210922221215040" title="$:/state/showeditpreview">
+<pre>yes</pre>
 </div>
 <div created="20210907145913059" modified="20210922211154077" title="$:/state/sidebar">
 <pre>yes</pre>
@@ -14182,7 +14184,7 @@ padding-bottom: 10px;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="Index $:/TiddlyTweaks" title="$:/StoryList">
+<div list="[[Modified this session]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210907161144910" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent $:/core/ui/SideBar/Tools $:/core/ui/SideBar/More $:/SaveToGitHub/Settings $:/Tasker/Kanban $:/About" modified="20210907161258843" title="$:/tags/SideBar">
@@ -15277,6 +15279,13 @@ A better way would be to use plugins - this is a WIP.
 
 You can also drag&amp;drop the relevant tag-pill.
 &lt;&lt;&lt;</pre>
+</div>
+<div created="20210922220541198" description="todo : get the previous commit from github and use https://tiddlywiki.com/#DiffTextWidget to compare the differences" modified="20210922221726967" tags="" task="todo" title="Modified this session">
+<pre>&lt;ul&gt;
+&lt;$list filter=&quot;[haschanged[]!search:title[$:/state]!search:title[$:/temp]![$:/StoryList]![$:/HistoryList]]&quot;&gt;
+&lt;li&gt;&lt;$link/&gt; (&lt;&lt;changecount&gt;&gt;)&lt;/li&gt;
+&lt;/$list&gt;
+&lt;/ul&gt;</pre>
 </div>
 <div created="20210907001351123" list="$:/showInfo/search/template $:/ThemeTweaks/SwitchPalette/button $:/Tasker/ui/Buttons/tasker" modified="20210922211459578" title="task">
 <pre></pre>
