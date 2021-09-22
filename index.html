@@ -199,10 +199,6 @@ Error message and password prompt
 
 <li>$:/language/ControlPanel/Saving/GitService/CommitMessage</li>
 
-<li>$:/macro/href-filter</li>
-
-<li>$:/macro/openTiddlers</li>
-
 <li>$:/palette</li>
 
 <li>$:/palettes/Blanca</li>
@@ -289,6 +285,24 @@ Error message and password prompt
 
 <li>$:/showInfo/source/template</li>
 
+<li>$:/showInfo/tagging</li>
+
+<li>$:/showInfo/tagging/openTiddlers</li>
+
+<li>$:/showInfo/tagging/search</li>
+
+<li>$:/showInfo/tagging/search-list</li>
+
+<li>$:/showInfo/tagging/style</li>
+
+<li>$:/showInfo/tagging/template</li>
+
+<li>$:/showInfo/tagging/template/after</li>
+
+<li>$:/showInfo/tagging/template/before</li>
+
+<li>$:/showInfo/tagging/template/itemTemplate</li>
+
 <li>$:/SiteSubtitle</li>
 
 <li>$:/SiteTitle</li>
@@ -345,6 +359,8 @@ Error message and password prompt
 
 <li>$:/state/tab--2112689675</li>
 
+<li>$:/state/tab--910542195</li>
+
 <li>$:/state/tab--959111941</li>
 
 <li>$:/state/tab-1749438307</li>
@@ -362,24 +378,6 @@ Error message and password prompt
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
 <li>$:/StoryList</li>
-
-<li>$:/tagging</li>
-
-<li>$:/tagging/openTiddlers</li>
-
-<li>$:/tagging/search</li>
-
-<li>$:/tagging/search-list</li>
-
-<li>$:/tagging/style</li>
-
-<li>$:/tagging/template</li>
-
-<li>$:/tagging/template/after</li>
-
-<li>$:/tagging/template/before</li>
-
-<li>$:/tagging/template/itemTemplate</li>
 
 <li>$:/tags/SideBar</li>
 
@@ -449,6 +447,10 @@ Error message and password prompt
 
 <li>$:/ThemeTweaks/icon/warning</li>
 
+<li>$:/ThemeTweaks/macro/href-filter</li>
+
+<li>$:/ThemeTweaks/macro/openTiddlers</li>
+
 <li>$:/ThemeTweaks/style/fold_banner</li>
 
 <li>$:/ThemeTweaks/style/fonts</li>
@@ -500,6 +502,8 @@ Error message and password prompt
 <li>$:/transclude/edit</li>
 
 <li>$:/transclude/edit/style</li>
+
+<li>Export this wiki settings</li>
 
 <li>Index</li>
 
@@ -574,7 +578,7 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div created="20210908152838707" modified="20210922211957849" title="$:/config/AutoSave">
+<div created="20210908152838707" modified="20210922220518324" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
 <div created="20210908160520283" modified="20210908160521340" title="$:/config/flibbles/relink-titles/relink/$:/plugins/flibbles/relink-titles/rules/directory">
@@ -10564,17 +10568,6 @@ $:/TiddlyTweaks</pre>
 <div created="20210921232125203" modified="20210922211238258" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
 <pre>Modified the tag for the right story</pre>
 </div>
-<div created="20210313134122939" modified="20210907002010666" tags="$:/tags/Macro $:/tagging/template" title="$:/macro/href-filter">
-<pre>\define href-filter(filter, text=&quot;open all&quot;) &lt;a href=&quot;#:[$filter$]&quot; target=&quot;_blank&quot;&gt;$text$&lt;/a&gt;</pre>
-</div>
-<div created="20210907001824874" modified="20210907002015974" tags="$:/tags/Macro $:/tagging/template" title="$:/macro/openTiddlers">
-<pre>\define openTiddlers(filter:&quot;&quot; text:&quot;open all&quot;)
-&lt;$button class=&quot;tc-btn-invisible tc-tiddlylink&quot; tooltip=&quot;Go to tiddlers&quot; dragFilter=&quot;$filter$&quot;&gt;
-&lt;$list filter=&quot;&quot;&quot;$filter$&quot;&quot;&quot;&gt;&lt;$action-navigate $to={{!!title}}/&gt;&lt;/$list&gt;
-$text$
-&lt;/$button&gt;
-\end</pre>
-</div>
 <div created="20210906233615248" modified="20210921231905526" tags="" title="$:/palette">
 <pre>$:/palettes/GruvboxDark</pre>
 </div>
@@ -13897,6 +13890,118 @@ $subfilter=&quot;+[toggle[yes],[no]]&quot;/&gt;
 	&lt;/$reveal&gt;
 &lt;/$list&gt;</pre>
 </div>
+<div created="20210907002753004" description="todo : add a field tagging-filter" list="$:/showInfo/tagging $:/tagging/style $:/tagging/openTiddlers $:/tagging/template $:/tagging/template/after $:/tagging/template/before" modified="20210922213724752" tagging="after" tags="$:/showInfo/tagging $:/showInfo" task="todo" title="$:/showInfo/tagging">
+<pre></pre>
+</div>
+<div created="20210907121748485" modified="20210922213525247" tags="$:/showInfo/tagging" title="$:/showInfo/tagging/openTiddlers">
+<pre>&lt;&lt;openTiddlers &quot;[tag[$(tag)$]]&quot; &quot;open all in the current tab&quot;&gt;&gt; - &lt;&lt;href-filter &quot;tag[$(tag)$]&quot; &quot;another tab&quot;&gt;&gt;</pre>
+</div>
+<div created="20210907124741506" description="The tag must be provided with the variable list-tag" modified="20210922213525553" tags="$:/showInfo/tagging" title="$:/showInfo/tagging/search">
+<pre>&lt;div class=&quot;search-list-container&quot;&gt;
+&lt;$edit-text tiddler=&lt;&lt;qualify $:/temp/search&gt;&gt; field=&quot;text&quot; tag=&quot;input&quot; default=&quot;&quot; placeholder=&quot;type to search the list..&quot; class=&quot;tc-edit-texteditor&quot;/&gt;
+&lt;$reveal state=&lt;&lt;qualify $:/temp/search&gt;&gt; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot;&gt;
+&lt;$action-setfield $tiddler=&lt;&lt;qualify $:/temp/search&gt;&gt; text=&quot;&quot;/&gt;
+{{$:/core/images/close-button}}
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;$set name=search tiddler=&lt;&lt;qualify $:/temp/search&gt;&gt; field=&quot;text&quot;&gt;
+&lt;$macrocall $name=&quot;list-tagged-draggable&quot; tag=&lt;&lt;list-tag&gt;&gt; itemTemplate=&quot;$:/showInfo/tagging/template/itemTemplate&quot; subFilter=&quot;search:*&lt;search&gt;&quot;/&gt;
+&lt;/$set&gt;
+&lt;/ul&gt;</pre>
+</div>
+<div created="20210915144016584" description="Transclude this tiddler with a filter to get a list with a search field. E.g: `{{[tag[tip]]||$:/tagging/search-list}}` will show a list of all the tiddlers tagged with tip. If there is no filter, the list display all tagging tiddler of the current tiddler:  `{{$:/tagging/search-list}}`" modified="20210922213525554" tags="$:/showInfo/tagging/template $:/showInfo/tagging $:/showInfo/tagging/template/itemTemplate" title="$:/showInfo/tagging/search-list">
+<pre>&lt;$set name=filter value=&lt;&lt;currentTiddler&gt;&gt; &gt;
+&lt;$tiddler tiddler=&lt;&lt;qualify $:/temp/search&gt;&gt; &gt; 
+&lt;div class=&quot;search-list&quot;&gt;
+&lt;$edit-text tag=&quot;input&quot; default=&quot;&quot; placeholder=&quot;type to search the list..&quot; class=&quot;tc-edit-texteditor&quot;/&gt;
+&lt;$reveal type=&quot;nomatch&quot; default={{!!text}} text=&quot;&quot;&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot; set=&quot;!!text&quot; setTo=&quot;&quot;&gt;{{$:/core/images/close-button}}&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;/div&gt;
+&lt;$reveal type=&quot;match&quot; default={{{ [&lt;filter&gt;match[(search-list)]]}}} text=&quot;&quot;&gt;
+&lt;$list filter=&quot;[subfilter&lt;filter&gt;]+[search:title,caption{!!text}]&quot; template=&quot;$:/showInfo/tagging/template/itemTemplate&quot;/&gt;
+&lt;/$reveal&gt;
+&lt;$reveal type=&quot;nomatch&quot; default={{{ [&lt;filter&gt;match[(search-list)]]}}} text=&quot;&quot;&gt;
+^^//No filter specified, default to displaying tagging tiddlers//^^
+&lt;$list filter=&quot;[&lt;storyTiddler&gt;tagging[]]+[search:title,caption{!!text}]&quot; template=&quot;$:/showInfo/tagging/template/itemTemplate&quot;/&gt;
+&lt;/$reveal&gt;
+&lt;/$tiddler&gt;
+&lt;/$set&gt;
+
+&lt;style&gt;
+.search-list{
+display:flex;
+align-items: center;
+}
+
+.search-list button {
+padding:.5em;
+}
+&lt;/style&gt;</pre>
+</div>
+<div created="20210907121516075" modified="20210922213525359" tags="$:/showInfo/tagging $:/tags/Stylesheet" title="$:/showInfo/tagging/style" type="text/css">
+<pre>.search-list-container {
+display:flex;
+align-items: center;
+}
+
+.search-list-container button {
+padding:.5em;
+}</pre>
+</div>
+<div created="20210713194532173" modified="20210922213525393" tags="$:/showInfo/tagging" title="$:/showInfo/tagging/template">
+<pre>\whitespace trim
+
+&lt;$reveal tag=&quot;div&quot; type=&quot;nomatch&quot; stateTitle=&lt;&lt;folded-state&gt;&gt; text=&quot;hide&quot; retain=&quot;yes&quot; animate=&quot;yes&quot;&gt;
+    &lt;$list filter=&quot;[all[current]!tagging-open[false]]&quot;&gt;
+        &lt;$list filter=&quot;[all[current]has:field[tagging-tiddler]]&quot;&gt;
+            &lt;$set name=&quot;tag&quot; value={{!!tagging-tiddler}}&gt;
+                {{$:/showInfo/tagging/openTiddlers}}
+            &lt;/$set&gt;
+        &lt;/$list&gt;
+
+        &lt;$list filter=&quot;[all[current]!has:field[tagging-tiddler]]&quot;&gt;
+            &lt;$set name=&quot;tag&quot; value={{!!title}}&gt;
+                {{$:/showInfo/tagging/openTiddlers}}
+            &lt;/$set&gt;
+        &lt;/$list&gt;
+    &lt;/$list&gt;
+
+    &lt;$list filter=&quot;[all[current]has:field[tagging-tiddler]]&quot;&gt;
+        &lt;$set name=&quot;list-tag&quot; value={{!!tagging-tiddler}}&gt;{{$:/showInfo/tagging/search}}&lt;/$set&gt;
+    &lt;/$list&gt;
+
+    &lt;$list filter=&quot;[all[current]!has[tagging-tiddler]]&quot;&gt;
+        &lt;$set name=&quot;list-tag&quot; value={{!!title}}&gt;{{$:/showInfo/tagging/search}}&lt;/$set&gt;
+    &lt;/$list&gt;
+&lt;/$reveal&gt;</pre>
+</div>
+<div created="20210907002454981" modified="20210922213525431" tags="$:/tags/ViewTemplate $:/showInfo/tagging" title="$:/showInfo/tagging/template/after">
+<pre>\whitespace trim
+&lt;$list filter=&quot;[all[current]field:tagging[after]]:or[all[current]tag[tagging-after]]:or[all[current]has[tagging-tiddler]]&quot;&gt;
+{{||$:/showInfo/tagging/template}}
+&lt;/$list&gt;</pre>
+</div>
+<div created="20210907002557014" modified="20210922213525497" tags="$:/tags/ViewTemplate $:/showInfo/tagging" title="$:/showInfo/tagging/template/before">
+<pre>\whitespace trim
+&lt;$list filter=&quot;[all[current]field:tagging[before]]:or[all[current]tag[tagging-before]]&quot;&gt;
+{{||$:/showInfo/tagging/template}}
+&lt;/$list&gt;</pre>
+</div>
+<div created="20210715020836713" modified="20210922213525529" tags="$:/showInfo/tagging" title="$:/showInfo/tagging/template/itemTemplate">
+<pre>&lt;li&gt;
+    &lt;$link to=&lt;&lt;currentTiddler&gt;&gt;&gt;
+        &lt;$transclude field=&quot;caption&quot;&gt;
+            &lt;$view field=&quot;title&quot; /&gt;
+        &lt;/$transclude&gt;
+    &lt;/$link&gt;
+    &lt;$list filter=&quot;[all[current]has[description]]&quot;&gt; - &lt;span style=&quot;font-style:italic;&quot;&gt;{{!!description}}&lt;/span&gt;&lt;/$list&gt;
+&lt;/li&gt;</pre>
+</div>
 <div created="20210906233115255" modified="20210908154300780" tags="" title="$:/SiteSubtitle">
 <pre>Small tweaks for &lt;a class=&quot;tc-tiddlylink&quot; href=&quot;https://tiddlywiki.com/&quot;&gt;~TiddlyWiki&lt;/a&gt;</pre>
 </div>
@@ -13993,7 +14098,7 @@ padding-bottom: 10px;
 &lt;/$reveal&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20210906235949815" modified="20210922035330844" title="$:/state/advancedsearch/currentTab">
+<div created="20210906235949815" modified="20210922215627605" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20210906235650195" modified="20210907180809320" title="$:/state/commander/log-tiddler">
@@ -14035,7 +14140,7 @@ padding-bottom: 10px;
 <div created="20210907180739978" modified="20210907180739978" title="$:/state/tab--103319216">
 <pre>$:/plugins/kookma/commander/field/uicomp/remove-fields</pre>
 </div>
-<div created="20210906235949815" modified="20210922035330844" title="$:/state/tab--1498284803">
+<div created="20210906235949815" modified="20210922215627605" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20210908155713655" modified="20210908160400991" title="$:/state/tab--1862192285">
@@ -14044,11 +14149,14 @@ padding-bottom: 10px;
 <div created="20210922140407624" modified="20210922140408513" title="$:/state/tab--1878235435">
 <pre>$:/core/ui/TiddlerInfo/Tagging</pre>
 </div>
-<div created="20210906235719905" modified="20210908203556092" title="$:/state/tab--1963855381">
-<pre>$:/core/ui/ControlPanel/Toolbars</pre>
+<div created="20210906235719905" modified="20210922214205866" title="$:/state/tab--1963855381">
+<pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
 </div>
 <div created="20210908155859338" modified="20210908203601345" title="$:/state/tab--2112689675">
 <pre>$:/core/ui/ControlPanel/Basics</pre>
+</div>
+<div created="20210922215136834" modified="20210922215138937" title="$:/state/tab--910542195">
+<pre>$:/core/ui/TiddlerInfo/Fields</pre>
 </div>
 <div created="20210908160120024" modified="20210908160213259" title="$:/state/tab--959111941">
 <pre>$:/core/ui/ControlPanel/TiddlerFields</pre>
@@ -14076,118 +14184,6 @@ padding-bottom: 10px;
 </div>
 <div list="Index $:/TiddlyTweaks" title="$:/StoryList">
 <pre></pre>
-</div>
-<div created="20210907002753004" list="$:/tagging $:/tagging/style $:/tagging/openTiddlers $:/tagging/template $:/tagging/template/after $:/tagging/template/before" modified="20210907134252168" tagging="after" tags="$:/tagging" title="$:/tagging">
-<pre></pre>
-</div>
-<div created="20210907121748485" modified="20210907131527479" tags="$:/tagging" title="$:/tagging/openTiddlers">
-<pre>&lt;&lt;openTiddlers &quot;[tag[$(tag)$]]&quot; &quot;open all in the current tab&quot;&gt;&gt; - &lt;&lt;href-filter &quot;tag[$(tag)$]&quot; &quot;another tab&quot;&gt;&gt;</pre>
-</div>
-<div created="20210907124741506" description="The tag must be provided with the variable list-tag" modified="20210907132538208" tags="$:/tagging" title="$:/tagging/search">
-<pre>&lt;div class=&quot;search-list-container&quot;&gt;
-&lt;$edit-text tiddler=&lt;&lt;qualify $:/temp/search&gt;&gt; field=&quot;text&quot; tag=&quot;input&quot; default=&quot;&quot; placeholder=&quot;type to search the list..&quot; class=&quot;tc-edit-texteditor&quot;/&gt;
-&lt;$reveal state=&lt;&lt;qualify $:/temp/search&gt;&gt; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
-&lt;$button class=&quot;tc-btn-invisible&quot;&gt;
-&lt;$action-setfield $tiddler=&lt;&lt;qualify $:/temp/search&gt;&gt; text=&quot;&quot;/&gt;
-{{$:/core/images/close-button}}
-&lt;/$button&gt;
-&lt;/$reveal&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-&lt;$set name=search tiddler=&lt;&lt;qualify $:/temp/search&gt;&gt; field=&quot;text&quot;&gt;
-&lt;$macrocall $name=&quot;list-tagged-draggable&quot; tag=&lt;&lt;list-tag&gt;&gt; itemTemplate=&quot;$:/tagging/template/itemTemplate&quot; subFilter=&quot;search:*&lt;search&gt;&quot;/&gt;
-&lt;/$set&gt;
-&lt;/ul&gt;</pre>
-</div>
-<div created="20210915144016584" description="Transclude this tiddler with a filter to get a list with a search field. E.g: `{{[tag[tip]]||$:/tagging/search-list}}` will show a list of all the tiddlers tagged with tip. If there is no filter, the list display all tagging tiddler of the current tiddler:  `{{$:/tagging/search-list}}`" modified="20210922020457573" tags="$:/tagging/template $:/tagging $:/tagging/template/itemTemplate" title="$:/tagging/search-list">
-<pre>&lt;$set name=filter value=&lt;&lt;currentTiddler&gt;&gt; &gt;
-&lt;$tiddler tiddler=&lt;&lt;qualify $:/temp/search&gt;&gt; &gt; 
-&lt;div class=&quot;search-list&quot;&gt;
-&lt;$edit-text tag=&quot;input&quot; default=&quot;&quot; placeholder=&quot;type to search the list..&quot; class=&quot;tc-edit-texteditor&quot;/&gt;
-&lt;$reveal type=&quot;nomatch&quot; default={{!!text}} text=&quot;&quot;&gt;
-&lt;$button class=&quot;tc-btn-invisible&quot; set=&quot;!!text&quot; setTo=&quot;&quot;&gt;{{$:/core/images/close-button}}&lt;/$button&gt;
-&lt;/$reveal&gt;
-&lt;/div&gt;
-&lt;$reveal type=&quot;match&quot; default={{{ [&lt;filter&gt;match[(search-list)]]}}} text=&quot;&quot;&gt;
-&lt;$list filter=&quot;[subfilter&lt;filter&gt;]+[search:title,caption{!!text}]&quot; template=&quot;$:/tagging/template/itemTemplate&quot;/&gt;
-&lt;/$reveal&gt;
-&lt;$reveal type=&quot;nomatch&quot; default={{{ [&lt;filter&gt;match[(search-list)]]}}} text=&quot;&quot;&gt;
-^^//No filter specified, default to displaying tagging tiddlers//^^
-&lt;$list filter=&quot;[&lt;storyTiddler&gt;tagging[]]+[search:title,caption{!!text}]&quot; template=&quot;$:/tagging/template/itemTemplate&quot;/&gt;
-&lt;/$reveal&gt;
-&lt;/$tiddler&gt;
-&lt;/$set&gt;
-
-&lt;style&gt;
-.search-list{
-display:flex;
-align-items: center;
-}
-
-.search-list button {
-padding:.5em;
-}
-&lt;/style&gt;</pre>
-</div>
-<div created="20210907121516075" modified="20210907121557260" tags="$:/tagging $:/tags/Stylesheet" title="$:/tagging/style" type="text/css">
-<pre>.search-list-container {
-display:flex;
-align-items: center;
-}
-
-.search-list-container button {
-padding:.5em;
-}</pre>
-</div>
-<div created="20210713194532173" modified="20210907131850912" tags="$:/tagging" title="$:/tagging/template">
-<pre>\whitespace trim
-
-&lt;$reveal tag=&quot;div&quot; type=&quot;nomatch&quot; stateTitle=&lt;&lt;folded-state&gt;&gt; text=&quot;hide&quot; retain=&quot;yes&quot; animate=&quot;yes&quot;&gt;
-    &lt;$list filter=&quot;[all[current]!tagging-open[false]]&quot;&gt;
-        &lt;$list filter=&quot;[all[current]has:field[tagging-tiddler]]&quot;&gt;
-            &lt;$set name=&quot;tag&quot; value={{!!tagging-tiddler}}&gt;
-                {{$:/tagging/openTiddlers}}
-            &lt;/$set&gt;
-        &lt;/$list&gt;
-
-        &lt;$list filter=&quot;[all[current]!has:field[tagging-tiddler]]&quot;&gt;
-            &lt;$set name=&quot;tag&quot; value={{!!title}}&gt;
-                {{$:/tagging/openTiddlers}}
-            &lt;/$set&gt;
-        &lt;/$list&gt;
-    &lt;/$list&gt;
-
-    &lt;$list filter=&quot;[all[current]has:field[tagging-tiddler]]&quot;&gt;
-        &lt;$set name=&quot;list-tag&quot; value={{!!tagging-tiddler}}&gt;{{$:/tagging/search}}&lt;/$set&gt;
-    &lt;/$list&gt;
-
-    &lt;$list filter=&quot;[all[current]!has[tagging-tiddler]]&quot;&gt;
-        &lt;$set name=&quot;list-tag&quot; value={{!!title}}&gt;{{$:/tagging/search}}&lt;/$set&gt;
-    &lt;/$list&gt;
-&lt;/$reveal&gt;</pre>
-</div>
-<div created="20210907002454981" modified="20210907124342891" tags="$:/tags/ViewTemplate $:/tagging" title="$:/tagging/template/after">
-<pre>\whitespace trim
-&lt;$list filter=&quot;[all[current]field:tagging[after]]:or[all[current]tag[tagging-after]]:or[all[current]has[tagging-tiddler]]&quot;&gt;
-{{||$:/tagging/template}}
-&lt;/$list&gt;</pre>
-</div>
-<div created="20210907002557014" modified="20210907124342892" tags="$:/tags/ViewTemplate $:/tagging" title="$:/tagging/template/before">
-<pre>\whitespace trim
-&lt;$list filter=&quot;[all[current]field:tagging[before]]:or[all[current]tag[tagging-before]]&quot;&gt;
-{{||$:/tagging/template}}
-&lt;/$list&gt;</pre>
-</div>
-<div created="20210715020836713" modified="20210907133449701" tags="$:/tagging" title="$:/tagging/template/itemTemplate">
-<pre>&lt;li&gt;
-    &lt;$link to=&lt;&lt;currentTiddler&gt;&gt;&gt;
-        &lt;$transclude field=&quot;caption&quot;&gt;
-            &lt;$view field=&quot;title&quot; /&gt;
-        &lt;/$transclude&gt;
-    &lt;/$link&gt;
-    &lt;$list filter=&quot;[all[current]has[description]]&quot;&gt; - &lt;span style=&quot;font-style:italic;&quot;&gt;{{!!description}}&lt;/span&gt;&lt;/$list&gt;
-&lt;/li&gt;</pre>
 </div>
 <div created="20210907161144910" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent $:/core/ui/SideBar/Tools $:/core/ui/SideBar/More $:/SaveToGitHub/Settings $:/Tasker/Kanban $:/About" modified="20210907161258843" title="$:/tags/SideBar">
 <pre></pre>
@@ -14662,7 +14658,7 @@ subFilter=&lt;&lt;subFilter&gt;&gt;
 <div created="20210730135105270" modified="20210907180810917" tags="$:/ThemeTweaks" title="$:/ThemeTweaks/caption/right_story">
 <pre>change column</pre>
 </div>
-<div created="20210907114836564" modified="20210907134111665" source="https://fonts.googleapis.com/css2?family=Roboto+Slab" tags="$:/tags/Stylesheet $:/ThemeTweaks" title="$:/ThemeTweaks/font/style/Roboto_Slab" type="text/css">
+<div created="20210907114836564" modified="20210922214120856" source="https://fonts.googleapis.com/css2?family=Roboto+Slab" tags="$:/tags/Stylesheet $:/ThemeTweaks $:/ThemeTweaks/style/fonts" title="$:/ThemeTweaks/font/style/Roboto_Slab" type="text/css">
 <pre>/* cyrillic-ext */
 @font-face {
   font-family: 'Roboto Slab';
@@ -14723,6 +14719,17 @@ subFilter=&lt;&lt;subFilter&gt;&gt;
 <div created="20210727150406437" modified="20210907180810917" tags="$:/ThemeTweaks" title="$:/ThemeTweaks/icon/warning" type="image/svg+xml">
 <pre>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;22pt&quot; height=&quot;22pt&quot; viewBox=&quot;0 0 128 128&quot; fill=&quot;#d5c4a1&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot;  d=&quot;M57.072 11c3.079-5.333 10.777-5.333 13.856 0l55.426 96c3.079 5.333-.77 12-6.928 12H8.574c-6.158 0-10.007-6.667-6.928-12l55.426-96zM64 37c-4.418 0-8 3.582-8 7.994v28.012C56 77.421 59.59 81 64 81c4.418 0 8-3.582 8-7.994V44.994C72 40.579 68.41 37 64 37zm0 67a8 8 0 100-16 8 8 0 000 16z&quot;/&gt;&lt;/svg&gt;</pre>
 </div>
+<div created="20210313134122939" modified="20210922213525430" tags="$:/tags/Macro $:/showInfo/tagging/template" title="$:/ThemeTweaks/macro/href-filter">
+<pre>\define href-filter(filter, text=&quot;open all&quot;) &lt;a href=&quot;#:[$filter$]&quot; target=&quot;_blank&quot;&gt;$text$&lt;/a&gt;</pre>
+</div>
+<div created="20210907001824874" modified="20210922213525430" tags="$:/tags/Macro $:/showInfo/tagging/template" title="$:/ThemeTweaks/macro/openTiddlers">
+<pre>\define openTiddlers(filter:&quot;&quot; text:&quot;open all&quot;)
+&lt;$button class=&quot;tc-btn-invisible tc-tiddlylink&quot; tooltip=&quot;Go to tiddlers&quot; dragFilter=&quot;$filter$&quot;&gt;
+&lt;$list filter=&quot;&quot;&quot;$filter$&quot;&quot;&quot;&gt;&lt;$action-navigate $to={{!!title}}/&gt;&lt;/$list&gt;
+$text$
+&lt;/$button&gt;
+\end</pre>
+</div>
 <div created="20210703203411752" creator="user" modified="20210907134111665" modifier="user" tags="$:/tags/Stylesheet $:/ThemeTweaks" title="$:/ThemeTweaks/style/fold_banner" type="text/css">
 <pre>button.tc-fold-banner {
     position: absolute;
@@ -14774,7 +14781,7 @@ button.tc-unfold-banner {
 }
 */</pre>
 </div>
-<div created="20210907113823607" modified="20210907134111666" tags="$:/tags/Stylesheet $:/ThemeTweaks" title="$:/ThemeTweaks/style/fonts" type="text/css">
+<div created="20210907113823607" modified="20210922214155719" tagging="after" tags="$:/tags/Stylesheet $:/ThemeTweaks $:/ThemeTweaks/style/fonts" title="$:/ThemeTweaks/style/fonts" type="text/css">
 <pre>body {
 font-family: 'Roboto Slab', serif;
 }</pre>
@@ -15243,6 +15250,9 @@ span.transclude-edit:hover .transclude-edit-button{
 .transclude-edit svg {
 	fill:&lt;&lt;color foreground&gt;&gt;;
 }</pre>
+</div>
+<div created="20210922215428269" description="todo : add the filter" filter="" modified="20210922220333450" tags="" title="Export this wiki settings">
+<pre>&lt;$macrocall $name=&quot;openTiddlers&quot; filter={{!!filter}} text=&quot;Drag to import the settings&quot;/&gt;</pre>
 </div>
 <div created="20210908150922338" modified="20210922204210733" tags="pinned" title="Index">
 <pre>!Welcome
