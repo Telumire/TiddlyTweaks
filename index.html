@@ -143,10 +143,6 @@ Error message and password prompt
 
 <li>(reading-time)</li>
 
-<li>$:/(edit-inline)</li>
-
-<li>$:/(edit)</li>
-
 <li>$:/About</li>
 
 <li>$:/AdvancedSearch</li>
@@ -177,6 +173,8 @@ Error message and password prompt
 
 <li>$:/config/ViewToolbarButtons/Visibility/$:/SaveToGitHub/Button/GitHubPermaView</li>
 
+<li>$:/config/ViewToolbarButtons/Visibility/$:/SaveToGitHub/Button/Private</li>
+
 <li>$:/config/WikiParserRules/Inline/wikilink</li>
 
 <li>$:/core</li>
@@ -184,6 +182,12 @@ Error message and password prompt
 <li>$:/core/images/locked-padlock</li>
 
 <li>$:/DefaultTiddlers</li>
+
+<li>$:/edit</li>
+
+<li>$:/edit-inline</li>
+
+<li>$:/Import</li>
 
 <li>$:/isEncrypted</li>
 
@@ -227,9 +231,13 @@ Error message and password prompt
 
 <li>$:/SaveToGitHub/Button/GitHubPermaView</li>
 
+<li>$:/SaveToGitHub/Button/Private</li>
+
 <li>$:/SaveToGitHub/Caption</li>
 
 <li>$:/SaveToGitHub/CommitMessage/Modal</li>
+
+<li>$:/SaveToGitHub/GithubPageUrl</li>
 
 <li>$:/SaveToGitHub/Hint</li>
 
@@ -252,6 +260,16 @@ Error message and password prompt
 <li>$:/showInfo/PalettePreview/style</li>
 
 <li>$:/showInfo/PalettePreview/template</li>
+
+<li>$:/showInfo/search</li>
+
+<li>$:/showInfo/search/img</li>
+
+<li>$:/showInfo/search/img/style</li>
+
+<li>$:/showInfo/search/SystemImage</li>
+
+<li>$:/showInfo/search/SystemImage/search/style</li>
 
 <li>$:/showInfo/source/style</li>
 
@@ -280,6 +298,8 @@ Error message and password prompt
 <li>$:/state/commander/snr/select-tiddler</li>
 
 <li>$:/state/compInspect/temp/commander/selectState-tiddler</li>
+
+<li>$:/state/Excise/-1546473224/tagnew</li>
 
 <li>$:/state/flibbles/relink/tables/Core--657194722</li>
 
@@ -328,6 +348,8 @@ Error message and password prompt
 <li>$:/tagging/openTiddlers</li>
 
 <li>$:/tagging/search</li>
+
+<li>$:/tagging/search-list</li>
 
 <li>$:/tagging/style</li>
 
@@ -421,6 +443,8 @@ Error message and password prompt
 
 <li>$:/ThemeTweaks/style/subtitle</li>
 
+<li>$:/ThemeTweaks/style/SVG inline</li>
+
 <li>$:/ThemeTweaks/style/tags</li>
 
 <li>$:/ThemeTweaks/style/texte-align</li>
@@ -439,6 +463,8 @@ Error message and password prompt
 
 <li>$:/ThemeTweaks/template/subtitle</li>
 
+<li>$:/ThemeTweaks/url/SVG</li>
+
 <li>$:/TiddlyTweaks</li>
 
 <li>$:/transclude/edit</li>
@@ -447,13 +473,13 @@ Error message and password prompt
 
 <li>Draft of 'SVG inline'</li>
 
+<li>GitHub</li>
+
 <li>Index</li>
 
 <li>New Tiddler</li>
 
 <li>right-story</li>
-
-<li>SVG inline</li>
 
 <li>System image gallery</li>
 
@@ -517,15 +543,6 @@ Error message and password prompt
 &lt;/$wikify&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20210702134909188" description="Transclure avec ce tiddler pour afficher un bouton d'édition : `{{NomduTiddler||(edit-inline)}}` en mode inline" modified="20210907160947725" tags="$:/SaveToGitHub $:/transclude/edit" title="$:/(edit-inline)">
-<pre>&lt;span class=&quot;transclude-edit&quot;&gt;&lt;$transclude tiddler={{!!title}} mode=&quot;inline&quot;/&gt;&lt;span class=&quot;hide-until-hover transclude-edit-button&quot;&gt; {{||$:/core/ui/Buttons/edit}} &lt;/span&gt;&lt;/span&gt;</pre>
-</div>
-<div created="20210612222422816" modified="20210907160956376" tags="$:/SaveToGitHub $:/transclude/edit" title="$:/(edit)">
-<pre>&lt;p class=&quot;transclude-edit&quot;&gt;
-&lt;$transclude tiddler={{!!title}} mode=&quot;block&quot;/&gt;
-&lt;span class=&quot;hide-until-hover transclude-edit-button&quot;&gt; {{||$:/core/ui/Buttons/edit}}&lt;/span&gt;
-&lt;/p&gt;</pre>
-</div>
 <div caption="About" created="20210907141427850" list="$:/spoiler/global $:/SaveToGitHub/publish [[New Tiddler]] [[New Tiddler 1]]" modified="20210908155647786" tagging="after" tags="$:/tags/SideBar $:/TiddlyTweaks" title="$:/About">
 <pre>&lt;$list filter=&quot;[tag[$:/About]sort[list]]&quot;&gt;
 &lt;$reveal type=&quot;nomatch&quot; state={{{ [tag[$:/About]sort[list]before&lt;currentTiddler&gt;] }}} text=&quot;&quot;&gt;&lt;hr&gt;&lt;/$reveal&gt;
@@ -538,7 +555,7 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div created="20210908152838707" modified="20210922003040201" title="$:/config/AutoSave">
+<div created="20210908152838707" modified="20210922024455102" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
 <div created="20210908160520283" modified="20210908160521340" title="$:/config/flibbles/relink-titles/relink/$:/plugins/flibbles/relink-titles/rules/directory">
@@ -576,6 +593,9 @@ Error message and password prompt
 </div>
 <div created="20210922001755954" modified="20210922001755954" title="$:/config/ViewToolbarButtons/Visibility/$:/SaveToGitHub/Button/GitHubPermaView">
 <pre>hide</pre>
+</div>
+<div created="20210922023330100" modified="20210922024130089" title="$:/config/ViewToolbarButtons/Visibility/$:/SaveToGitHub/Button/Private">
+<pre>show</pre>
 </div>
 <div created="20210906233330670" modified="20210907003013911" title="$:/config/WikiParserRules/Inline/wikilink">
 <pre>enable</pre>
@@ -10451,11 +10471,25 @@ Error message and password prompt
 <pre>[tag[pinned]]
 $:/TiddlyTweaks</pre>
 </div>
+<div created="20210612222422816" description="`{{TiddlerName||$:/edit}}`" modified="20210922022639669" tags="$:/SaveToGitHub $:/transclude/edit" title="$:/edit">
+<pre>&lt;p class=&quot;transclude-edit&quot;&gt;
+&lt;$transclude tiddler={{!!title}} mode=&quot;block&quot;/&gt;
+&lt;span class=&quot;hide-until-hover transclude-edit-button&quot;&gt; {{||$:/core/ui/Buttons/edit}}&lt;/span&gt;
+&lt;/p&gt;</pre>
+</div>
+<div created="20210702134909188" description="`{{TiddlerName||$:/edit-inline}}`" modified="20210922022626463" tags="$:/SaveToGitHub $:/transclude/edit" title="$:/edit-inline">
+<pre>&lt;span class=&quot;transclude-edit&quot;&gt;&lt;$transclude tiddler={{!!title}} mode=&quot;inline&quot;/&gt;&lt;span class=&quot;hide-until-hover transclude-edit-button&quot;&gt; {{||$:/core/ui/Buttons/edit}} &lt;/span&gt;&lt;/span&gt;</pre>
+</div>
+<div modified="20210922014928038" status="complete" title="$:/Import">
+<pre>The following tiddlers were imported:
+
+# [[$:/tagging/search-list]]</pre>
+</div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div created="20210921232125203" modified="20210922003101143" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
-<pre>Added GitHub Permalink/Permaview buttons</pre>
+<div created="20210921232125203" modified="20210922024451373" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
+<pre>Added a &quot;set to priivate&quot; button</pre>
 </div>
 <div created="20210313134122939" modified="20210907002010666" tags="$:/tags/Macro $:/tagging/template" title="$:/macro/href-filter">
 <pre>\define href-filter(filter, text=&quot;open all&quot;) &lt;a href=&quot;#:[$filter$]&quot; target=&quot;_blank&quot;&gt;$text$&lt;/a&gt;</pre>
@@ -13325,7 +13359,7 @@ fill:&lt;&lt;color tiddler-subtitle-foreground&gt;&gt;;
 &lt;/span&gt;
 &lt;/$button&gt;</pre>
 </div>
-<div caption="GitHub permalink" created="20210921232322676" description="Button to get the GitHub Page url of a tiddler" hint="Click to copy the GitHub Page url of this tiddler to the clipboard" list-after="$:/core/ui/Buttons/permalink" modified="20210922001736097" tags="$:/SaveToGitHub $:/tags/ViewToolbar" title="$:/SaveToGitHub/Button/GitHubPermalink">
+<div caption="GitHub permalink" created="20210921232322676" description="Button to get the GitHub Page url of a tiddler" hint="Click to copy the GitHub Page url of this tiddler to the clipboard" modified="20210922024136158" tags="$:/SaveToGitHub $:/tags/ViewToolbar" title="$:/SaveToGitHub/Button/GitHubPermalink">
 <pre>\whitespace trim
 &lt;$set name=GithubPageTiddlerUrl filter=&quot;
 [[https://]][{$:/SaveToGitHub/private/username}][[.github.io/]]
@@ -13333,7 +13367,7 @@ fill:&lt;&lt;color tiddler-subtitle-foreground&gt;&gt;;
 [{$:/GitHub/Path}addsuffix{$:/GitHub/Filename}]
 [[#]]
 [all[current]]
-+[join[]]
++[join[]encodeuri[]]
 &quot;&gt;
 &lt;$button class=tc-btn-invisible message=&quot;tm-copy-to-clipboard&quot; 
 param=&lt;&lt;GithubPageTiddlerUrl&gt;&gt; tooltip={{!!hint}}&gt;
@@ -13348,16 +13382,16 @@ param=&lt;&lt;GithubPageTiddlerUrl&gt;&gt; tooltip={{!!hint}}&gt;
 &lt;/$list&gt;
 &lt;/$button&gt;</pre>
 </div>
-<div caption="GitHub permaview" created="20210922001530951" description="Button to get the GitHub Page url of this story" hint="Click to copy the GitHub Page url of this story to the clipboard" list-after="$:/core/ui/Buttons/permaview" modified="20210922003000438" tags="$:/SaveToGitHub $:/tags/ViewToolbar" title="$:/SaveToGitHub/Button/GitHubPermaView">
+<div caption="GitHub permaview" created="20210922001530951" description="Button to get the GitHub Page url of this story" hint="Click to copy the GitHub Page url of this story to the clipboard" modified="20210922024136158" tags="$:/SaveToGitHub $:/tags/ViewToolbar" title="$:/SaveToGitHub/Button/GitHubPermaView">
 <pre>\whitespace trim
-&lt;$vars separator=&quot;][&quot; separator-start=&quot;[[&quot; separator-end=&quot;]]&quot;&gt;
+&lt;$vars separator=&quot;]][[&quot; separator-start=&quot;:[[&quot; separator-end=&quot;]]&quot;&gt;
 &lt;$set name=GithubPageTiddlerUrl filter=&quot;
 [[https://]][{$:/SaveToGitHub/private/username}][[.github.io/]]
 [{$:/GitHub/Repo}removeprefix{$:/SaveToGitHub/private/username}removeprefix[/]]
 [{$:/GitHub/Path}addsuffix{$:/GitHub/Filename}]
 [[#]]
 [&lt;separator-start&gt;][list[$:/StoryList]join&lt;separator&gt;][&lt;separator-end&gt;]
-+[join[]]
++[join[]encodeuri[]]
 &quot;&gt;
 &lt;$button class=tc-btn-invisible message=&quot;tm-copy-to-clipboard&quot; 
 param=&lt;&lt;GithubPageTiddlerUrl&gt;&gt; tooltip={{!!hint}}&gt;
@@ -13374,6 +13408,26 @@ param=&lt;&lt;GithubPageTiddlerUrl&gt;&gt; tooltip={{!!hint}}&gt;
 &lt;/$set&gt;
 &lt;/$vars&gt;</pre>
 </div>
+<div caption="Private" created="20210922022754002" description="Prevent the publication of the tiddler on GitHub. Warning : A tiddler set to private WILL NOT be saved to GitHub ! See [[$:/SaveToGitHub/PublishFilter]]" hint="Click to set the tiddler to private" modified="20210922024332413" tags="$:/SaveToGitHub $:/tags/ViewToolbar" title="$:/SaveToGitHub/Button/Private">
+<pre>\whitespace trim
+&lt;$button class=tc-btn-invisible tooltip={{$:/SaveToGitHub/Button/Private!!hint}}&gt;
+&lt;$action-listops  $tiddler=&lt;&lt;currentTiddler&gt;&gt; $tags=&quot;+[toggle[private]]&quot; /&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot; variable=_&gt;
+&lt;$list filter=&quot;[all[current]tag[private]]&quot;&gt;
+{{$:/core/images/locked-padlock}}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[all[current]!tag[private]]&quot;&gt;
+{{$:/core/images/unlocked-padlock}}
+&lt;/$list&gt;
+&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
+&lt;span class=&quot;tc-btn-text&quot;&gt;
+&lt;$text text=&quot; &quot;/&gt;
+&lt;$text text={{$:/SaveToGitHub/Button/Private!!caption}}/&gt;
+&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$button&gt;</pre>
+</div>
 <div created="20210806021049086" modified="20210813030810346" tags="$:/SaveToGitHub" title="$:/SaveToGitHub/Caption">
 <pre>save to github</pre>
 </div>
@@ -13387,10 +13441,17 @@ width:100%;
 
 &lt;$edit-text class=&quot;commit-message&quot; tiddler=&quot;$:/language/ControlPanel/Saving/GitService/CommitMessage&quot; default=&quot;Saved by TiddlyWiki&quot; tag=&quot;textarea&quot; class=&quot;tc-edit-texteditor&quot;/&gt;</pre>
 </div>
+<div created="20210922004120766" modified="20210922004120767" tags="$:/SaveToGitHub/Settings" title="$:/SaveToGitHub/GithubPageUrl">
+<pre>&lt;$set name=GithubPageUrl filter=&quot;[{$:/GitHub/Repo}removeprefix{$:/SaveToGitHub/private/username}removeprefix[/]addprefix[.github.io/]addprefix{$:/SaveToGitHub/private/username}addprefix[https://]addsuffix{$:/GitHub/Path}addsuffix{$:/GitHub/Filename}]&quot;&gt;
+
+&lt;&lt;GithubPageUrl&gt;&gt;
+
+&lt;/$set&gt;</pre>
+</div>
 <div created="20210806021302793" modified="20210813030810346" tags="$:/SaveToGitHub" title="$:/SaveToGitHub/Hint" type="text/plain">
 <pre>save to GitHub</pre>
 </div>
-<div created="20210727234120954" modified="20210907180810917" tags="$:/SaveToGitHub $:/About" title="$:/SaveToGitHub/publish">
+<div created="20210727234120954" modified="20210922022516150" tags="$:/SaveToGitHub $:/About" title="$:/SaveToGitHub/publish">
 <pre>&lt;style&gt;
 .sidebar-link .tc-btn-invisible.tc-tiddlylink{
 color:&lt;&lt;colour tiddler-link-foreground&gt;&gt;;
@@ -13401,8 +13462,8 @@ color:&lt;&lt;colour tiddler-link-foreground&gt;&gt;;
 
 &lt;span class=&quot;sidebar-link&quot;&gt;
 
-* {{$:/SaveToGitHub/publish/public||$:/(edit-inline)}}
-* {{$:/SaveToGitHub/publish/all||$:/(edit-inline)}}
+* {{$:/SaveToGitHub/publish/public||$:/edit-inline}}
+* {{$:/SaveToGitHub/publish/all||$:/edit-inline}}
 
 &lt;/span&gt;</pre>
 </div>
@@ -13423,7 +13484,7 @@ public
 -[tag[private]] -$:/HistoryList -[search:title[$:/state/folded]] -[search:title[$:/GitHub]] -[search:title[$:/SaveToGitHub/private]]
 </pre>
 </div>
-<div ask-commit="true" caption="Github" created="20210805131146320" modified="20210921232931353" tags="$:/SaveToGitHub $:/tags/SideBar" title="$:/SaveToGitHub/Settings">
+<div ask-commit="true" caption="Github" created="20210805131146320" modified="20210922004303808" tags="$:/SaveToGitHub $:/tags/SideBar" title="$:/SaveToGitHub/Settings">
 <pre>\define lingo-base() $:/language/ControlPanel/Saving/GitService/
 \define service-name() ~GitHub
 
@@ -13437,7 +13498,7 @@ public
 &lt;$edit-text tiddler=&quot;$:/SaveToGitHub/PublishFilter&quot; default=&quot;&quot; tag=&quot;textarea&quot; class=&quot;tc-edit-texteditor&quot;/&gt;
 
 |GitHub-Table-Settings|k
-|~GitHub settings|c
+|[[GitHub settings|$:/SaveToGitHub/Settings]]|c
 |&lt;&lt;lingo UserName&gt;&gt;|&lt;$edit-text tiddler=&quot;$:/SaveToGitHub/private/username&quot; autocomplete=&quot;username&quot;  placeholder=&quot;github username&quot; default={{$:/GitHub/Username}} tag=&quot;input&quot;/&gt;|
 |&lt;&lt;lingo GitHub/Password&gt;&gt; |&lt;$password name=&quot;github&quot;/&gt; |
 |&lt;&lt;lingo Repo&gt;&gt; |&lt;$edit-text tiddler=&quot;$:/GitHub/Repo&quot; default=&quot;&quot; tag=&quot;input&quot;/&gt; |
@@ -13447,13 +13508,9 @@ public
 |&lt;&lt;lingo ServerURL&gt;&gt; |&lt;$edit-text tiddler=&quot;$:/GitHub/ServerURL&quot; default=&quot;https://api.github.com&quot; tag=&quot;input&quot;/&gt; |
 
 
-!!! ~GitHub Pages url
+!!! [[GitHub Pages url|$:/SaveToGitHub/GithubPageUrl]]
 
-&lt;$set name=GithubPageUrl filter=&quot;[{$:/GitHub/Repo}removeprefix{$:/SaveToGitHub/private/username}removeprefix[/]addprefix[.github.io/]addprefix{$:/SaveToGitHub/private/username}addprefix[https://]addsuffix{$:/GitHub/Path}addsuffix{$:/GitHub/Filename}]&quot;&gt;
-
-&lt;&lt;GithubPageUrl&gt;&gt;
-
-&lt;/$set&gt;</pre>
+{{$:/SaveToGitHub/GithubPageUrl}}</pre>
 </div>
 <div created="20210810223410206" modified="20210813030810346" tags="$:/tags/Stylesheet $:/SaveToGitHub" title="$:/SaveToGitHub/Settings/Style">
 <pre>&lt;pre&gt;
@@ -13516,7 +13573,7 @@ width:100%;
 
 &lt;/pre&gt;</pre>
 </div>
-<div created="20210907002326014" modified="20210908155647788" tagging="after" tags="$:/showInfo $:/TiddlyTweaks" title="$:/showInfo">
+<div created="20210907002326014" modified="20210922020150999" tagging="after" tags="$:/showInfo $:/TiddlyTweaks right-story" title="$:/showInfo">
 <pre></pre>
 </div>
 <div created="20210630152942552" description="This template show the content of the tiddler field `description`" list-before="$:/core/ui/ViewTemplate/body" modified="20210907002309128" tags="$:/tags/ViewTemplate $:/showInfo" title="$:/showInfo/description/template">
@@ -13561,6 +13618,62 @@ display:inline;
 &lt;/$set&gt;
 &lt;/$reveal&gt;
 &lt;/$list&gt;</pre>
+</div>
+<div created="20210922020055129" modified="20210922020056591" tagging="after" tags="$:/showInfo" title="$:/showInfo/search">
+<pre></pre>
+</div>
+<div created="20210911222821934" hide-body="yes" modified="20210922020320177" tags="$:/showInfo/search $:/showInfo" title="$:/showInfo/search/img">
+<pre>&lt;$button message=&quot;tm-copy-to-clipboard&quot; param=&lt;&lt;item&gt;&gt; class=&quot;tc-btn-invisible search-list-img&quot; tooltip=&lt;&lt;item&gt;&gt;&gt;
+&lt;$transclude tiddler=&lt;&lt;item&gt;&gt;/&gt;
+&lt;/$button&gt;</pre>
+</div>
+<div created="20210911225120089" modified="20210922020313946" tags="$:/tags/Stylesheet $:/showInfo" title="$:/showInfo/search/img/style" type="text/css">
+<pre>.search-list-img :is(svg , img) {
+font-size: 2em;
+margin:5px;
+}
+
+.search-list-img img {
+object-fit: contain;
+width: 2em;
+height: auto;
+}</pre>
+</div>
+<div caption="system image" created="20210911212256922" modified="20210922021302590" tags="$:/tags/SideBar $:/showInfo/search $:/showInfo" title="$:/showInfo/search/SystemImage">
+<pre>List of all system images (ie, tiddlers tagged {{$:/tags/Image||$:/core/ui/TagTemplate}}). Click on an icon to copy its title !
+
+&lt;$set name=search-list filter=&quot;[all[tiddlers+shadows]tag[$:/tags/Image]]&quot; &gt;
+&lt;$set name=item-template value=&quot;$:/showInfo/search/img&quot;&gt;
+
+{{$:/showInfo/search/template}}
+
+&lt;/$set&gt;
+&lt;/$set&gt;</pre>
+</div>
+<div created="20210911022400630" fill-fallback="" modified="20210922022416173" tags="$:/tags/Stylesheet $:/showInfo/search $:/showInfo" title="$:/showInfo/search/SystemImage/search/style" type="">
+<pre>&lt;pre&gt;
+.search-list-container {
+display:flex;
+align-items: center;
+}
+
+.search-list-container button {
+padding:.5em;
+}
+
+.system-image-search svg {
+
+fill:&lt;&lt;color foreground&gt;&gt;;
+
+}
+
+.tc-edit-texteditor {
+  width:100%;
+	padding: 3px 3px 3px 3px;
+	border: 1px solid rgb(63, 63, 63);
+	line-height: 1.3em;
+	-webkit-appearance: none;
+}</pre>
 </div>
 <div created="20210907003321241" modified="20210907003427828" tags="$:/showInfo $:/tags/Stylesheet" title="$:/showInfo/source/style" type="text/css">
 <pre>.view-source .solo~*{
@@ -13660,7 +13773,7 @@ padding-bottom: 10px;
 &lt;/$reveal&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20210906235949815" modified="20210921232457028" title="$:/state/advancedsearch/currentTab">
+<div created="20210906235949815" modified="20210922021407480" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20210906235650195" modified="20210907180809320" title="$:/state/commander/log-tiddler">
@@ -13674,6 +13787,9 @@ padding-bottom: 10px;
 </div>
 <div created="20210907181028428" modified="20210921233324839" title="$:/state/compInspect/temp/commander/selectState-tiddler">
 <pre></pre>
+</div>
+<div created="20210922004118822" modified="20210922004118822" title="$:/state/Excise/-1546473224/tagnew">
+<pre>yes</pre>
 </div>
 <div created="20210908155838435" modified="20210908155935205" title="$:/state/flibbles/relink/tables/Core--657194722">
 <pre>yes</pre>
@@ -13690,16 +13806,16 @@ padding-bottom: 10px;
 <div created="20210908160455948" modified="20210908160714259" title="$:/state/plugin-info--381224194-$:/plugins/flibbles/relink-titles--744984950">
 <pre>contents</pre>
 </div>
-<div created="20210908161318090" modified="20210922002910447" title="$:/state/showeditpreview">
-<pre>no</pre>
+<div created="20210908161318090" modified="20210922023343139" title="$:/state/showeditpreview">
+<pre>yes</pre>
 </div>
-<div created="20210907145913059" modified="20210919155251673" title="$:/state/sidebar">
+<div created="20210907145913059" modified="20210922011856467" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20210907180739978" modified="20210907180739978" title="$:/state/tab--103319216">
 <pre>$:/plugins/kookma/commander/field/uicomp/remove-fields</pre>
 </div>
-<div created="20210906235949815" modified="20210921232457028" title="$:/state/tab--1498284803">
+<div created="20210906235949815" modified="20210922021407480" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20210908155713655" modified="20210908160400991" title="$:/state/tab--1862192285">
@@ -13726,7 +13842,7 @@ padding-bottom: 10px;
 <div created="20210907003143193" modified="20210907003143193" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20210906235850481" modified="20210921231922919" title="$:/state/tab/sidebar--595412856">
+<div created="20210906235850481" modified="20210922024339354" title="$:/state/tab/sidebar--595412856">
 <pre>$:/SaveToGitHub/Settings</pre>
 </div>
 <div created="20210922000529400" modified="20210922000537152" title="$:/state/tabs/controlpanel/toolbars-1345989671">
@@ -13735,7 +13851,7 @@ padding-bottom: 10px;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210921232453079" list="$:/SaveToGitHub/Button/GitHubPermaView $:/SaveToGitHub/Button/GitHubPermalink" modified="20210922001956805" title="$:/StoryList">
+<div list="Index $:/TiddlyTweaks" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210907002753004" list="$:/tagging $:/tagging/style $:/tagging/openTiddlers $:/tagging/template $:/tagging/template/after $:/tagging/template/before" modified="20210907134252168" tagging="after" tags="$:/tagging" title="$:/tagging">
@@ -13760,6 +13876,36 @@ padding-bottom: 10px;
 &lt;$macrocall $name=&quot;list-tagged-draggable&quot; tag=&lt;&lt;list-tag&gt;&gt; itemTemplate=&quot;$:/tagging/template/itemTemplate&quot; subFilter=&quot;search:*&lt;search&gt;&quot;/&gt;
 &lt;/$set&gt;
 &lt;/ul&gt;</pre>
+</div>
+<div created="20210915144016584" description="Transclude this tiddler with a filter to get a list with a search field. E.g: `{{[tag[tip]]||$:/tagging/search-list}}` will show a list of all the tiddlers tagged with tip. If there is no filter, the list display all tagging tiddler of the current tiddler:  `{{$:/tagging/search-list}}`" modified="20210922020457573" tags="$:/tagging/template $:/tagging $:/tagging/template/itemTemplate" title="$:/tagging/search-list">
+<pre>&lt;$set name=filter value=&lt;&lt;currentTiddler&gt;&gt; &gt;
+&lt;$tiddler tiddler=&lt;&lt;qualify $:/temp/search&gt;&gt; &gt; 
+&lt;div class=&quot;search-list&quot;&gt;
+&lt;$edit-text tag=&quot;input&quot; default=&quot;&quot; placeholder=&quot;type to search the list..&quot; class=&quot;tc-edit-texteditor&quot;/&gt;
+&lt;$reveal type=&quot;nomatch&quot; default={{!!text}} text=&quot;&quot;&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot; set=&quot;!!text&quot; setTo=&quot;&quot;&gt;{{$:/core/images/close-button}}&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;/div&gt;
+&lt;$reveal type=&quot;match&quot; default={{{ [&lt;filter&gt;match[(search-list)]]}}} text=&quot;&quot;&gt;
+&lt;$list filter=&quot;[subfilter&lt;filter&gt;]+[search:title,caption{!!text}]&quot; template=&quot;$:/tagging/template/itemTemplate&quot;/&gt;
+&lt;/$reveal&gt;
+&lt;$reveal type=&quot;nomatch&quot; default={{{ [&lt;filter&gt;match[(search-list)]]}}} text=&quot;&quot;&gt;
+^^//No filter specified, default to displaying tagging tiddlers//^^
+&lt;$list filter=&quot;[&lt;storyTiddler&gt;tagging[]]+[search:title,caption{!!text}]&quot; template=&quot;$:/tagging/template/itemTemplate&quot;/&gt;
+&lt;/$reveal&gt;
+&lt;/$tiddler&gt;
+&lt;/$set&gt;
+
+&lt;style&gt;
+.search-list{
+display:flex;
+align-items: center;
+}
+
+.search-list button {
+padding:.5em;
+}
+&lt;/style&gt;</pre>
 </div>
 <div created="20210907121516075" modified="20210907121557260" tags="$:/tagging $:/tags/Stylesheet" title="$:/tagging/style" type="text/css">
 <pre>.search-list-container {
@@ -13823,7 +13969,7 @@ padding:.5em;
 <div created="20210907161144910" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent $:/core/ui/SideBar/Tools $:/core/ui/SideBar/More $:/SaveToGitHub/Settings $:/Tasker/Kanban $:/About" modified="20210907161258843" title="$:/tags/SideBar">
 <pre></pre>
 </div>
-<div created="20210922000559330" list="$:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/SaveToGitHub/Button/GitHubPermalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/fold-bar $:/Tasker/ui/Buttons/tasker $:/ThemeTweaks/button/right_story" modified="20210922000559330" title="$:/tags/ViewToolbar">
+<div created="20210922000559330" list="$:/SaveToGitHub/Button/Private $:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/SaveToGitHub/Button/GitHubPermalink $:/core/ui/Buttons/permaview $:/SaveToGitHub/Button/GitHubPermaView $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/fold-bar $:/Tasker/ui/Buttons/tasker $:/ThemeTweaks/button/right_story" modified="20210922024136159" title="$:/tags/ViewToolbar">
 <pre></pre>
 </div>
 <div created="20210816112626171" modified="20210908155647788" tagging="after" tags="$:/Tasker/Kanban $:/TiddlyTweaks" title="$:/Tasker">
@@ -14357,7 +14503,7 @@ subFilter=&lt;&lt;subFilter&gt;&gt;
 <div created="20210727150406437" modified="20210907180810917" tags="$:/ThemeTweaks" title="$:/ThemeTweaks/icon/warning" type="image/svg+xml">
 <pre>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;22pt&quot; height=&quot;22pt&quot; viewBox=&quot;0 0 128 128&quot; fill=&quot;#d5c4a1&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot;  d=&quot;M57.072 11c3.079-5.333 10.777-5.333 13.856 0l55.426 96c3.079 5.333-.77 12-6.928 12H8.574c-6.158 0-10.007-6.667-6.928-12l55.426-96zM64 37c-4.418 0-8 3.582-8 7.994v28.012C56 77.421 59.59 81 64 81c4.418 0 8-3.582 8-7.994V44.994C72 40.579 68.41 37 64 37zm0 67a8 8 0 100-16 8 8 0 000 16z&quot;/&gt;&lt;/svg&gt;</pre>
 </div>
-<div created="20210613102831878" description="Example : https://tiddlywiki.com/" modified="20210921232025864" tags="$:/ThemeTweaks $:/tags/Stylesheet" title="$:/ThemeTweaks/style/external_link" url="&lt;$vars fill={{{[&lt;fill&gt;]:reduce[{$:/palette}getindex&lt;currentTiddler&gt;match[inherit]then[foreground]else&lt;currentTiddler&gt;]:reduce[{$:/palette}getindex&lt;currentTiddler&gt;else&lt;currentTiddler&gt;]:reduce[&lt;currentTiddler&gt;is[blank]then[$:/palettes/Vanilla]getindex[foreground]else&lt;currentTiddler&gt;]+[search-replace[#],[%23]]}}}&gt;  `--`url:url(&lt;$text text={{{[['data:image/svg+xml;utf8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;]][&lt;fill&gt;][[&quot; width=&quot;22pt&quot; height=&quot;22pt&quot;&gt;]][&lt;svg&gt;][[&lt;/svg&gt;']]+[join[]]}}} /&gt;);">
+<div created="20210613102831878" description="https://tiddlywiki.com &lt;a href=&quot;https://telumire.github.io/TiddlyTweaks/index.html&quot; class=&quot;icon-svg github&quot;&gt;github.io/~TiddlyTweaks&lt;/a&gt;" modified="20210922013217819" tags="$:/ThemeTweaks $:/tags/Stylesheet $:/ThemeTweaks/url/SVG" title="$:/ThemeTweaks/style/external_link">
 <pre>\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline html
 &lt;pre&gt;
 
@@ -14365,25 +14511,24 @@ a[href]:not(.no-icon, .tc-tiddlylink, .tc-btn-invisible){
     color:&lt;&lt;color external-link-foreground&gt;&gt;;
 }
 
+
+
 /*Default icon for external links*/
 
-a.tc-tiddlylink-external:after, a[target=_blank]:after{
+a.tc-tiddlylink-external:not(a.no-icon):after, .icon-svg:after {
     content: &quot; &quot;;
     margin-left:.5ch;
     display: inline-block;
     height:1em;
     width:1em;
     background: center / contain no-repeat var(--url);
-    &lt;$vars svg={{$:/core/images/open-window}} fill=&quot;external-link-foreground&quot;&gt; 
-		{{!!url}}
 }
 
-a.tc-tiddlylink-external:visited:after{&lt;$vars fill=&quot;external-link-foreground-visited&quot;&gt; {{!!url}} }
-
-
-a.tc-tiddlylink-external:hover:after{&lt;$vars fill=&quot;external-link-foreground-hover&quot;&gt; {{!!url}} }
-a.tc-tiddlylink-external:hover{color:&lt;&lt;color external-link-foreground-hover&gt;&gt;}
-
+a.tc-tiddlylink-external:not(a.no-icon, a.icon-svg):after {&lt;$vars svg={{$:/core/images/open-window}} fill=&quot;external-link-foreground&quot;&gt;{{||$:/ThemeTweaks/url/SVG}} }
+a.tc-tiddlylink-external:not(a.no-icon, a.icon-svg):visited:after {&lt;$vars fill=&quot;external-link-foreground-visited&quot;&gt; {{||$:/ThemeTweaks/url/SVG}} }
+a.tc-tiddlylink-external:not(a.no-icon, a.icon-svg):hover:after{&lt;$vars fill=&quot;external-link-foreground-hover&quot;&gt; {{||$:/ThemeTweaks/url/SVG}} }
+a.tc-tiddlylink-external:hover, a.icon-svg:hover{color:&lt;&lt;color external-link-foreground-hover&gt;&gt;}
+ 
 /*Icon for specific domains*/
 
 a.tc-tiddlylink-external[href*=&quot;wikipedia&quot;]:not(a.no-icon):before {background-image: url(&lt;&lt;datauri &quot;wikipedia.png&quot;&gt;&gt;);}</pre>
@@ -14512,6 +14657,16 @@ content:&quot;-&quot;;
 margin-left:1ch;
 margin-right:1ch;
 }</pre>
+</div>
+<div created="20210908171908194" modified="20210922013059231" tags="$:/tags/Stylesheet $:/ThemeTweaks $:/ThemeTweaks/url/SVG $:/ThemeTweaks/style/external_link" title="$:/ThemeTweaks/style/SVG inline" type="">
+<pre>\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline html
+&lt;pre&gt;
+&lt;$list filter=&quot;[all[shadows]tag[$:/tags/Image]]&quot; variable=img&gt;
+
+.icon-svg.&lt;$text text={{{[&lt;img&gt;removeprefix[$:/core/images/]else[core]]}}}/&gt;:after{
+&lt;$vars svg={{{[&lt;img&gt;get[text]]}}} fill=&quot;foreground&quot;&gt;{{$:/ThemeTweaks/url/SVG}}&lt;/$vars&gt;
+}
+&lt;/$list&gt;</pre>
 </div>
 <div created="20210917130124992" modified="20210917130245813" tags="$:/tags/Stylesheet $:/ThemeTweaks" title="$:/ThemeTweaks/style/tags" type="text/css">
 <pre>.tc-tagged-hide-title .tc-title,
@@ -14739,7 +14894,10 @@ margin-right:1ch;
 &lt;span class=&quot;item&quot;&gt;&lt;$transclude tiddler=&quot;(reading-time)&quot; /&gt;&lt;/span&gt;
 &lt;/$reveal&gt;</pre>
 </div>
-<div created="20210907160816890" modified="20210908155647783" tagging="after" title="$:/TiddlyTweaks">
+<div created="20210922004830897" modified="20210922021623420" tags="$:/tags/Stylesheet $:/ThemeTweaks" title="$:/ThemeTweaks/url/SVG" type="">
+<pre>&lt;$vars fill={{{[&lt;fill&gt;]:reduce[{$:/palette}getindex&lt;currentTiddler&gt;match[inherit]then[foreground]else&lt;currentTiddler&gt;]:reduce[{$:/palette}getindex&lt;currentTiddler&gt;else&lt;currentTiddler&gt;]:reduce[&lt;currentTiddler&gt;is[blank]then[$:/palettes/Vanilla]getindex[foreground]else&lt;currentTiddler&gt;]+[search-replace[#],[%23]]}}}&gt;  `--`url:url(&lt;$text text={{{[['data:image/svg+xml;utf8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;]][&lt;fill&gt;][[&quot; width=&quot;22pt&quot; height=&quot;22pt&quot;&gt;]][&lt;svg&gt;][[&lt;/svg&gt;']]+[join[]]}}} /&gt;);</pre>
+</div>
+<div created="20210907160816890" modified="20210922024430329" tagging="after" tags="" title="$:/TiddlyTweaks">
 <pre></pre>
 </div>
 <div created="20210907160925876" modified="20210908155647788" tagging="after" tags="$:/TiddlyTweaks" title="$:/transclude/edit">
@@ -14790,40 +14948,19 @@ span.transclude-edit:hover .transclude-edit-button{
 <div modified="20210908203426519" title="Draft of 'SVG inline'">
 <pre></pre>
 </div>
-<div created="20210908150922338" modified="20210908154419098" tags="pinned" title="Index">
+<div created="20210922024351096" modified="20210922024352816" title="GitHub">
+<pre>* $:/SaveToGitHub</pre>
+</div>
+<div created="20210908150922338" modified="20210922022427963" tags="pinned" title="Index">
 <pre>! How to use
 
-Drag&amp;Drop the tweak you want into your wiki. That's it !
-
-! Name convention
-
-</pre>
+Drag&amp;Drop the tweak you want into your wiki. That's it !</pre>
 </div>
 <div created="20210919173606877" modified="20210919173656249" tags="" title="New Tiddler">
 <pre>&lt;span class=&quot;icon-svg add-comment&quot;&gt;test&lt;/span&gt;</pre>
 </div>
 <div created="20210907123952800" modified="20210907124008305" tagging="after" tags="" title="right-story">
 <pre></pre>
-</div>
-<div created="20210908171908194" description="https://tiddlywiki.com" modified="20210921214116079" tags="$:/tags/Stylesheet" title="SVG inline" type="" url="`--`url:url(&lt;$text text={{{[['data:image/svg+xml;utf8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;]][&lt;fill&gt;][[&quot; width=&quot;22pt&quot; height=&quot;22pt&quot;&gt;]][&lt;svg&gt;][[&lt;/svg&gt;']]+[join[]]}}} /&gt;);">
-<pre>\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline html
-&lt;pre&gt;
-
-.icon-svg:before{
-    content: &quot; &quot;;
-		display: inline-block;
-    height:22pt;
-    width:22pt;
-		background: center / contain no-repeat var(--url);
-}
-
-&lt;$list filter=&quot;[all[shadows]tag[$:/tags/Image]]&quot; variable=img&gt;
-
-.icon-svg.&lt;$text text={{{[&lt;img&gt;removeprefix[$:/core/images/]else[core]]}}}/&gt;:before{
-&lt;$vars svg={{{[&lt;img&gt;get[text]]}}} fill={{{ [{$:/palette}getindex[foreground]search-replace[#],[%23]] }}}&gt;{{!!url}}&lt;/$vars&gt;
-}
-
-&lt;/$list&gt;</pre>
 </div>
 <div created="20140809113603449" modified="20210906234456991" tags="tip" title="System image gallery" type="text/vnd.tiddlywiki">
 <pre>Grid of all system images (ie, tiddlers tagged [[$:/tags/Image]]).
