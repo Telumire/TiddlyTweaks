@@ -173,6 +173,10 @@ Error message and password prompt
 
 <li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/fold-bar</li>
 
+<li>$:/config/ViewToolbarButtons/Visibility/$:/SaveToGitHub/Button/GitHubPermalink</li>
+
+<li>$:/config/ViewToolbarButtons/Visibility/$:/SaveToGitHub/Button/GitHubPermaView</li>
+
 <li>$:/config/WikiParserRules/Inline/wikilink</li>
 
 <li>$:/core</li>
@@ -219,7 +223,9 @@ Error message and password prompt
 
 <li>$:/SaveToGitHub/Button</li>
 
-<li>$:/SaveToGitHub/Button/GitHubLink</li>
+<li>$:/SaveToGitHub/Button/GitHubPermalink</li>
+
+<li>$:/SaveToGitHub/Button/GitHubPermaView</li>
 
 <li>$:/SaveToGitHub/Caption</li>
 
@@ -311,6 +317,8 @@ Error message and password prompt
 
 <li>$:/state/tab/sidebar--595412856</li>
 
+<li>$:/state/tabs/controlpanel/toolbars-1345989671</li>
+
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
 <li>$:/StoryList</li>
@@ -332,6 +340,8 @@ Error message and password prompt
 <li>$:/tagging/template/itemTemplate</li>
 
 <li>$:/tags/SideBar</li>
+
+<li>$:/tags/ViewToolbar</li>
 
 <li>$:/Tasker</li>
 
@@ -441,8 +451,6 @@ Error message and password prompt
 
 <li>New Tiddler</li>
 
-<li>New Tiddler 1</li>
-
 <li>right-story</li>
 
 <li>SVG inline</li>
@@ -530,7 +538,7 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div created="20210908152838707" modified="20210921233450060" title="$:/config/AutoSave">
+<div created="20210908152838707" modified="20210922003040201" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
 <div created="20210908160520283" modified="20210908160521340" title="$:/config/flibbles/relink-titles/relink/$:/plugins/flibbles/relink-titles/rules/directory">
@@ -562,6 +570,12 @@ Error message and password prompt
 </div>
 <div created="20210907010247310" modified="20210907010247310" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/fold-bar">
 <pre>show</pre>
+</div>
+<div created="20210922000539841" modified="20210922000539841" title="$:/config/ViewToolbarButtons/Visibility/$:/SaveToGitHub/Button/GitHubPermalink">
+<pre>hide</pre>
+</div>
+<div created="20210922001755954" modified="20210922001755954" title="$:/config/ViewToolbarButtons/Visibility/$:/SaveToGitHub/Button/GitHubPermaView">
+<pre>hide</pre>
 </div>
 <div created="20210906233330670" modified="20210907003013911" title="$:/config/WikiParserRules/Inline/wikilink">
 <pre>enable</pre>
@@ -10440,8 +10454,8 @@ $:/TiddlyTweaks</pre>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div created="20210921232125203" modified="20210921233505412" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
-<pre>Updated target branch</pre>
+<div created="20210921232125203" modified="20210922003101143" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
+<pre>Added GitHub Permalink/Permaview buttons</pre>
 </div>
 <div created="20210313134122939" modified="20210907002010666" tags="$:/tags/Macro $:/tagging/template" title="$:/macro/href-filter">
 <pre>\define href-filter(filter, text=&quot;open all&quot;) &lt;a href=&quot;#:[$filter$]&quot; target=&quot;_blank&quot;&gt;$text$&lt;/a&gt;</pre>
@@ -13311,13 +13325,54 @@ fill:&lt;&lt;color tiddler-subtitle-foreground&gt;&gt;;
 &lt;/span&gt;
 &lt;/$button&gt;</pre>
 </div>
-<div caption="{{$:/core/images/right-arrow}} {{$:/ThemeTweaks/caption/right_story}}" created="20210921232322676" description="Button to get the github page url of a tiddler" modified="20210921232626568" tags="$:/SaveToGitHub $:/tags/ViewToolbar" title="$:/SaveToGitHub/Button/GitHubLink">
+<div caption="GitHub permalink" created="20210921232322676" description="Button to get the GitHub Page url of a tiddler" hint="Click to copy the GitHub Page url of this tiddler to the clipboard" list-after="$:/core/ui/Buttons/permalink" modified="20210922001736097" tags="$:/SaveToGitHub $:/tags/ViewToolbar" title="$:/SaveToGitHub/Button/GitHubPermalink">
 <pre>\whitespace trim
-\define right-story-toggle() &lt;$action-listops $field=&quot;tags&quot; $subfilter=&quot;+[toggle[right-story]]&quot;/&gt;
-&lt;$button actions=&lt;&lt;right-story-toggle&gt;&gt; class=&quot;tc-btn-invisible display&quot; tooltip={{$:/ThemeTweaks/caption/right_story}}&gt;
-&lt;$list filter=&quot;[all[current]tag[right-story]]&quot;&gt;{{$:/core/images/left-arrow}}&lt;/$list&gt;
-&lt;$list filter=&quot;[all[current]!tag[right-story]]&quot;&gt;{{$:/core/images/right-arrow}}&lt;/$list&gt;
+&lt;$set name=GithubPageTiddlerUrl filter=&quot;
+[[https://]][{$:/SaveToGitHub/private/username}][[.github.io/]]
+[{$:/GitHub/Repo}removeprefix{$:/SaveToGitHub/private/username}removeprefix[/]]
+[{$:/GitHub/Path}addsuffix{$:/GitHub/Filename}]
+[[#]]
+[all[current]]
++[join[]]
+&quot;&gt;
+&lt;$button class=tc-btn-invisible message=&quot;tm-copy-to-clipboard&quot; 
+param=&lt;&lt;GithubPageTiddlerUrl&gt;&gt; tooltip={{!!hint}}&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
+{{$:/core/images/permalink-button}}{{$:/core/images/github}}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
+&lt;span class=&quot;tc-btn-text&quot;&gt;
+&lt;$text text=&quot; &quot;/&gt;
+&lt;$text text={{$:/SaveToGitHub/Button/GitHubPermalink!!caption}}/&gt;
+&lt;/span&gt;
+&lt;/$list&gt;
 &lt;/$button&gt;</pre>
+</div>
+<div caption="GitHub permaview" created="20210922001530951" description="Button to get the GitHub Page url of this story" hint="Click to copy the GitHub Page url of this story to the clipboard" list-after="$:/core/ui/Buttons/permaview" modified="20210922003000438" tags="$:/SaveToGitHub $:/tags/ViewToolbar" title="$:/SaveToGitHub/Button/GitHubPermaView">
+<pre>\whitespace trim
+&lt;$vars separator=&quot;][&quot; separator-start=&quot;[[&quot; separator-end=&quot;]]&quot;&gt;
+&lt;$set name=GithubPageTiddlerUrl filter=&quot;
+[[https://]][{$:/SaveToGitHub/private/username}][[.github.io/]]
+[{$:/GitHub/Repo}removeprefix{$:/SaveToGitHub/private/username}removeprefix[/]]
+[{$:/GitHub/Path}addsuffix{$:/GitHub/Filename}]
+[[#]]
+[&lt;separator-start&gt;][list[$:/StoryList]join&lt;separator&gt;][&lt;separator-end&gt;]
++[join[]]
+&quot;&gt;
+&lt;$button class=tc-btn-invisible message=&quot;tm-copy-to-clipboard&quot; 
+param=&lt;&lt;GithubPageTiddlerUrl&gt;&gt; tooltip={{!!hint}}&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
+{{$:/core/images/permaview-button}}{{$:/core/images/github}}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
+&lt;span class=&quot;tc-btn-text&quot;&gt;
+&lt;$text text=&quot; &quot;/&gt;
+&lt;$text text={{$:/SaveToGitHub/Button/GitHubPermaView!!caption}}/&gt;
+&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$button&gt;
+&lt;/$set&gt;
+&lt;/$vars&gt;</pre>
 </div>
 <div created="20210806021049086" modified="20210813030810346" tags="$:/SaveToGitHub" title="$:/SaveToGitHub/Caption">
 <pre>save to github</pre>
@@ -13635,8 +13690,8 @@ padding-bottom: 10px;
 <div created="20210908160455948" modified="20210908160714259" title="$:/state/plugin-info--381224194-$:/plugins/flibbles/relink-titles--744984950">
 <pre>contents</pre>
 </div>
-<div created="20210908161318090" modified="20210921232953538" title="$:/state/showeditpreview">
-<pre>yes</pre>
+<div created="20210908161318090" modified="20210922002910447" title="$:/state/showeditpreview">
+<pre>no</pre>
 </div>
 <div created="20210907145913059" modified="20210919155251673" title="$:/state/sidebar">
 <pre>yes</pre>
@@ -13659,8 +13714,8 @@ padding-bottom: 10px;
 <div created="20210908160120024" modified="20210908160213259" title="$:/state/tab--959111941">
 <pre>$:/core/ui/ControlPanel/TiddlerFields</pre>
 </div>
-<div created="20210906235704336" modified="20210908203603202" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Plugins</pre>
+<div created="20210906235704336" modified="20210922000527229" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
 <div created="20210906235645986" modified="20210906235645986" title="$:/state/tab-1765345818">
 <pre>$:/plugins/kookma/commander/tiddler/uicomp/delete-tiddlers</pre>
@@ -13674,10 +13729,13 @@ padding-bottom: 10px;
 <div created="20210906235850481" modified="20210921231922919" title="$:/state/tab/sidebar--595412856">
 <pre>$:/SaveToGitHub/Settings</pre>
 </div>
+<div created="20210922000529400" modified="20210922000537152" title="$:/state/tabs/controlpanel/toolbars-1345989671">
+<pre>$:/core/ui/ControlPanel/Toolbars/ViewToolbar</pre>
+</div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210921232453079" list="$:/SaveToGitHub/private/username $:/SaveToGitHub/private/state [[New Tiddler 1]] $:/SaveToGitHub/Button/GitHubLink" modified="20210921233320745" title="$:/StoryList">
+<div created="20210921232453079" list="$:/SaveToGitHub/Button/GitHubPermaView $:/SaveToGitHub/Button/GitHubPermalink" modified="20210922001956805" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210907002753004" list="$:/tagging $:/tagging/style $:/tagging/openTiddlers $:/tagging/template $:/tagging/template/after $:/tagging/template/before" modified="20210907134252168" tagging="after" tags="$:/tagging" title="$:/tagging">
@@ -13763,6 +13821,9 @@ padding:.5em;
 &lt;/li&gt;</pre>
 </div>
 <div created="20210907161144910" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent $:/core/ui/SideBar/Tools $:/core/ui/SideBar/More $:/SaveToGitHub/Settings $:/Tasker/Kanban $:/About" modified="20210907161258843" title="$:/tags/SideBar">
+<pre></pre>
+</div>
+<div created="20210922000559330" list="$:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/SaveToGitHub/Button/GitHubPermalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/fold-bar $:/Tasker/ui/Buttons/tasker $:/ThemeTweaks/button/right_story" modified="20210922000559330" title="$:/tags/ViewToolbar">
 <pre></pre>
 </div>
 <div created="20210816112626171" modified="20210908155647788" tagging="after" tags="$:/Tasker/Kanban $:/TiddlyTweaks" title="$:/Tasker">
@@ -14740,11 +14801,6 @@ Drag&amp;Drop the tweak you want into your wiki. That's it !
 </div>
 <div created="20210919173606877" modified="20210919173656249" tags="" title="New Tiddler">
 <pre>&lt;span class=&quot;icon-svg add-comment&quot;&gt;test&lt;/span&gt;</pre>
-</div>
-<div created="20210921232637237" modified="20210921233017907" tags="" title="New Tiddler 1">
-<pre>&lt;$set name=GithubPageTiddlerUrl filter=&quot;[{$:/GitHub/Repo}removeprefix{$:/SaveToGitHub/private/username}removeprefix[/]addprefix[.github.io/]addprefix{$:/SaveToGitHub/private/username}addprefix[https://]addsuffix{$:/GitHub/Path}addsuffix{$:/GitHub/Filename}]&quot;&gt;
-
-&lt;&lt;GithubPageTiddlerUrl&gt;&gt;</pre>
 </div>
 <div created="20210907123952800" modified="20210907124008305" tagging="after" tags="" title="right-story">
 <pre></pre>
