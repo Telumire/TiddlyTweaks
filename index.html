@@ -167,6 +167,8 @@ Error message and password prompt
 
 <li>$:/config/Tiddlers/TitleLinks</li>
 
+<li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/close-others</li>
+
 <li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/fold-bar</li>
 
 <li>$:/config/ViewToolbarButtons/Visibility/$:/SaveToGitHub/Button/GitHubPermalink</li>
@@ -555,7 +557,7 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div created="20210908152838707" modified="20210922024508411" title="$:/config/AutoSave">
+<div created="20210908152838707" modified="20210922025019140" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
 <div created="20210908160520283" modified="20210908160521340" title="$:/config/flibbles/relink-titles/relink/$:/plugins/flibbles/relink-titles/rules/directory">
@@ -585,11 +587,14 @@ Error message and password prompt
 <div created="20210906233528436" modified="20210906235542673" title="$:/config/Tiddlers/TitleLinks">
 <pre>yes</pre>
 </div>
+<div created="20210922024540531" modified="20210922024540531" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/close-others">
+<pre>show</pre>
+</div>
 <div created="20210907010247310" modified="20210907010247310" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/fold-bar">
 <pre>show</pre>
 </div>
-<div created="20210922000539841" modified="20210922000539841" title="$:/config/ViewToolbarButtons/Visibility/$:/SaveToGitHub/Button/GitHubPermalink">
-<pre>hide</pre>
+<div created="20210922000539841" modified="20210922024550151" title="$:/config/ViewToolbarButtons/Visibility/$:/SaveToGitHub/Button/GitHubPermalink">
+<pre>show</pre>
 </div>
 <div created="20210922001755954" modified="20210922001755954" title="$:/config/ViewToolbarButtons/Visibility/$:/SaveToGitHub/Button/GitHubPermaView">
 <pre>hide</pre>
@@ -10488,8 +10493,8 @@ $:/TiddlyTweaks</pre>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div created="20210921232125203" modified="20210922024505513" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
-<pre>Added a &quot;set to private&quot; button</pre>
+<div created="20210921232125203" modified="20210922025054287" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
+<pre>Removed github icon from github page permaview/permalink </pre>
 </div>
 <div created="20210313134122939" modified="20210907002010666" tags="$:/tags/Macro $:/tagging/template" title="$:/macro/href-filter">
 <pre>\define href-filter(filter, text=&quot;open all&quot;) &lt;a href=&quot;#:[$filter$]&quot; target=&quot;_blank&quot;&gt;$text$&lt;/a&gt;</pre>
@@ -13359,7 +13364,7 @@ fill:&lt;&lt;color tiddler-subtitle-foreground&gt;&gt;;
 &lt;/span&gt;
 &lt;/$button&gt;</pre>
 </div>
-<div caption="GitHub permalink" created="20210921232322676" description="Button to get the GitHub Page url of a tiddler" hint="Click to copy the GitHub Page url of this tiddler to the clipboard" modified="20210922024136158" tags="$:/SaveToGitHub $:/tags/ViewToolbar" title="$:/SaveToGitHub/Button/GitHubPermalink">
+<div caption="GitHub permalink" created="20210921232322676" description="Button to get the GitHub Page url of a tiddler" hint="Click to copy the GitHub Page url of this tiddler to the clipboard" modified="20210922024920023" tags="$:/SaveToGitHub $:/tags/ViewToolbar" title="$:/SaveToGitHub/Button/GitHubPermalink">
 <pre>\whitespace trim
 &lt;$set name=GithubPageTiddlerUrl filter=&quot;
 [[https://]][{$:/SaveToGitHub/private/username}][[.github.io/]]
@@ -13372,7 +13377,7 @@ fill:&lt;&lt;color tiddler-subtitle-foreground&gt;&gt;;
 &lt;$button class=tc-btn-invisible message=&quot;tm-copy-to-clipboard&quot; 
 param=&lt;&lt;GithubPageTiddlerUrl&gt;&gt; tooltip={{!!hint}}&gt;
 &lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
-{{$:/core/images/permalink-button}}{{$:/core/images/github}}
+{{$:/core/images/permalink-button}}
 &lt;/$list&gt;
 &lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
 &lt;span class=&quot;tc-btn-text&quot;&gt;
@@ -13382,7 +13387,7 @@ param=&lt;&lt;GithubPageTiddlerUrl&gt;&gt; tooltip={{!!hint}}&gt;
 &lt;/$list&gt;
 &lt;/$button&gt;</pre>
 </div>
-<div caption="GitHub permaview" created="20210922001530951" description="Button to get the GitHub Page url of this story" hint="Click to copy the GitHub Page url of this story to the clipboard" modified="20210922024136158" tags="$:/SaveToGitHub $:/tags/ViewToolbar" title="$:/SaveToGitHub/Button/GitHubPermaView">
+<div caption="GitHub permaview" created="20210922001530951" description="Button to get the GitHub Page url of this story" hint="Click to copy the GitHub Page url of this story to the clipboard" modified="20210922024910346" tags="$:/SaveToGitHub $:/tags/ViewToolbar" title="$:/SaveToGitHub/Button/GitHubPermaView">
 <pre>\whitespace trim
 &lt;$vars separator=&quot;]][[&quot; separator-start=&quot;:[[&quot; separator-end=&quot;]]&quot;&gt;
 &lt;$set name=GithubPageTiddlerUrl filter=&quot;
@@ -13396,7 +13401,7 @@ param=&lt;&lt;GithubPageTiddlerUrl&gt;&gt; tooltip={{!!hint}}&gt;
 &lt;$button class=tc-btn-invisible message=&quot;tm-copy-to-clipboard&quot; 
 param=&lt;&lt;GithubPageTiddlerUrl&gt;&gt; tooltip={{!!hint}}&gt;
 &lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
-{{$:/core/images/permaview-button}}{{$:/core/images/github}}
+{{$:/core/images/permaview-button}}
 &lt;/$list&gt;
 &lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
 &lt;span class=&quot;tc-btn-text&quot;&gt;
@@ -13842,8 +13847,8 @@ padding-bottom: 10px;
 <div created="20210907003143193" modified="20210907003143193" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20210906235850481" modified="20210922024339354" title="$:/state/tab/sidebar--595412856">
-<pre>$:/SaveToGitHub/Settings</pre>
+<div created="20210906235850481" modified="20210922024614325" title="$:/state/tab/sidebar--595412856">
+<pre>$:/showInfo/search/SystemImage</pre>
 </div>
 <div created="20210922000529400" modified="20210922000537152" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/ViewToolbar</pre>
@@ -13969,7 +13974,7 @@ padding:.5em;
 <div created="20210907161144910" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent $:/core/ui/SideBar/Tools $:/core/ui/SideBar/More $:/SaveToGitHub/Settings $:/Tasker/Kanban $:/About" modified="20210907161258843" title="$:/tags/SideBar">
 <pre></pre>
 </div>
-<div created="20210922000559330" list="$:/SaveToGitHub/Button/Private $:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/SaveToGitHub/Button/GitHubPermalink $:/core/ui/Buttons/permaview $:/SaveToGitHub/Button/GitHubPermaView $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/fold-bar $:/Tasker/ui/Buttons/tasker $:/ThemeTweaks/button/right_story" modified="20210922024136159" title="$:/tags/ViewToolbar">
+<div created="20210922000559330" list="$:/SaveToGitHub/Button/GitHubPermalink $:/SaveToGitHub/Button/GitHubPermaView $:/SaveToGitHub/Button/Private $:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/fold-bar $:/Tasker/ui/Buttons/tasker $:/ThemeTweaks/button/right_story" modified="20210922024936881" title="$:/tags/ViewToolbar">
 <pre></pre>
 </div>
 <div created="20210816112626171" modified="20210908155647788" tagging="after" tags="$:/Tasker/Kanban $:/TiddlyTweaks" title="$:/Tasker">
