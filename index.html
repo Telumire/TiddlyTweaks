@@ -141,6 +141,8 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>$:/(reading-time)</li>
+
 <li>$:/About</li>
 
 <li>$:/AdvancedSearch</li>
@@ -224,8 +226,6 @@ Error message and password prompt
 <li>$:/plugins/tiddlywiki/highlight</li>
 
 <li>$:/Reading-time</li>
-
-<li>$:/Reading-time/(reading-time)</li>
 
 <li>$:/Reading-time/style</li>
 
@@ -507,6 +507,48 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
+<div created="20210806221807357" description="To use : `{{||$:/(reading-time)}}`. Be carefull when modifying this tiddler, can cause infinite recursion while the preview is shown! Note : the regex expression for counting words could probably be improved." hide-body="yes" hide-preview="yes" modified="20210922105356844" tags="$:/Reading-time" title="$:/(reading-time)">
+<pre>\whitespace trim
+\define wordsCount() $(nbWords)$ words
+&lt;$list filter=&quot;[all[current]![$:/(reading-time)]!is[draft]!is[system]]&quot;&gt;
+&lt;$wikify name=&quot;text&quot; text={{!!text}} output=&quot;text&quot;&gt;
+&lt;$set name=&quot;regex&quot; value=&quot;[a-zA-Z0-9éèêàçù]+&quot;&gt;
+&lt;$set name=&quot;nbWords&quot; filter=&quot;[&lt;text&gt;splitregexp:m&lt;regex&gt;count[]] +[subtract[1]]&quot;&gt;
+&lt;$set name=&quot;time&quot; filter=&quot;[&lt;nbWords&gt;divide{$:/Reading-time/wpm}]&quot;&gt;
+&lt;$set name=&quot;timeH&quot; filter=&quot;[&lt;time&gt;divide[60]trunc[]]&quot;&gt;
+&lt;$set name=&quot;timeM&quot; filter=&quot;[&lt;time&gt;divide[60]remainder[1]multiply[60]trunc[]]&quot;&gt;
+&lt;$set name=&quot;timeS&quot; filter=&quot;[&lt;time&gt;divide[60]remainder[1]multiply[60]remainder[1]multiply[60]trunc[]]&quot;&gt;
+
+&lt;span title=&lt;&lt;wordsCount&gt;&gt; class=&quot;reading-time&quot; &gt;
+{{$:/core/images/timestamp-on}}
+
+&lt;$list filter=&quot;[&lt;time&gt;compare:number:lteq[1]]&quot;&gt;
+1&amp;nbsp;minute
+&lt;/$list&gt;
+
+&lt;$list filter=&quot;[&lt;time&gt;compare:number:gt[1]compare:number:lt[60]]&quot;&gt;
+&lt;&lt;timeM&gt;&gt;&amp;nbsp;minutes
+&lt;/$list&gt;
+
+&lt;$list filter=&quot;[&lt;time&gt;compare:number:eq[60]]&quot;&gt;
+1&amp;nbsp;hours
+&lt;/$list&gt;
+
+&lt;$list filter=&quot;[&lt;time&gt;compare:number:gt[60]]&quot;&gt;
+&lt;&lt;timeH&gt;&gt;&amp;nbsp;hours
+&lt;/$list&gt;
+
+&lt;/span&gt;
+
+&lt;/$set&gt;
+&lt;/$set&gt;
+&lt;/$set&gt;
+&lt;/$set&gt;
+&lt;/$set&gt;
+&lt;/$set&gt;
+&lt;/$wikify&gt;
+&lt;/$list&gt;</pre>
+</div>
 <div caption="About" created="20210907141427850" list="$:/spoiler/global $:/SaveToGitHub/publish [[New Tiddler]] [[New Tiddler 1]]" modified="20210908155647786" tagging="after" tags="$:/tags/SideBar $:/TiddlyTweaks" title="$:/About">
 <pre>&lt;$list filter=&quot;[tag[$:/About]sort[list]]&quot;&gt;
 &lt;$reveal type=&quot;nomatch&quot; state={{{ [tag[$:/About]sort[list]before&lt;currentTiddler&gt;] }}} text=&quot;&quot;&gt;&lt;hr&gt;&lt;/$reveal&gt;
@@ -519,7 +561,7 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div created="20210908152838707" modified="20210922040859559" title="$:/config/AutoSave">
+<div created="20210908152838707" modified="20210922110022623" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
 <div created="20210908160520283" modified="20210908160521340" title="$:/config/flibbles/relink-titles/relink/$:/plugins/flibbles/relink-titles/rules/directory">
@@ -10506,8 +10548,8 @@ $:/TiddlyTweaks</pre>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div created="20210921232125203" modified="20210922030740201" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
-<pre>Tweaked the GitHub filter to allow the tiddler with a task to be posted</pre>
+<div created="20210921232125203" modified="20210922110045123" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
+<pre>Modified $:/(reading-time) name for ease of typing</pre>
 </div>
 <div created="20210313134122939" modified="20210907002010666" tags="$:/tags/Macro $:/tagging/template" title="$:/macro/href-filter">
 <pre>\define href-filter(filter, text=&quot;open all&quot;) &lt;a href=&quot;#:[$filter$]&quot; target=&quot;_blank&quot;&gt;$text$&lt;/a&gt;</pre>
@@ -13327,52 +13369,10 @@ very-muted-foreground: rgba(240, 196, 117, 0.7)
     }
 }</pre>
 </div>
-<div created="20210803191227903" modified="20210908155647788" tagging="after" tags="$:/TiddlyTweaks" title="$:/Reading-time">
+<div created="20210803191227903" description="Display an estimate of the reading time for a tiddler." modified="20210922104855741" tagging="after" tags="$:/TiddlyTweaks" title="$:/Reading-time">
 <pre></pre>
 </div>
-<div created="20210806221807357" hide-body="yes" hide-preview="yes" modified="20210922034842393" tags="$:/Reading-time" title="$:/Reading-time/(reading-time)">
-<pre>\whitespace trim
-\define wordsCount() $(nbWords)$ words
-&lt;$list filter=&quot;[all[current]![$:/Reading-time/(reading-time)]!is[draft]!is[system]]&quot;&gt;
-&lt;$wikify name=&quot;text&quot; text={{!!text}} output=&quot;text&quot;&gt;
-&lt;$set name=&quot;regex&quot; value=&quot;[a-zA-Z0-9éèêàçù]+&quot;&gt;
-&lt;$set name=&quot;nbWords&quot; filter=&quot;[&lt;text&gt;splitregexp:m&lt;regex&gt;count[]] +[subtract[1]]&quot;&gt;
-&lt;$set name=&quot;time&quot; filter=&quot;[&lt;nbWords&gt;divide{$:/Reading-time/wpm}]&quot;&gt;
-&lt;$set name=&quot;timeH&quot; filter=&quot;[&lt;time&gt;divide[60]trunc[]]&quot;&gt;
-&lt;$set name=&quot;timeM&quot; filter=&quot;[&lt;time&gt;divide[60]remainder[1]multiply[60]trunc[]]&quot;&gt;
-&lt;$set name=&quot;timeS&quot; filter=&quot;[&lt;time&gt;divide[60]remainder[1]multiply[60]remainder[1]multiply[60]trunc[]]&quot;&gt;
-
-&lt;span title=&lt;&lt;wordsCount&gt;&gt; class=&quot;reading-time&quot; &gt;
-{{$:/core/images/timestamp-on}}
-
-&lt;$list filter=&quot;[&lt;time&gt;compare:number:lteq[1]]&quot;&gt;
-1&amp;nbsp;minute
-&lt;/$list&gt;
-
-&lt;$list filter=&quot;[&lt;time&gt;compare:number:gt[1]compare:number:lt[60]]&quot;&gt;
-&lt;&lt;timeM&gt;&gt;&amp;nbsp;minutes
-&lt;/$list&gt;
-
-&lt;$list filter=&quot;[&lt;time&gt;compare:number:eq[60]]&quot;&gt;
-1&amp;nbsp;hours
-&lt;/$list&gt;
-
-&lt;$list filter=&quot;[&lt;time&gt;compare:number:gt[60]]&quot;&gt;
-&lt;&lt;timeH&gt;&gt;&amp;nbsp;hours
-&lt;/$list&gt;
-
-&lt;/span&gt;
-
-&lt;/$set&gt;
-&lt;/$set&gt;
-&lt;/$set&gt;
-&lt;/$set&gt;
-&lt;/$set&gt;
-&lt;/$set&gt;
-&lt;/$wikify&gt;
-&lt;/$list&gt;</pre>
-</div>
-<div created="20210803191345611" modified="20210922034717353" tags="$:/tags/Stylesheet $:/Reading-time/(reading-time) $:/Reading-time" title="$:/Reading-time/style">
+<div created="20210803191345611" modified="20210922105356843" tags="$:/tags/Stylesheet $:/(reading-time) $:/Reading-time" title="$:/Reading-time/style">
 <pre>&lt;pre&gt;
 .reading-time{
 
@@ -14028,7 +14028,7 @@ padding-bottom: 10px;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="Index $:/TiddlyTweaks" title="$:/StoryList">
+<div created="20210922104753923" list="Index $:/TiddlyTweaks $:/Reading-time $:/ThemeTweaks/template/subtitle $:/(reading-time)" modified="20210922110011722" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210907002753004" list="$:/tagging $:/tagging/style $:/tagging/openTiddlers $:/tagging/template $:/tagging/template/after $:/tagging/template/before" modified="20210907134252168" tagging="after" tags="$:/tagging" title="$:/tagging">
@@ -15109,11 +15109,11 @@ margin-right:1ch;
 <div created="20210811020117077" modified="20210907112251236" tagging="after" tags="$:/ThemeTweaks/SwitchPalette" title="$:/ThemeTweaks/SwitchPalette/tags">
 <pre></pre>
 </div>
-<div created="20210802170615024" list-before="$:/core/ui/ViewTemplate/subtitle" modified="20210922034859309" tags="$:/tags/ViewTemplate $:/Reading-time $:/ThemeTweaks" title="$:/ThemeTweaks/template/subtitle">
+<div created="20210802170615024" list-before="$:/core/ui/ViewTemplate/subtitle" modified="20210922105356843" tags="$:/tags/ViewTemplate $:/Reading-time $:/ThemeTweaks" title="$:/ThemeTweaks/template/subtitle">
 <pre>\whitespace trim
 &lt;$reveal type=&quot;nomatch&quot; stateTitle=&lt;&lt;folded-state&gt;&gt; text=&quot;hide&quot; tag=&quot;div&quot; retain=&quot;yes&quot; animate=&quot;yes&quot; class=&quot;tc-subtitle custom&quot;&gt;
 &lt;span class=&quot;item&quot;&gt;&lt;$view field=&quot;modified&quot; format=&quot;date&quot; template=&quot;DD MMM YYYY&quot;/&gt;&lt;/span&gt;
-&lt;span class=&quot;item&quot;&gt;&lt;$transclude tiddler=&quot;$:/Reading-time/(reading-time)&quot; /&gt;&lt;/span&gt;
+&lt;span class=&quot;item&quot;&gt;&lt;$transclude tiddler=&quot;$:/(reading-time)&quot; /&gt;&lt;/span&gt;
 &lt;/$reveal&gt;</pre>
 </div>
 <div created="20210922004830897" modified="20210922021623420" tags="$:/tags/Stylesheet $:/ThemeTweaks" title="$:/ThemeTweaks/url/SVG" type="">
