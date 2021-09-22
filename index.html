@@ -337,6 +337,8 @@ Error message and password prompt
 
 <li>$:/state/tab--1862192285</li>
 
+<li>$:/state/tab--1878235435</li>
+
 <li>$:/state/tab--1963855381</li>
 
 <li>$:/state/tab--2112689675</li>
@@ -445,8 +447,6 @@ Error message and password prompt
 
 <li>$:/ThemeTweaks/icon/warning</li>
 
-<li>$:/ThemeTweaks/style/external_link</li>
-
 <li>$:/ThemeTweaks/style/fold_banner</li>
 
 <li>$:/ThemeTweaks/style/fonts</li>
@@ -459,8 +459,6 @@ Error message and password prompt
 
 <li>$:/ThemeTweaks/style/subtitle</li>
 
-<li>$:/ThemeTweaks/style/SVG inline</li>
-
 <li>$:/ThemeTweaks/style/tags</li>
 
 <li>$:/ThemeTweaks/style/texte-align</li>
@@ -471,6 +469,18 @@ Error message and password prompt
 
 <li>$:/ThemeTweaks/subtitle/style</li>
 
+<li>$:/ThemeTweaks/svg</li>
+
+<li>$:/ThemeTweaks/svg/style/external_link</li>
+
+<li>$:/ThemeTweaks/svg/style/filter_color</li>
+
+<li>$:/ThemeTweaks/svg/style/system_images</li>
+
+<li>$:/ThemeTweaks/svg/url</li>
+
+<li>$:/ThemeTweaks/svg/wikipedia</li>
+
 <li>$:/ThemeTweaks/SwitchPalette</li>
 
 <li>$:/ThemeTweaks/SwitchPalette/button</li>
@@ -480,8 +490,6 @@ Error message and password prompt
 <li>$:/ThemeTweaks/SwitchPalette/tags</li>
 
 <li>$:/ThemeTweaks/template/subtitle</li>
-
-<li>$:/ThemeTweaks/url/SVG</li>
 
 <li>$:/TiddlyTweaks</li>
 
@@ -561,7 +569,7 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div created="20210908152838707" modified="20210922110054114" title="$:/config/AutoSave">
+<div created="20210908152838707" modified="20210922150051306" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
 <div created="20210908160520283" modified="20210908160521340" title="$:/config/flibbles/relink-titles/relink/$:/plugins/flibbles/relink-titles/rules/directory">
@@ -10479,7 +10487,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20210908182003239" modified="20210908182014944" tags="$:/tags/Image" title="$:/core/images/locked-padlock">
+<div created="20210908182003239" modified="20210922143918916" tags="$:/tags/Image right-story" title="$:/core/images/locked-padlock">
 <pre>&lt;svg width=&quot;22pt&quot; height=&quot;22pt&quot; class=&quot;tc-image-locked-padlock tc-image-button&quot; viewBox=&quot;0 0 128 128&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M96.472 64H105v32.01C105 113.674 90.674 128 73.001 128H56C38.318 128 24 113.677 24 96.01V64h8c.003-15.723.303-47.731 32.16-47.731 31.794 0 32.305 32.057 32.312 47.731zm-15.897 0H48.44c.002-16.287.142-32 15.719-32 15.684 0 16.977 16.136 16.415 32zM67.732 92.364A8.503 8.503 0 0064.5 76a8.5 8.5 0 00-3.498 16.25l-5.095 22.77H72.8l-5.07-22.656z&quot;/&gt;&lt;/svg&gt;</pre>
 </div>
 <div created="20210910123934410" hide-preview="yes" modified="20210910132032444" tags="$:/tags/EditTemplate" title="$:/core/ui/EditTemplate/body">
@@ -10548,8 +10556,8 @@ $:/TiddlyTweaks</pre>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div created="20210921232125203" modified="20210922110045123" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
-<pre>Modified $:/(reading-time) name for ease of typing</pre>
+<div created="20210921232125203" modified="20210922150109434" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
+<pre>Added external icons for wikipedia links</pre>
 </div>
 <div created="20210313134122939" modified="20210907002010666" tags="$:/tags/Macro $:/tagging/template" title="$:/macro/href-filter">
 <pre>\define href-filter(filter, text=&quot;open all&quot;) &lt;a href=&quot;#:[$filter$]&quot; target=&quot;_blank&quot;&gt;$text$&lt;/a&gt;</pre>
@@ -13640,7 +13648,7 @@ width:100%;
 
 &lt;/pre&gt;</pre>
 </div>
-<div created="20210907134312150" modified="20210922030918597" tags="$:/tags/Stylesheet $:/SaveToGitHub" title="$:/SaveToGitHub/style/site_title">
+<div created="20210907134312150" modified="20210922145348751" tags="$:/tags/Stylesheet $:/SaveToGitHub" title="$:/SaveToGitHub/style/site_title">
 <pre>&lt;$reveal default={{{[{$:/SaveToGitHub/private/state}match[yes]]}}} type=&quot;match&quot; text=&quot;yes&quot;&gt;
 
 &lt;pre&gt;
@@ -13652,7 +13660,7 @@ content:&quot; &quot;;
 height:  0.72em;width: 0.72em;
 display:inline-flex;
 margin-right: .2ch;
-&lt;$vars svg={{$:/core/images/locked-padlock}} fill=&quot;primary&quot;&gt; {{||$:/ThemeTweaks/url/SVG}} &lt;/$vars&gt;
+&lt;$vars svg={{$:/core/images/locked-padlock}} fill=&quot;primary&quot;&gt; {{||$:/ThemeTweaks/svg/url}} &lt;/$vars&gt;
 background: center / contain no-repeat var(`--`url);
 }
 
@@ -13670,7 +13678,7 @@ content:&quot; &quot;;
 height:  0.72em;width: 0.72em;
 display:inline-flex;
 margin-right: .2ch;
-&lt;$vars svg={{$:/core/images/theme-button}} fill=&quot;primary&quot;&gt; {{||$:/ThemeTweaks/url/SVG}} &lt;/$vars&gt;
+&lt;$vars svg={{$:/core/images/theme-button}} fill=&quot;primary&quot;&gt; {{||$:/ThemeTweaks/svg/url}} &lt;/$vars&gt;
 background: center / contain no-repeat var(`--`url);
 }
 
@@ -13857,9 +13865,9 @@ $subfilter=&quot;+[toggle[yes],[no]]&quot;/&gt;
 <div created="20210906233115255" modified="20210908154300780" tags="" title="$:/SiteSubtitle">
 <pre>Small tweaks for &lt;a class=&quot;tc-tiddlylink&quot; href=&quot;https://tiddlywiki.com/&quot;&gt;~TiddlyWiki&lt;/a&gt;</pre>
 </div>
-<div created="20210906233004035" modified="20210922040832053" tags="$:/SiteTitle" title="$:/SiteTitle">
+<div created="20210906233004035" modified="20210922140851879" tags="$:/SiteTitle" title="$:/SiteTitle">
 <pre>\whitespace trim
-&lt;a href={{{[{$:/GitHub/Repo}removeprefix{$:/SaveToGitHub/private/username}removeprefix[/]addprefix[.github.io/]addprefix{$:/SaveToGitHub/private/username}addprefix[https://]addsuffix{$:/GitHub/Path}addsuffix{$:/GitHub/Filename}]}}} class=&quot;site-title-link&quot;&gt;~TiddlyTweaks&lt;/a&gt;</pre>
+&lt;a href={{{[{$:/GitHub/Repo}removeprefix{$:/SaveToGitHub/private/username}removeprefix[/]addprefix[.github.io/]addprefix{$:/SaveToGitHub/private/username}addprefix[https://]addsuffix{$:/GitHub/Path}addsuffix{$:/GitHub/Filename}]}}} class=&quot;site-title-link no-icon&quot;&gt;~TiddlyTweaks&lt;/a&gt;</pre>
 </div>
 <div created="20210922040756912" modified="20210922040850025" tags="$:/SiteTitle $:/tags/Stylesheet" title="$:/SiteTitle/style">
 <pre>&lt;pre&gt;
@@ -13998,6 +14006,9 @@ padding-bottom: 10px;
 <div created="20210908155713655" modified="20210908160400991" title="$:/state/tab--1862192285">
 <pre>$:/plugins/flibbles/relink/ui/configuration/Attributes</pre>
 </div>
+<div created="20210922140407624" modified="20210922140408513" title="$:/state/tab--1878235435">
+<pre>$:/core/ui/TiddlerInfo/Tagging</pre>
+</div>
 <div created="20210906235719905" modified="20210908203556092" title="$:/state/tab--1963855381">
 <pre>$:/core/ui/ControlPanel/Toolbars</pre>
 </div>
@@ -14019,7 +14030,7 @@ padding-bottom: 10px;
 <div created="20210907003143193" modified="20210907003143193" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20210906235850481" modified="20210922110050826" title="$:/state/tab/sidebar--595412856">
+<div created="20210906235850481" modified="20210922150018669" title="$:/state/tab/sidebar--595412856">
 <pre>$:/SaveToGitHub/Settings</pre>
 </div>
 <div created="20210922000529400" modified="20210922000537152" title="$:/state/tabs/controlpanel/toolbars-1345989671">
@@ -14028,7 +14039,7 @@ padding-bottom: 10px;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210922104753923" list="Index $:/TiddlyTweaks $:/Reading-time $:/ThemeTweaks/template/subtitle $:/(reading-time)" modified="20210922110011722" title="$:/StoryList">
+<div list="Index $:/TiddlyTweaks" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210907002753004" list="$:/tagging $:/tagging/style $:/tagging/openTiddlers $:/tagging/template $:/tagging/template/after $:/tagging/template/before" modified="20210907134252168" tagging="after" tags="$:/tagging" title="$:/tagging">
@@ -14602,7 +14613,7 @@ subFilter=&lt;&lt;subFilter&gt;&gt;
 <div created="20210906233316002" modified="20210906235623959" tags="" title="$:/themes/tiddlywiki/vanilla/options/stickytitles">
 <pre>yes</pre>
 </div>
-<div created="20210907011026232" list="$:/ThemeTweaks $:/ThemeTweaks/button/right_story $:/ThemeTweaks/caption/right_story $:/ThemeTweaks/font/style/Roboto_Slab $:/ThemeTweaks/icon/external_link $:/ThemeTweaks/icon/warning $:/ThemeTweaks/style/external_link $:/ThemeTweaks/style/fold_banner $:/ThemeTweaks/style/fonts $:/ThemeTweaks/style/hide-until-hover $:/ThemeTweaks/style/right_story $:/ThemeTweaks/style/sidebar $:/ThemeTweaks/style/texte-align $:/ThemeTweaks/style/tiddler_controls $:/ThemeTweaks/style/warning" modified="20210908155647788" tagging="after" tags="$:/ThemeTweaks $:/TiddlyTweaks" title="$:/ThemeTweaks">
+<div created="20210907011026232" list="$:/ThemeTweaks $:/ThemeTweaks/button/right_story $:/ThemeTweaks/caption/right_story $:/ThemeTweaks/font/style/Roboto_Slab $:/ThemeTweaks/icon/external_link $:/ThemeTweaks/icon/warning $:/ThemeTweaks/svg/style/external_link $:/ThemeTweaks/style/fold_banner $:/ThemeTweaks/style/fonts $:/ThemeTweaks/style/hide-until-hover $:/ThemeTweaks/style/right_story $:/ThemeTweaks/style/sidebar $:/ThemeTweaks/style/texte-align $:/ThemeTweaks/style/tiddler_controls $:/ThemeTweaks/style/warning" modified="20210922145328378" tagging="after" tags="$:/ThemeTweaks $:/TiddlyTweaks" title="$:/ThemeTweaks">
 <pre></pre>
 </div>
 <div caption="{{$:/core/images/right-arrow}} {{$:/ThemeTweaks/caption/right_story}}" created="20210728115549996" description="Move tiddler to right column" modified="20210907134111665" tags="$:/tags/Macro $:/tags/ViewToolbar $:/tags/EditToolbar $:/ThemeTweaks" title="$:/ThemeTweaks/button/right_story">
@@ -14676,36 +14687,6 @@ subFilter=&lt;&lt;subFilter&gt;&gt;
 </div>
 <div created="20210727150406437" modified="20210907180810917" tags="$:/ThemeTweaks" title="$:/ThemeTweaks/icon/warning" type="image/svg+xml">
 <pre>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;22pt&quot; height=&quot;22pt&quot; viewBox=&quot;0 0 128 128&quot; fill=&quot;#d5c4a1&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot;  d=&quot;M57.072 11c3.079-5.333 10.777-5.333 13.856 0l55.426 96c3.079 5.333-.77 12-6.928 12H8.574c-6.158 0-10.007-6.667-6.928-12l55.426-96zM64 37c-4.418 0-8 3.582-8 7.994v28.012C56 77.421 59.59 81 64 81c4.418 0 8-3.582 8-7.994V44.994C72 40.579 68.41 37 64 37zm0 67a8 8 0 100-16 8 8 0 000 16z&quot;/&gt;&lt;/svg&gt;</pre>
-</div>
-<div created="20210613102831878" description="https://tiddlywiki.com &lt;a href=&quot;https://telumire.github.io/TiddlyTweaks/index.html&quot; class=&quot;icon-svg github&quot;&gt;github.io/~TiddlyTweaks&lt;/a&gt;" modified="20210922013217819" tags="$:/ThemeTweaks $:/tags/Stylesheet $:/ThemeTweaks/url/SVG" title="$:/ThemeTweaks/style/external_link">
-<pre>\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline html
-&lt;pre&gt;
-
-a[href]:not(.no-icon, .tc-tiddlylink, .tc-btn-invisible){
-    color:&lt;&lt;color external-link-foreground&gt;&gt;;
-}
-
-
-
-/*Default icon for external links*/
-
-a.tc-tiddlylink-external:not(a.no-icon):after, .icon-svg:after {
-    content: &quot; &quot;;
-    margin-left:.5ch;
-    display: inline-block;
-    height:1em;
-    width:1em;
-    background: center / contain no-repeat var(--url);
-}
-
-a.tc-tiddlylink-external:not(a.no-icon, a.icon-svg):after {&lt;$vars svg={{$:/core/images/open-window}} fill=&quot;external-link-foreground&quot;&gt;{{||$:/ThemeTweaks/url/SVG}} }
-a.tc-tiddlylink-external:not(a.no-icon, a.icon-svg):visited:after {&lt;$vars fill=&quot;external-link-foreground-visited&quot;&gt; {{||$:/ThemeTweaks/url/SVG}} }
-a.tc-tiddlylink-external:not(a.no-icon, a.icon-svg):hover:after{&lt;$vars fill=&quot;external-link-foreground-hover&quot;&gt; {{||$:/ThemeTweaks/url/SVG}} }
-a.tc-tiddlylink-external:hover, a.icon-svg:hover{color:&lt;&lt;color external-link-foreground-hover&gt;&gt;}
- 
-/*Icon for specific domains*/
-
-a.tc-tiddlylink-external[href*=&quot;wikipedia&quot;]:not(a.no-icon):before {background-image: url(&lt;&lt;datauri &quot;wikipedia.png&quot;&gt;&gt;);}</pre>
 </div>
 <div created="20210703203411752" creator="user" modified="20210907134111665" modifier="user" tags="$:/tags/Stylesheet $:/ThemeTweaks" title="$:/ThemeTweaks/style/fold_banner" type="text/css">
 <pre>button.tc-fold-banner {
@@ -14832,28 +14813,148 @@ margin-left:1ch;
 margin-right:1ch;
 }</pre>
 </div>
-<div created="20210908171908194" description="&lt;div class=&quot;icon core icon-blue&quot;&gt;core&lt;/div&gt;" modified="20210922034407828" tags="$:/tags/Stylesheet $:/ThemeTweaks $:/ThemeTweaks/url/SVG $:/ThemeTweaks/style/external_link" title="$:/ThemeTweaks/style/SVG inline" type="">
+<div created="20210917130124992" modified="20210917130245813" tags="$:/tags/Stylesheet $:/ThemeTweaks" title="$:/ThemeTweaks/style/tags" type="text/css">
+<pre>.tc-tagged-hide-title .tc-title,
+.tc-tagged-hide-tags .tc-tags-wrapper
+{
+display:none;
+}</pre>
+</div>
+<div created="20210728031544804" modified="20210907180810918" tags="$:/tags/Stylesheet $:/ThemeTweaks" title="$:/ThemeTweaks/style/texte-align" type="text/css">
+<pre>.txt-justify { text-align:justify;}
+.txt-center { text-align:center;}
+.txt-left { text-align:left;}
+.txt-right { text-align:right;}</pre>
+</div>
+<div created="20210703203551396" modified="20210907180810918" tags="$:/tags/Stylesheet $:/ThemeTweaks" title="$:/ThemeTweaks/style/tiddler_controls" type="">
+<pre>&lt;pre&gt;
+
+@media (hover: hover) {
+
+/**** hide tiddler controls until hover IF hover is supported ****/
+
+.tc-tiddler-frame .tc-tiddler-controls {
+    opacity:0;
+    transition: opacity .1s;
+}
+
+.tc-tiddler-controls:hover  {
+    opacity:1;
+    transition: opacity .5s;
+}
+
+.tc-tiddler-controls {
+    transition-timing-function: ease-in-out;
+}
+
+/* exception */
+.tc-tiddler-edit-frame .tc-tiddler-controls, .tc-tiddler-controls.display {
+    opacity:1;
+}
+
+/****Place tiddler controls in absolute position IF hover is supported****/
+
+.tc-tiddler-title .tc-tiddler-controls { 
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: &lt;&lt;color background&gt;&gt;;
+}
+
+.tc-tiddler-title .tc-tiddler-controls.tc-titlebar {position: inherit;}
+
+}</pre>
+</div>
+<div created="20210727145647733" modified="20210922145348752" tags="$:/ThemeTweaks $:/tags/Stylesheet" title="$:/ThemeTweaks/style/warning">
+<pre>&lt;pre&gt;
+.tc-quote.warning {
+    position: relative;
+    margin-left: calc(25px + 2em);
+    min-height:3em;
+}
+
+.tc-quote.warning:before {
+    content: &quot;&quot;;
+		background: center / contain no-repeat var(`--`url);
+		&lt;$vars svg={{$:/core/images/warning}} fill=&quot;foreground&quot;&gt; {{||$:/ThemeTweaks/svg/url}} &lt;/$vars&gt;
+    height: 3em;
+    width: 3em;
+    display: inline-block;
+    position: absolute;
+    right: calc(100% + 1em);
+}</pre>
+</div>
+<div created="20210802171357078" modified="20210907180810918" tags="$:/tags/Stylesheet $:/Reading-time" title="$:/ThemeTweaks/subtitle/style" type="text/css">
+<pre>.tc-subtitle:not(.custom) {display:none;}
+
+.tc-subtitle.custom .item&gt;p{
+display:inline;
+margin:0;
+padding:0;
+}
+
+.tc-subtitle.custom .item:nth-child(n+2):before{
+content:&quot;-&quot;;
+margin-left:1ch;
+margin-right:1ch;
+}</pre>
+</div>
+<div created="20210922143046823" list="$:/ThemeTweaks/svg/style/external_link $:/ThemeTweaks/svg/url $:/ThemeTweaks/svg/style/system_images $:/ThemeTweaks/svg/wikipedia" modified="20210922145556648" tagging="after" tags="$:/ThemeTweaks" title="$:/ThemeTweaks/svg">
+<pre></pre>
+</div>
+<div created="20210613102831878" description="https://tiddlywiki.com https://github.com" modified="20210922145536661" tagging-tiddler="" tags="$:/ThemeTweaks $:/tags/Stylesheet $:/ThemeTweaks/svg" title="$:/ThemeTweaks/svg/style/external_link">
 <pre>\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline html
 &lt;pre&gt;
 
-.icon:after {
+a[href]:not(.no-icon, .tc-tiddlylink, .tc-btn-invisible){
+    color:&lt;&lt;color external-link-foreground&gt;&gt;;
+}
+
+/*Default icon for external links*/
+
+a:not(.tc-tiddlylink,.no-icon,.tc-btn-invisible):after, a.tc-tiddlylink-external:after, .icon-svg:after {
     content: &quot; &quot;;
     margin-left:.5ch;
     display: inline-block;
-    height:2em;
-    width:2em;
+    height:1em;
+    width:1em;
     background: center / contain no-repeat var(--url);
 }
 
-&lt;$list filter=&quot;[all[shadows]tag[$:/tags/Image]]&quot; variable=img&gt;
 
-.icon.&lt;$text text={{{[&lt;img&gt;removeprefix[$:/core/images/]else[core]]}}}/&gt;:after{
-&lt;$vars svg={{{[&lt;img&gt;get[text]]}}} fill=&quot;red&quot;&gt;{{$:/ThemeTweaks/url/SVG}}&lt;/$vars&gt;
-}
-&lt;/$list&gt;
+&lt;$vars fill=&quot;external-link-foreground&quot;&gt;
 
-/*Source: https://codepen.io/noahblon/post/coloring-svgs-in-css-background-images
-*/
+a:not(.tc-tiddlylink,.no-icon,.tc-btn-invisible):after {&lt;$vars svg=&quot;$:/core/images/open-window&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
+a[href*=&quot;tiddlywiki.&quot;]:not(a.no-icon):after {&lt;$vars svg=&quot;$:/core/icon&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
+a[href*=&quot;github.&quot;]:not(a.no-icon):after {&lt;$vars svg=&quot;$:/core/images/github&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
+a[href*=&quot;wikipedia.&quot;]:not(a.no-icon):after {&lt;$vars svg=&quot;$:/ThemeTweaks/svg/wikipedia&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
+
+&lt;/$vars&gt;
+
+&lt;$vars fill=&quot;external-link-foreground-visited&quot;&gt;
+
+a:not(.tc-tiddlylink,.no-icon,.tc-btn-invisible):visited:after {&lt;$vars svg=&quot;$:/core/images/open-window&quot;&gt; {{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt; }
+a[href*=&quot;tiddlywiki.&quot;]:not(a.no-icon):visited:after {&lt;$vars svg=&quot;$:/core/icon&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
+a[href*=&quot;github.&quot;]:not(a.no-icon):visited:after {&lt;$vars svg=&quot;$:/core/images/github&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
+a[href*=&quot;wikipedia.&quot;]:not(a.no-icon):visited:after {&lt;$vars svg=&quot;$:/ThemeTweaks/svg/wikipedia&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
+
+&lt;/$vars&gt;
+
+&lt;$vars fill=&quot;external-link-foreground-hover&quot;&gt;
+
+a:not(.tc-tiddlylink,.no-icon,.tc-btn-invisible):hover:after{&lt;$vars svg=&quot;$:/core/images/open-window&quot;&gt; {{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
+a[href*=&quot;tiddlywiki.&quot;]:not(a.no-icon):hover:after {&lt;$vars svg=&quot;$:/core/icon&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
+a[href*=&quot;github.&quot;]:not(a.no-icon):hover:after {&lt;$vars svg=&quot;$:/core/images/github&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
+a[href*=&quot;wikipedia.&quot;]:not(a.no-icon):hover:after {&lt;$vars svg=&quot;$:/ThemeTweaks/svg/wikipedia&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
+
+&lt;/$vars&gt;
+
+a:not(.tc-tiddlylink,.no-icon,.tc-btn-invisible):hover, a.icon-svg:hover{
+color:&lt;&lt;color external-link-foreground-hover&gt;&gt;;
+}</pre>
+</div>
+<div created="20210922145848108" modified="20210922145936920" tags="$:/tags/Stylesheet $:/ThemeTweaks $:/ThemeTweaks/svg" title="$:/ThemeTweaks/svg/style/filter_color" type="text/css">
+<pre>/*Source: https://codepen.io/noahblon/post/coloring-svgs-in-css-background-images*/
 
 .icon-red {}
 
@@ -14973,91 +15074,35 @@ margin-right:1ch;
   filter: grayscale(100%) brightness(0);
 }</pre>
 </div>
-<div created="20210917130124992" modified="20210917130245813" tags="$:/tags/Stylesheet $:/ThemeTweaks" title="$:/ThemeTweaks/style/tags" type="text/css">
-<pre>.tc-tagged-hide-title .tc-title,
-.tc-tagged-hide-tags .tc-tags-wrapper
-{
-display:none;
-}</pre>
-</div>
-<div created="20210728031544804" modified="20210907180810918" tags="$:/tags/Stylesheet $:/ThemeTweaks" title="$:/ThemeTweaks/style/texte-align" type="text/css">
-<pre>.txt-justify { text-align:justify;}
-.txt-center { text-align:center;}
-.txt-left { text-align:left;}
-.txt-right { text-align:right;}</pre>
-</div>
-<div created="20210703203551396" modified="20210907180810918" tags="$:/tags/Stylesheet $:/ThemeTweaks" title="$:/ThemeTweaks/style/tiddler_controls" type="">
-<pre>&lt;pre&gt;
+<div created="20210908171908194" description="&lt;i class=&quot;icon core icon-orange&quot;&gt;&lt;/i&gt;core" modified="20210922150012369" tags="$:/tags/Stylesheet $:/ThemeTweaks $:/ThemeTweaks/svg" title="$:/ThemeTweaks/svg/style/system_images" type="">
+<pre>\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline html
+&lt;pre&gt;
 
-@media (hover: hover) {
-
-/**** hide tiddler controls until hover IF hover is supported ****/
-
-.tc-tiddler-frame .tc-tiddler-controls {
-    opacity:0;
-    transition: opacity .1s;
-}
-
-.tc-tiddler-controls:hover  {
-    opacity:1;
-    transition: opacity .5s;
-}
-
-.tc-tiddler-controls {
-    transition-timing-function: ease-in-out;
-}
-
-/* exception */
-.tc-tiddler-edit-frame .tc-tiddler-controls, .tc-tiddler-controls.display {
-    opacity:1;
-}
-
-/****Place tiddler controls in absolute position IF hover is supported****/
-
-.tc-tiddler-title .tc-tiddler-controls { 
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    background: &lt;&lt;color background&gt;&gt;;
-}
-
-.tc-tiddler-title .tc-tiddler-controls.tc-titlebar {position: inherit;}
-
-}</pre>
-</div>
-<div created="20210727145647733" modified="20210922032806677" tags="$:/ThemeTweaks $:/tags/Stylesheet" title="$:/ThemeTweaks/style/warning">
-<pre>&lt;pre&gt;
-.tc-quote.warning {
-    position: relative;
-    margin-left: calc(25px + 2em);
-    min-height:3em;
-}
-
-.tc-quote.warning:before {
-    content: &quot;&quot;;
-		background: center / contain no-repeat var(`--`url);
-		&lt;$vars svg={{$:/core/images/warning}} fill=&quot;foreground&quot;&gt; {{||$:/ThemeTweaks/url/SVG}} &lt;/$vars&gt;
-    height: 3em;
-    width: 3em;
+.icon:after {
+    content: &quot; &quot;;
+    margin-left:.5ch;
     display: inline-block;
-    position: absolute;
-    right: calc(100% + 1em);
-}</pre>
-</div>
-<div created="20210802171357078" modified="20210907180810918" tags="$:/tags/Stylesheet $:/Reading-time" title="$:/ThemeTweaks/subtitle/style" type="text/css">
-<pre>.tc-subtitle:not(.custom) {display:none;}
-
-.tc-subtitle.custom .item&gt;p{
-display:inline;
-margin:0;
-padding:0;
+    height:2em;
+    width:2em;
+    background: center / contain no-repeat var(--url);
 }
 
-.tc-subtitle.custom .item:nth-child(n+2):before{
-content:&quot;-&quot;;
-margin-left:1ch;
-margin-right:1ch;
-}</pre>
+&lt;$list filter=&quot;[all[shadows]tag[$:/tags/Image]]&quot; variable=img&gt;
+
+.icon.&lt;$text text={{{[&lt;img&gt;removeprefix[$:/core/images/]else[core]]}}}/&gt;:after{
+&lt;$vars svg={{{[&lt;img&gt;get[text]]}}} fill=&quot;red&quot;&gt;{{$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;
+}
+&lt;/$list&gt;</pre>
+</div>
+<div created="20210922004830897" description="Transclude this to generate an URL SVG" modified="20210922145434931" tags="$:/tags/Stylesheet $:/ThemeTweaks $:/ThemeTweaks/svg" title="$:/ThemeTweaks/svg/url" type="">
+<pre>&lt;$vars 
+svg={{{ [&lt;svg&gt;get[text]else&lt;svg&gt;] }}}
+fill={{{[&lt;fill&gt;]:reduce[{$:/palette}getindex&lt;currentTiddler&gt;match[inherit]then[foreground]else&lt;currentTiddler&gt;]:reduce[{$:/palette}getindex&lt;currentTiddler&gt;else&lt;currentTiddler&gt;]:reduce[&lt;currentTiddler&gt;is[blank]then[$:/palettes/Vanilla]getindex[foreground]else&lt;currentTiddler&gt;]+[search-replace[#],[%23]]}}}&gt;  
+
+`--`url:url(&lt;$text text={{{[['data:image/svg+xml;utf8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;]][&lt;fill&gt;][[&quot; width=&quot;22pt&quot; height=&quot;22pt&quot;&gt;]][&lt;svg&gt;][[&lt;/svg&gt;']]+[join[]]}}} /&gt;);</pre>
+</div>
+<div created="20210922142730326" description="Tool used for compression : https://jakearchibald.github.io/svgomg/" modified="20210922145051209" source="https://upload.wikimedia.org/wikipedia/commons/5/5a/Wikipedia%27s_W.svg https://www.wikipedia.org/" tags="$:/ThemeTweaks $:/tags/Image [[ $:/ThemeTweaks/style/external_link]] $:/ThemeTweaks/svg" title="$:/ThemeTweaks/svg/wikipedia">
+<pre>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;22pt&quot; height=&quot;22pt&quot; fill-rule=&quot;evenodd&quot; stroke-miterlimit=&quot;10&quot; shape-rendering=&quot;geometricPrecision&quot; viewBox=&quot;0 0 128 128&quot;&gt;&lt;path d=&quot;M120.8 29.2c0 .4 0 .8-.3 1.1-.3.4-.6.5-.9.5-2.5.3-4.5 1-6 2.4-1.7 1.4-3.3 4-5 7.8L82.8 99.3c-.2.5-.6.8-1.4.8-.6 0-1.1-.3-1.4-.8L65.5 68.9 48.9 99.2c-.4.5-.9.8-1.5.8-.7 0-1.2-.3-1.4-.8L20.6 41a20.1 20.1 0 0 0-5-7.5 13.7 13.7 0 0 0-7.3-2.7c-.3 0-.6-.1-.8-.4-.2-.3-.3-.6-.3-1 0-1 .2-1.4.8-1.4l7 .3a71 71 0 0 0 13.8 0l7.8-.3c.5 0 .8.5.8 1.4 0 1-.2 1.4-.5 1.4-2.3.2-4 .8-5.3 1.7-1.3 1-2 2.3-2 3.9 0 .8.3 1.8.8 3l21 47.3 11.9-22.4L52.2 41c-2-4-3.6-6.8-5-8a9.9 9.9 0 0 0-5.7-2.2c-.3 0-.5-.1-.7-.4-.2-.3-.3-.6-.3-1 0-1 .2-1.4.7-1.4 2.2 0 4.3.1 6.2.3a50.9 50.9 0 0 0 12.2 0l6.9-.3c.5 0 .8.5.8 1.4 0 1-.1 1.4-.5 1.4-4.5.3-6.8 1.6-6.8 3.9 0 1 .5 2.6 1.6 4.7l7.3 14.9 7.3-13.6c1-2 1.5-3.6 1.5-5 0-3-2.2-4.7-6.7-4.9-.5 0-.7-.4-.7-1.4 0-.3.2-.6.4-1 .2-.3.4-.4.6-.4l6 .3a62.3 62.3 0 0 0 10.1 0l6.4-.3c.4 0 .6.4.6 1.2 0 1-.3 1.6-1 1.6-2.7.3-4.8 1-6.4 2.2a27.8 27.8 0 0 0-6 8l-9.7 18 13.1 26.8 19.4-45.1c.7-1.7 1-3.2 1-4.6 0-3.3-2.2-5-6.7-5.3-.4 0-.6-.4-.6-1.4 0-1 .3-1.4.9-1.4l5.8.3a54 54 0 0 0 10.5 0l5.4-.3c.5 0 .8.4.8 1.2z&quot;/&gt;&lt;/svg&gt;</pre>
 </div>
 <div created="20210811020158840" modified="20210907112217403" tagging="after" tags="$:/ThemeTweaks/SwitchPalette" title="$:/ThemeTweaks/SwitchPalette">
 <pre></pre>
@@ -15115,9 +15160,6 @@ margin-right:1ch;
 &lt;span class=&quot;item&quot;&gt;&lt;$view field=&quot;modified&quot; format=&quot;date&quot; template=&quot;DD MMM YYYY&quot;/&gt;&lt;/span&gt;
 &lt;span class=&quot;item&quot;&gt;&lt;$transclude tiddler=&quot;$:/(reading-time)&quot; /&gt;&lt;/span&gt;
 &lt;/$reveal&gt;</pre>
-</div>
-<div created="20210922004830897" modified="20210922021623420" tags="$:/tags/Stylesheet $:/ThemeTweaks" title="$:/ThemeTweaks/url/SVG" type="">
-<pre>&lt;$vars fill={{{[&lt;fill&gt;]:reduce[{$:/palette}getindex&lt;currentTiddler&gt;match[inherit]then[foreground]else&lt;currentTiddler&gt;]:reduce[{$:/palette}getindex&lt;currentTiddler&gt;else&lt;currentTiddler&gt;]:reduce[&lt;currentTiddler&gt;is[blank]then[$:/palettes/Vanilla]getindex[foreground]else&lt;currentTiddler&gt;]+[search-replace[#],[%23]]}}}&gt;  `--`url:url(&lt;$text text={{{[['data:image/svg+xml;utf8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;]][&lt;fill&gt;][[&quot; width=&quot;22pt&quot; height=&quot;22pt&quot;&gt;]][&lt;svg&gt;][[&lt;/svg&gt;']]+[join[]]}}} /&gt;);</pre>
 </div>
 <div created="20210907160816890" modified="20210922024430329" tagging="after" tags="" title="$:/TiddlyTweaks">
 <pre></pre>
