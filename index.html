@@ -443,8 +443,6 @@ Error message and password prompt
 
 <li>$:/ThemeTweaks/caption/right_story</li>
 
-<li>$:/ThemeTweaks/font/style/Roboto_Slab</li>
-
 <li>$:/ThemeTweaks/macro/href-filter</li>
 
 <li>$:/ThemeTweaks/macro/openTiddlers</li>
@@ -535,41 +533,22 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div bag="default" created="20210806221807357" description="To use : `{{||$:/(reading-time)}}`. Be carefull when modifying this tiddler, can cause infinite recursion while the preview is shown! Note : the regex expression for counting words could probably be improved." hide-body="yes" hide-preview="yes" modified="20210927221916221" revision="0" tags="$:/Reading-time" title="$:/(reading-time)">
+<div bag="default" created="20210806221807357" description="To use : `{{||$:/(reading-time)}}`. Be carefull when modifying this tiddler, can cause infinite recursion while the preview is shown! Note : the regex expression for counting words could probably be improved." hide-body="yes" hide-preview="yes" modified="20210927224315503" revision="0" tags="$:/Reading-time" title="$:/(reading-time)">
 <pre>\whitespace trim
-\define wordsCount() $(nbWords)$ words
 &lt;$list filter=&quot;[all[current]![$:/(reading-time)]!is[draft]!is[system]]&quot;&gt;
 &lt;$wikify name=&quot;text&quot; text={{!!text}} output=&quot;text&quot;&gt;
 &lt;$set name=&quot;regex&quot; value=&quot;[a-zA-Z0-9éèêàçù]+&quot;&gt;
-&lt;$set name=&quot;nbWords&quot; filter=&quot;[&lt;text&gt;splitregexp:m&lt;regex&gt;count[]] +[subtract[1]]&quot;&gt;
+&lt;$set name=&quot;nbWords&quot; filter=&quot;[&lt;text&gt;splitregexp:m&lt;regex&gt;count[]subtract[1]]&quot;&gt;
 &lt;$set name=&quot;time&quot; filter=&quot;[&lt;nbWords&gt;divide{$:/Reading-time/wpm}]&quot;&gt;
 &lt;$set name=&quot;timeH&quot; filter=&quot;[&lt;time&gt;divide[60]trunc[]]&quot;&gt;
 &lt;$set name=&quot;timeM&quot; filter=&quot;[&lt;time&gt;divide[60]remainder[1]multiply[60]trunc[]]&quot;&gt;
-&lt;$set name=&quot;timeS&quot; filter=&quot;[&lt;time&gt;divide[60]remainder[1]multiply[60]remainder[1]multiply[60]trunc[]]&quot;&gt;
-
-&lt;span class=&quot;item&quot;&gt;
-&lt;span title={{{[&lt;nbWords&gt;][[ ]][[word]][&lt;nbWords&gt;compare:number:gt[1]then[s]]+[join[]]}}} class=&quot;reading-time&quot; &gt;
+&lt;span class=&quot;item reading-time&quot; title={{{[&lt;nbWords&gt;][[ ]][[word]][&lt;nbWords&gt;compare:number:gt[1]then[s]]+[join[]]}}}&gt;
 {{$:/core/images/timestamp-on}}
-
-&lt;$list filter=&quot;[&lt;time&gt;compare:number:lteq[1]]&quot;&gt;
-1&amp;nbsp;minute
-&lt;/$list&gt;
-
-&lt;$list filter=&quot;[&lt;time&gt;compare:number:gt[1]compare:number:lt[60]]&quot;&gt;
-&lt;&lt;timeM&gt;&gt;&amp;nbsp;minutes
-&lt;/$list&gt;
-
-&lt;$list filter=&quot;[&lt;time&gt;compare:number:eq[60]]&quot;&gt;
-1&amp;nbsp;hours
-&lt;/$list&gt;
-
-&lt;$list filter=&quot;[&lt;time&gt;compare:number:gt[60]]&quot;&gt;
-&lt;&lt;timeH&gt;&gt;&amp;nbsp;hours
-&lt;/$list&gt;
-
+&lt;$list filter=&quot;[&lt;time&gt;compare:number:lt[2]]&quot;&gt;1&amp;nbsp;minute&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;time&gt;compare:number:gt[2]compare:number:lt[60]]&quot;&gt;&lt;&lt;timeM&gt;&gt;&amp;nbsp;minutes&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;time&gt;compare:number:eq[60]]&quot;&gt;1&amp;nbsp;hours&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;time&gt;compare:number:gt[60]]&quot;&gt;&lt;&lt;timeH&gt;&gt;&amp;nbsp;hours&lt;/$list&gt;
 &lt;/span&gt;
-&lt;/span&gt;
-&lt;/$set&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
@@ -590,7 +569,7 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div bag="default" created="20210908152838707" modified="20210927222105357" revision="0" title="$:/config/AutoSave">
+<div bag="default" created="20210908152838707" modified="20210927230842364" revision="0" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
 <div bag="default" created="20210908160520283" modified="20210908160521340" revision="0" title="$:/config/flibbles/relink-titles/relink/$:/plugins/flibbles/relink-titles/rules/directory">
@@ -10577,13 +10556,13 @@ $:/config/EditorToolbarButtons/Visibility/$(currentTiddler)$
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/plugins/telmiger/details]]</pre>
+# [[$:/ThemeTweaks/style/fonts]]</pre>
 </div>
 <div bag="default" revision="0" title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div bag="default" created="20210921232125203" modified="20210927222101264" revision="0" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
-<pre>Updated $:/(reading-time) to correct the plural/singular form of the word counter</pre>
+<div bag="default" created="20210921232125203" modified="20210927222734155" revision="0" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
+<pre>Updated  to correct the plural/singular form of the word counter</pre>
 </div>
 <div bag="default" created="20210906233615248" modified="20210927154548067" revision="0" tags="" title="$:/palette">
 <pre>$:/palettes/GruvboxDark</pre>
@@ -14621,7 +14600,7 @@ padding-bottom: 10px;
 <div created="20210923165147348" modified="20210927221706495" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210923195039440" modified="20210927221125039" title="$:/state/sidebar">
+<div created="20210923195039440" modified="20210927224321411" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20210927151324591" modified="20210927152635288" title="$:/state/tab--1498284803">
@@ -14633,8 +14612,8 @@ padding-bottom: 10px;
 <div bag="default" created="20210923145356267" modified="20210927154823940" revision="1" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
-<div created="20210923162159858" modified="20210927221939610" title="$:/state/tab/sidebar--595412856">
-<pre>$:/SaveToGitHub/Settings</pre>
+<div created="20210923162159858" modified="20210927225131226" title="$:/state/tab/sidebar--595412856">
+<pre>$:/ThemeTweaks/style/fonts</pre>
 </div>
 <div created="20210923190359522" modified="20210923190415229" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/ViewToolbar</pre>
@@ -14654,7 +14633,7 @@ padding-bottom: 10px;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20210927220221563" list="$:/(reading-time)" modified="20210927220650634" title="$:/StoryList">
+<div created="20210927225251772" list="$:/ThemeTweaks/style/fonts" modified="20210927225251772" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20210923144105193" list="$:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/plugins/kookma/commander/buttons/pagecontrol $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/refresh $:/core/ui/Buttons/more-page-actions $:/SaveToGitHub/Button $:/ThemeTweaks/SwitchPalette/button" modified="20210923144105362" revision="0" title="$:/tags/PageControls" type="text/vnd.tiddlywiki">
@@ -15133,64 +15112,6 @@ subFilter=&lt;&lt;subFilter&gt;&gt;
 <div bag="default" created="20210730135105270" modified="20210907180810917" revision="0" tags="$:/ThemeTweaks" title="$:/ThemeTweaks/caption/right_story">
 <pre>change column</pre>
 </div>
-<div bag="default" created="20210907114836564" modified="20210922214120856" revision="0" source="https://fonts.googleapis.com/css2?family=Roboto+Slab" tags="$:/tags/Stylesheet $:/ThemeTweaks $:/ThemeTweaks/style/fonts" title="$:/ThemeTweaks/font/style/Roboto_Slab" type="text/css">
-<pre>/* cyrillic-ext */
-@font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/robotoslab/v13/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjojISmYmRjRdE.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/robotoslab/v13/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjojISma2RjRdE.woff2) format('woff2');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek-ext */
-@font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/robotoslab/v13/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjojISmY2RjRdE.woff2) format('woff2');
-  unicode-range: U+1F00-1FFF;
-}
-/* greek */
-@font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/robotoslab/v13/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjojISmbGRjRdE.woff2) format('woff2');
-  unicode-range: U+0370-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/robotoslab/v13/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjojISmYGRjRdE.woff2) format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/robotoslab/v13/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjojISmYWRjRdE.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/robotoslab/v13/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjojISmb2Rj.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}</pre>
-</div>
 <div bag="default" created="20210313134122939" modified="20210922213525430" revision="0" tags="$:/tags/Macro $:/showInfo/tagging/template" title="$:/ThemeTweaks/macro/href-filter">
 <pre>\define href-filter(filter, text=&quot;open all&quot;) &lt;a href=&quot;#:[$filter$]&quot; target=&quot;_blank&quot;&gt;$text$&lt;/a&gt;</pre>
 </div>
@@ -15272,9 +15193,27 @@ button.tc-unfold-banner {
 }
 */</pre>
 </div>
-<div bag="default" created="20210907113823607" modified="20210922214155719" revision="0" tagging="after" tags="$:/tags/Stylesheet $:/ThemeTweaks $:/ThemeTweaks/style/fonts" title="$:/ThemeTweaks/style/fonts" type="text/css">
-<pre>body {
-font-family: 'Roboto Slab', serif;
+<div bag="default" caption="Fonts" created="20210907113823607" creator="Telumire" modified="20210927230648153" modifier="Telumire" revision="0" tags="$:/tags/Stylesheet $:/ThemeTweaks $:/ThemeTweaks/style/fonts $:/tags/SideBar" title="$:/ThemeTweaks/style/fonts" type="text/css">
+<pre>/* https://fonts.googleapis.com/css2?family=Zilla+Slab */
+/* latin-ext */
+@font-face {
+  font-family: 'Zilla Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/zillaslab/v6/dFa6ZfeM_74wlPZtksIFajQ6_UyI.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Zilla Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/zillaslab/v6/dFa6ZfeM_74wlPZtksIFajo6_Q.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body {
+    font-family: 'Zilla Slab', serif;
 }</pre>
 </div>
 <div bag="default" created="20210907113025487" modified="20210907134111666" revision="0" tags="$:/tags/Stylesheet $:/ThemeTweaks" title="$:/ThemeTweaks/style/hide-until-hover" type="text/css">
@@ -15790,7 +15729,7 @@ span.transclude-edit:hover .transclude-edit-button{
 <div bag="default" created="20210922215428269" description="todo : add the filter" filter="" modified="20210922220333450" revision="0" tags="" title="Export this wiki settings">
 <pre>&lt;$macrocall $name=&quot;openTiddlers&quot; filter={{!!filter}} text=&quot;Drag to import the settings&quot;/&gt;</pre>
 </div>
-<div bag="default" created="20210908150922338" description-task="See http://j.d.tiddlyspot.com/ for a better layout" modified="20210927220624140" revision="0" tags="pinned" task="todo" title="Index">
+<div bag="default" created="20210908150922338" description-task="See http://j.d.tiddlyspot.com/ for a better layout" modified="20210927222903875" revision="0" tags="pinned" task="todo" title="Index">
 <pre>!Welcome
 
 I use this wiki to quickly add tweaks I often use into new tiddlywikis. Some are mine, other not - see the source field of the tiddler. This is a cleaner version of my other wiki, https://telumire.github.io/TW-tips/. 
