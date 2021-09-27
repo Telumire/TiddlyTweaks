@@ -580,7 +580,7 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div bag="default" created="20210908152838707" modified="20210927094955815" revision="0" title="$:/config/AutoSave">
+<div bag="default" created="20210908152838707" modified="20210927131604067" revision="0" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
 <div bag="default" created="20210908160520283" modified="20210908160521340" revision="0" title="$:/config/flibbles/relink-titles/relink/$:/plugins/flibbles/relink-titles/rules/directory">
@@ -10575,7 +10575,7 @@ $:/config/EditorToolbarButtons/Visibility/$(currentTiddler)$
 <div bag="default" created="20210921232125203" modified="20210927094946189" revision="0" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
 <pre>Updated Index</pre>
 </div>
-<div bag="default" created="20210906233615248" modified="20210923004941065" revision="0" tags="" title="$:/palette">
+<div bag="default" created="20210906233615248" modified="20210927131602064" revision="0" tags="" title="$:/palette">
 <pre>$:/palettes/GruvboxDark</pre>
 </div>
 <div bag="default" created="20210907010728393" description="A clean white palette to let you focus" modified="20210923004503310" name="Blanca" revision="0" tags="$:/tags/Palette $:/ThemeTweaks/SwitchPalette/tags PalettePreview" title="$:/palettes/Blanca" type="application/x-tiddler-dictionary">
@@ -10820,7 +10820,7 @@ wikilist-button-reveal: &lt;&lt;colour sidebar-tiddler-link-foreground-hover&gt;
 wikilist-button-reveal-hover: &lt;&lt;colour message-background&gt;&gt;
 </pre>
 </div>
-<div author="Thomas Elmiger" bag="default" created="20210907010813968" description="Delightful, soft darkness." modified="20210907112251239" name="Twilight" revision="0" tags="$:/tags/Palette $:/ThemeTweaks/SwitchPalette/tags" title="$:/palettes/Twilight" type="application/x-tiddler-dictionary">
+<div author="Thomas Elmiger" bag="default" created="20210907010813968" description="Delightful, soft darkness." modified="20210927131552660" name="Twilight" revision="0" tags="$:/tags/Palette" title="$:/palettes/Twilight" type="application/x-tiddler-dictionary">
 <pre>alert-background: rgb(255, 255, 102)
 alert-border: rgb(232, 232, 125)
 alert-highlight: rgb(255, 51, 51)
@@ -14495,7 +14495,7 @@ padding-bottom: 10px;
 <div created="20210923165147348" modified="20210923201245631" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210923195039440" modified="20210927094940008" title="$:/state/sidebar">
+<div created="20210923195039440" modified="20210927131558600" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20210923190323173" modified="20210923201121052" title="$:/state/tab--1963855381">
@@ -15554,43 +15554,35 @@ fill={{{[&lt;fill&gt;]:reduce[{$:/palette}getindex&lt;currentTiddler&gt;match[in
 <div bag="default" created="20210811020158840" modified="20210923184724058" revision="0" tagging="after" tags="$:/ThemeTweaks/SwitchPalette $:/ThemeTweaks" title="$:/ThemeTweaks/SwitchPalette">
 <pre></pre>
 </div>
-<div bag="default" caption="{{$:/ThemeTweaks/SwitchPalette/image}} Switch palette" created="20201210171047824" description="Choose a colour palette" modified="20210922200810561" revision="0" source="https://nicolas.petton.fr/tw/notebook.html" tags="$:/tags/PageControls $:/ThemeTweaks/SwitchPalette" task="doing" title="$:/ThemeTweaks/SwitchPalette/button" type="text/vnd.tiddlywiki">
+<div bag="default" caption="{{$:/ThemeTweaks/SwitchPalette/image}} Switch palette" created="20201210171047824" description="Choose a colour palette" modified="20210927131523780" revision="0" source="[[modified from https://nicolas.petton.fr/tw/notebook.html]]" tags="$:/tags/PageControls $:/ThemeTweaks/SwitchPalette" task="doing" title="$:/ThemeTweaks/SwitchPalette/button" type="text/vnd.tiddlywiki">
 <pre>\whitespace trim
-&lt;$vars
-    palettes=&quot;[all[tiddlers+shadows]tag[$:/ThemeTweaks/SwitchPalette/tags]]&quot;
-    popupTiddler=&lt;&lt;qualify &quot;$:/state/palette-dropdown&quot;&gt;&gt;
-  &gt;
-    &lt;$button
-      popup=&lt;&lt;popupTiddler&gt;&gt;
-      tooltip=&quot;Switch colours&quot;
-      aria-label=&quot;Switch colours&quot;
-      class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
+&lt;$vars 
+palettes=&quot;[all[tiddlers+shadows]tag[$:/ThemeTweaks/SwitchPalette/tags]]&quot; 
+popupTiddler=&lt;&lt;qualify &quot;$:/state/palette-dropdown&quot;&gt;&gt;
+&gt;
+    &lt;$button popup=&lt;&lt;popupTiddler&gt;&gt;
+        tooltip=&quot;Switch colours&quot;
+        aria-label=&quot;Switch colours&quot;
+        class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
     &gt;
-      &lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
-	{{$:/ThemeTweaks/SwitchPalette/image}}
-      &lt;/$list&gt;
-
-      &lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
-	&lt;span class=&quot;tc-btn-text&quot;&gt;Switch colours&lt;/span&gt;
-      &lt;/$list&gt;
-
-      &lt;$reveal state=&lt;&lt;popupTiddler&gt;&gt; type=&quot;popup&quot; position=&quot;belowleft&quot; class=&quot;tc-drop-down&quot;&gt;
-	&lt;$list filter=&lt;&lt;palettes&gt;&gt;&gt;
-	  &lt;$button class=&quot;tc-btn-invisible&quot;&gt;
-      &lt;$list filter=&quot;[&lt;currentTiddler&gt;match{$:/palette}]&quot;&gt;
-	    &lt;li&gt;{{!!name}}&lt;/li&gt;
-     &lt;/$list&gt;
-      &lt;$list filter=&quot;[&lt;currentTiddler&gt;!match{$:/palette}]&quot;&gt;
-	    {{!!name}}
-     &lt;/$list&gt;
-
-	    &lt;$action-setfield $tiddler=&quot;$:/palette&quot; text={{!!title}}/&gt;
-	  &lt;/$button&gt;
-	&lt;/$list&gt;
-      &lt;/$reveal&gt;
-
+    &lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;{{$:/ThemeTweaks/SwitchPalette/image}}&lt;/$list&gt;
+    &lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;&lt;span class=&quot;tc-btn-text&quot;&gt;Switch colours&lt;/span&gt;&lt;/$list&gt;
+    &lt;$reveal default={{{ [subfilter:&lt;palettes&gt;count[]] }}} type=&quot;gt&quot; text=&quot;2&quot;&gt;
+            &lt;$reveal state=&lt;&lt;popupTiddler&gt;&gt; type=&quot;popup&quot; position=&quot;belowleft&quot; class=&quot;tc-drop-down&quot;&gt;
+                &lt;$list filter=&lt;&lt;palettes&gt;&gt;&gt;
+                    &lt;$button class=&quot;tc-btn-invisible&quot;&gt;
+                        &lt;$list filter=&quot;[&lt;currentTiddler&gt;match{$:/palette}]&quot;&gt;&lt;li&gt;{{!!name}}&lt;/li&gt;&lt;/$list&gt;
+                        &lt;$list filter=&quot;[&lt;currentTiddler&gt;!match{$:/palette}]&quot;&gt;{{!!name}}&lt;/$list&gt;
+                        &lt;$action-setfield $tiddler=&quot;$:/palette&quot; text={{!!title}} /&gt;
+                    &lt;/$button&gt;
+                &lt;/$list&gt;
+            &lt;/$reveal&gt;
+        &lt;/$reveal&gt;
+        &lt;$reveal default={{{ [subfilter:&lt;palettes&gt;count[]] }}} type=&quot;lteq&quot; text=&quot;2&quot;&gt;
+            &lt;$action-setfield $tiddler=&quot;$:/palette&quot; text={{{ [subfilter:&lt;palettes&gt;!match{$:/palette}] }}} /&gt;
+        &lt;/$reveal&gt;
     &lt;/$button&gt;
-  &lt;/$vars&gt;</pre>
+&lt;/$vars&gt;</pre>
 </div>
 <div bag="default" created="20201210170859810" modified="20210907112503276" revision="0" tags="$:/ThemeTweaks/SwitchPalette" title="$:/ThemeTweaks/SwitchPalette/image" type="text/vnd.tiddlywiki">
 <pre>&lt;svg width=&quot;20px&quot; height=&quot;20px&quot; viewBox=&quot;0 0 16 16&quot; class=&quot;bi bi-circle-half&quot; fill=&quot;currentColor&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
