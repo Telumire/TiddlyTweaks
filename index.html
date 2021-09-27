@@ -163,6 +163,12 @@ Error message and password prompt
 
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/more-page-actions</li>
 
+<li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-tiddler</li>
+
+<li>$:/config/PageControlButtons/Visibility/$:/plugins/kookma/commander/buttons/pagecontrol</li>
+
+<li>$:/config/PageControlButtons/Visibility/$:/ThemeTweaks/SwitchPalette/button</li>
+
 <li>$:/config/RelinkOnRename</li>
 
 <li>$:/config/Tiddlers/TitleLinks</li>
@@ -381,6 +387,8 @@ Error message and password prompt
 
 <li>$:/tags/SideBar</li>
 
+<li>$:/tags/TopRightBar</li>
+
 <li>$:/tags/ViewToolbar</li>
 
 <li>$:/Tasker</li>
@@ -513,6 +521,8 @@ Error message and password prompt
 
 <li>Spider graph with vanilla TW</li>
 
+<li>Tags used for the UI</li>
+
 <li>task</li>
 
 <li>Tips</li>
@@ -569,7 +579,7 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div bag="default" created="20210908152838707" modified="20210927230842364" revision="0" title="$:/config/AutoSave">
+<div bag="default" created="20210908152838707" modified="20210927234600904" revision="0" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
 <div bag="default" created="20210908160520283" modified="20210908160521340" revision="0" title="$:/config/flibbles/relink-titles/relink/$:/plugins/flibbles/relink-titles/rules/directory">
@@ -592,6 +602,15 @@ Error message and password prompt
 </div>
 <div bag="default" created="20210906233238783" modified="20210906235542673" revision="0" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/more-page-actions">
 <pre>show</pre>
+</div>
+<div created="20210927234347422" modified="20210927234347422" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-tiddler">
+<pre>hide</pre>
+</div>
+<div created="20210927234338953" modified="20210927234338953" title="$:/config/PageControlButtons/Visibility/$:/plugins/kookma/commander/buttons/pagecontrol">
+<pre>hide</pre>
+</div>
+<div created="20210927234315553" modified="20210927234317579" title="$:/config/PageControlButtons/Visibility/$:/ThemeTweaks/SwitchPalette/button">
+<pre>hide</pre>
 </div>
 <div bag="default" created="20210907001718660" modified="20210907162326236" revision="0" title="$:/config/RelinkOnRename">
 <pre>yes</pre>
@@ -10564,7 +10583,7 @@ $:/config/EditorToolbarButtons/Visibility/$(currentTiddler)$
 <div bag="default" created="20210921232125203" modified="20210927222734155" revision="0" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
 <pre>Updated  to correct the plural/singular form of the word counter</pre>
 </div>
-<div bag="default" created="20210906233615248" modified="20210927154548067" revision="0" tags="" title="$:/palette">
+<div bag="default" created="20210906233615248" modified="20210927234029303" revision="0" tags="" title="$:/palette">
 <pre>$:/palettes/GruvboxDark</pre>
 </div>
 <div bag="default" created="20210907010728393" description="A clean white palette to let you focus" modified="20210923004503310" name="Blanca" revision="0" tags="$:/tags/Palette $:/ThemeTweaks/SwitchPalette/tags PalettePreview" title="$:/palettes/Blanca" type="application/x-tiddler-dictionary">
@@ -14591,8 +14610,8 @@ padding-bottom: 10px;
 &lt;/$reveal&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20210927151324591" modified="20210927152635288" title="$:/state/advancedsearch/currentTab">
-<pre>$:/core/ui/AdvancedSearch/System</pre>
+<div created="20210927151324591" modified="20210927233322691" title="$:/state/advancedsearch/currentTab">
+<pre>$:/core/ui/AdvancedSearch/Filter</pre>
 </div>
 <div created="20210927093445210" modified="20210927093445210" title="$:/state/plugin-info-575017246-$:/plugins/danielo515/2click2edit--543222777">
 <pre>contents</pre>
@@ -14600,23 +14619,23 @@ padding-bottom: 10px;
 <div created="20210923165147348" modified="20210927221706495" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210923195039440" modified="20210927224321411" title="$:/state/sidebar">
+<div created="20210923195039440" modified="20210927234559228" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20210927151324591" modified="20210927152635288" title="$:/state/tab--1498284803">
-<pre>$:/core/ui/AdvancedSearch/System</pre>
+<div created="20210927151324591" modified="20210927233322692" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/Filter</pre>
 </div>
-<div created="20210923190323173" modified="20210923201121052" title="$:/state/tab--1963855381">
-<pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
+<div created="20210923190323173" modified="20210927234310323" title="$:/state/tab--1963855381">
+<pre>$:/core/ui/ControlPanel/Toolbars</pre>
 </div>
-<div bag="default" created="20210923145356267" modified="20210927154823940" revision="1" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Info</pre>
+<div bag="default" created="20210923145356267" modified="20210927234306822" revision="1" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
-<div created="20210923162159858" modified="20210927225131226" title="$:/state/tab/sidebar--595412856">
-<pre>$:/ThemeTweaks/style/fonts</pre>
+<div created="20210923162159858" modified="20210927234050293" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20210923190359522" modified="20210923190415229" title="$:/state/tabs/controlpanel/toolbars-1345989671">
-<pre>$:/core/ui/ControlPanel/Toolbars/ViewToolbar</pre>
+<div created="20210923190359522" modified="20210927234312426" title="$:/state/tabs/controlpanel/toolbars-1345989671">
+<pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
 <div bag="default" revision="1" title="$:/status/IsAnonymous">
 <pre>yes</pre>
@@ -14633,13 +14652,16 @@ padding-bottom: 10px;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20210927225251772" list="$:/ThemeTweaks/style/fonts" modified="20210927225251772" title="$:/StoryList">
+<div list="Index $:/TiddlyTweaks Tips" title="$:/StoryList">
 <pre></pre>
 </div>
-<div bag="default" created="20210923144105193" list="$:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/plugins/kookma/commander/buttons/pagecontrol $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/refresh $:/core/ui/Buttons/more-page-actions $:/SaveToGitHub/Button $:/ThemeTweaks/SwitchPalette/button" modified="20210923144105362" revision="0" title="$:/tags/PageControls" type="text/vnd.tiddlywiki">
+<div bag="default" created="20210923144105193" list="$:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/plugins/kookma/commander/buttons/pagecontrol $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/refresh $:/core/ui/Buttons/more-page-actions $:/SaveToGitHub/Button $:/ThemeTweaks/SwitchPalette/button" modified="20210927234325710" revision="0" title="$:/tags/PageControls" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20210907161144910" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent $:/core/ui/SideBar/Tools $:/core/ui/SideBar/More $:/SaveToGitHub/Settings $:/Tasker/Kanban $:/About" modified="20210907161258843" revision="0" title="$:/tags/SideBar">
+<pre></pre>
+</div>
+<div created="20210927233233624" list="$:/ThemeTweaks/SwitchPalette/button $:/core/ui/TopBar/menu" modified="20210927233654668" tagging="after" title="$:/tags/TopRightBar">
 <pre></pre>
 </div>
 <div bag="default" created="20210922000559330" list="$:/core/ui/Buttons/more-tiddler-actions $:/spoiler/Button $:/SaveToGitHub/Button/Private $:/SaveToGitHub/Button/GitHubPermalink $:/SaveToGitHub/Button/GitHubPermaView $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/fold-bar $:/core/ui/Buttons/edit $:/Tasker/ui/Buttons/tasker $:/ThemeTweaks/button/right_story" modified="20210922031727826" revision="0" title="$:/tags/ViewToolbar">
@@ -15630,7 +15652,7 @@ fill={{{[&lt;fill&gt;]:reduce[{$:/palette}getindex&lt;currentTiddler&gt;match[in
 <div bag="default" created="20210811020158840" modified="20210923184724058" revision="0" tagging="after" tags="$:/ThemeTweaks/SwitchPalette $:/ThemeTweaks" title="$:/ThemeTweaks/SwitchPalette">
 <pre></pre>
 </div>
-<div bag="default" caption="{{$:/ThemeTweaks/SwitchPalette/image}} Switch palette" created="20201210171047824" description="Choose a colour palette" modified="20210927131523780" revision="0" source="[[modified from https://nicolas.petton.fr/tw/notebook.html]]" tags="$:/tags/PageControls $:/ThemeTweaks/SwitchPalette" task="doing" title="$:/ThemeTweaks/SwitchPalette/button" type="text/vnd.tiddlywiki">
+<div bag="default" caption="{{$:/ThemeTweaks/SwitchPalette/image}} Switch palette" created="20201210171047824" description="Choose a colour palette" modified="20210927233444384" revision="0" source="[[modified from https://nicolas.petton.fr/tw/notebook.html]]" tags="$:/tags/PageControls $:/ThemeTweaks/SwitchPalette $:/tags/TopRightBar" task="doing" title="$:/ThemeTweaks/SwitchPalette/button" type="text/vnd.tiddlywiki">
 <pre>\whitespace trim
 &lt;$vars 
 palettes=&quot;[all[tiddlers+shadows]tag[$:/ThemeTweaks/SwitchPalette/tags]]&quot; 
@@ -15775,6 +15797,9 @@ To add all the tiddlers tagged with $:/Tasker :
 </div>
 <div created="20210927093219321" modified="20210927093321252" tags="" task="todo" title="Spider graph with vanilla TW">
 <pre>see https://Telumire.github.io/TW-tips/index.html#:%5B%5B(svg-spider)%5D%5D</pre>
+</div>
+<div created="20210927233510946" modified="20210927233622054" tags="tip" title="Tags used for the UI">
+<pre>{{{ [search:title[$:/tags]] }}}</pre>
 </div>
 <div bag="default" created="20210907001351123" list="$:/showInfo/search/template $:/ThemeTweaks/SwitchPalette/button $:/Tasker/ui/Buttons/tasker" modified="20210922211459578" revision="0" title="task">
 <pre></pre>
