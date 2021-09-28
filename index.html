@@ -147,6 +147,12 @@ Error message and password prompt
 
 <li>$:/AdvancedSearch</li>
 
+<li>$:/bookmarks</li>
+
+<li>$:/bookmarks/button</li>
+
+<li>$:/bookmarks/button/style</li>
+
 <li>$:/config/AutoSave</li>
 
 <li>$:/config/flibbles/relink-titles/relink/$:/plugins/flibbles/relink-titles/rules/directory</li>
@@ -483,6 +489,8 @@ Error message and password prompt
 
 <li>$:/ThemeTweaks/svg</li>
 
+<li>$:/ThemeTweaks/svg/star</li>
+
 <li>$:/ThemeTweaks/svg/style/external_link</li>
 
 <li>$:/ThemeTweaks/svg/style/filter_color</li>
@@ -579,7 +587,76 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div bag="default" created="20210908152838707" modified="20210927234600904" revision="0" title="$:/config/AutoSave">
+<div caption="bookmarks" created="20210928134659548" modified="20210928140340097" tags="$:/tags/SideBar" title="$:/bookmarks">
+<pre>&lt;ul style=&quot;list-style:none;&quot;&gt;
+&lt;$list filter=&quot;[tag[bookmark]sort[title]]&quot;&gt;
+&lt;li&gt;{{||$:/bookmarks/button}} - &lt;$link/&gt;&lt;/li&gt;
+&lt;/$list&gt;
+&lt;/ul&gt;</pre>
+</div>
+<div bag="default" caption="{{$:/core/images/preview-open}} Bookmark" created="20210928120601334" description="Add a bookmark" hint="Add a bookmark" modified="20210928140341797" revision="0" tags="$:/bookmarks $:/tags/ViewToolbar" title="$:/bookmarks/button">
+<pre>\whitespace trim
+&lt;$button class=tc-btn-invisible tooltip={{$:/bookmarks/button!!hint}}&gt;
+&lt;$action-listops  $tiddler=&lt;&lt;currentTiddler&gt;&gt; $tags=&quot;+[toggle[bookmark]]&quot; /&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot; variable=_&gt;
+&lt;$list filter=&quot;[all[current]tag[bookmark]]&quot;&gt;
+{{$:/ThemeTweaks/svg/star}}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[all[current]!tag[bookmark]]&quot;&gt;
+&lt;span class=&quot;star-empty&quot;&gt;
+{{$:/ThemeTweaks/svg/star}}
+&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
+&lt;span class=&quot;tc-btn-text&quot;&gt;
+&lt;$text text=&quot; &quot;/&gt;
+&lt;$text text={{$:/bookmarks/button!!caption}}/&gt;
+&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$button&gt;</pre>
+</div>
+<div created="20210928121007298" modified="20210928140237365" tags="$:/bookmark/button $:/bookmarks $:/tags/Stylesheet" title="$:/bookmarks/button/style">
+<pre>&lt;pre&gt;
+.tc-image-star path{
+stroke-linejoin:round;
+stroke-width:10px;
+}
+
+button .tc-image-star path{
+stroke:&lt;&lt;color foreground&gt;&gt;;
+fill:&lt;&lt;color foreground&gt;&gt;;
+}
+button:hover .tc-image-star path{
+stroke:&lt;&lt;color foreground-hover&gt;&gt;;
+fill:&lt;&lt;color foreground-hover&gt;&gt;;
+}
+button:selected .tc-image-star path{
+stroke:&lt;&lt;color foreground-selected&gt;&gt;;
+fill:&lt;&lt;color foreground-selected&gt;&gt;;
+}
+
+.tc-tiddler-controls button .tc-image-star path{
+stroke:&lt;&lt;color tiddler-controls-foreground&gt;&gt;;
+fill:&lt;&lt;color tiddler-controls-foreground&gt;&gt;;
+}
+
+.tc-tiddler-controls button:hover .tc-image-star path{
+stroke:&lt;&lt;color tiddler-controls-foreground-hover&gt;&gt;;
+fill:&lt;&lt;color tiddler-controls-foreground-hover&gt;&gt;;
+}
+
+.tc-tiddler-controls button:selected .tc-image-star path{
+stroke:&lt;&lt;color tiddler-controls-foreground-selected&gt;&gt;;
+fill:&lt;&lt;color tiddler-controls-foreground-selected&gt;&gt;;
+}
+
+.tc-tiddler-controls button .star-empty .tc-image-star path,
+button .star-empty .tc-image-star path{
+fill:none;
+}</pre>
+</div>
+<div bag="default" created="20210908152838707" modified="20210928140344293" revision="0" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
 <div bag="default" created="20210908160520283" modified="20210908160521340" revision="0" title="$:/config/flibbles/relink-titles/relink/$:/plugins/flibbles/relink-titles/rules/directory">
@@ -14610,8 +14687,8 @@ padding-bottom: 10px;
 &lt;/$reveal&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20210927151324591" modified="20210927233322691" title="$:/state/advancedsearch/currentTab">
-<pre>$:/core/ui/AdvancedSearch/Filter</pre>
+<div created="20210927151324591" modified="20210928132720132" title="$:/state/advancedsearch/currentTab">
+<pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20210927093445210" modified="20210927093445210" title="$:/state/plugin-info-575017246-$:/plugins/danielo515/2click2edit--543222777">
 <pre>contents</pre>
@@ -14619,11 +14696,11 @@ padding-bottom: 10px;
 <div created="20210923165147348" modified="20210927221706495" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210923195039440" modified="20210927234559228" title="$:/state/sidebar">
+<div created="20210923195039440" modified="20210928140253240" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20210927151324591" modified="20210927233322692" title="$:/state/tab--1498284803">
-<pre>$:/core/ui/AdvancedSearch/Filter</pre>
+<div created="20210927151324591" modified="20210928132720132" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20210923190323173" modified="20210927234310323" title="$:/state/tab--1963855381">
 <pre>$:/core/ui/ControlPanel/Toolbars</pre>
@@ -14631,8 +14708,8 @@ padding-bottom: 10px;
 <div bag="default" created="20210923145356267" modified="20210927234306822" revision="1" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
-<div created="20210923162159858" modified="20210927234050293" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20210923162159858" modified="20210928134932729" title="$:/state/tab/sidebar--595412856">
+<pre>$:/bookmarks</pre>
 </div>
 <div created="20210923190359522" modified="20210927234312426" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
@@ -14652,7 +14729,7 @@ padding-bottom: 10px;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="Index $:/TiddlyTweaks Tips" title="$:/StoryList">
+<div created="20210928134653316" list="$:/AdvancedSearch $:/bookmarks/button $:/bookmarks" modified="20210928134759601" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20210923144105193" list="$:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/plugins/kookma/commander/buttons/pagecontrol $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/refresh $:/core/ui/Buttons/more-page-actions $:/SaveToGitHub/Button $:/ThemeTweaks/SwitchPalette/button" modified="20210927234325710" revision="0" title="$:/tags/PageControls" type="text/vnd.tiddlywiki">
@@ -15445,6 +15522,10 @@ margin-right:1ch;
 <div bag="default" created="20210922143046823" list="$:/ThemeTweaks/svg/style/external_link $:/ThemeTweaks/svg/url $:/ThemeTweaks/svg/style/system_images $:/ThemeTweaks/svg/wikipedia" modified="20210922145556648" revision="0" tagging="after" tags="$:/ThemeTweaks" title="$:/ThemeTweaks/svg">
 <pre></pre>
 </div>
+<div created="20210928131422906" modified="20210928133510572" tags="$:/ThemeTweaks $:/ThemeTweaks/svg $:/tags/Image" title="$:/ThemeTweaks/svg/star">
+<pre>&lt;svg width=&quot;22pt&quot; height=&quot;22pt&quot; class=&quot;tc-image-star tc-image-button&quot; viewBox=&quot;0 0 128 128&quot;&gt;
+&lt;path d=&quot;M6 48h42L61 8c1-3 5-3 6 0l13 40h42c3 0 4 4 2 6L90 78l13 40c1 3-3 6-5 4L64 97l-34 25c-2 2-6-1-5-4l13-40L4 54c-2-2-1-6 2-6z&quot;/&gt;&lt;/svg&gt;</pre>
+</div>
 <div bag="default" created="20210613102831878" description="https://tiddlywiki.com https://github.com" modified="20210922145536661" revision="0" tagging-tiddler="" tags="$:/ThemeTweaks $:/tags/Stylesheet $:/ThemeTweaks/svg" title="$:/ThemeTweaks/svg/style/external_link">
 <pre>\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline html
 &lt;pre&gt;
@@ -15751,7 +15832,7 @@ span.transclude-edit:hover .transclude-edit-button{
 <div bag="default" created="20210922215428269" description="todo : add the filter" filter="" modified="20210922220333450" revision="0" tags="" title="Export this wiki settings">
 <pre>&lt;$macrocall $name=&quot;openTiddlers&quot; filter={{!!filter}} text=&quot;Drag to import the settings&quot;/&gt;</pre>
 </div>
-<div bag="default" created="20210908150922338" description-task="See http://j.d.tiddlyspot.com/ for a better layout" modified="20210927222903875" revision="0" tags="pinned" task="todo" title="Index">
+<div bag="default" created="20210908150922338" description-task="See http://j.d.tiddlyspot.com/ for a better layout" modified="20210928121249770" revision="0" tags="pinned" task="todo" title="Index">
 <pre>!Welcome
 
 I use this wiki to quickly add tweaks I often use into new tiddlywikis. Some are mine, other not - see the source field of the tiddler. This is a cleaner version of my other wiki, https://telumire.github.io/TW-tips/. 
