@@ -199,6 +199,8 @@ Error message and password prompt
 
 <li>$:/core/images/locked-padlock</li>
 
+<li>$:/core/ui/Buttons/info</li>
+
 <li>$:/core/ui/EditTemplate/body</li>
 
 <li>$:/DefaultTiddlers</li>
@@ -519,6 +521,8 @@ Error message and password prompt
 
 <li>$:/transclude/edit/style</li>
 
+<li>Comma separated parameters</li>
+
 <li>Export this wiki settings</li>
 
 <li>Index</li>
@@ -528,6 +532,14 @@ Error message and password prompt
 <li>pinned</li>
 
 <li>Spider graph with vanilla TW</li>
+
+<li>Tags 1,2,3</li>
+
+<li>Tags 1,2,3 + another</li>
+
+<li>Tags 1,2,3,4</li>
+
+<li>Tags 1,2,3,4 + another</li>
 
 <li>Tags used for the UI</li>
 
@@ -587,14 +599,14 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div caption="bookmarks" created="20210928134659548" modified="20210928140340097" tags="$:/tags/SideBar" title="$:/bookmarks">
+<div caption="bookmarks" created="20210928134659548" description="A very simple bookmark manager" modified="20210928140700318" tagging="after" tags="$:/tags/SideBar $:/TiddlyTweaks $:/bookmarks" title="$:/bookmarks">
 <pre>&lt;ul style=&quot;list-style:none;&quot;&gt;
 &lt;$list filter=&quot;[tag[bookmark]sort[title]]&quot;&gt;
 &lt;li&gt;{{||$:/bookmarks/button}} - &lt;$link/&gt;&lt;/li&gt;
 &lt;/$list&gt;
 &lt;/ul&gt;</pre>
 </div>
-<div bag="default" caption="{{$:/core/images/preview-open}} Bookmark" created="20210928120601334" description="Add a bookmark" hint="Add a bookmark" modified="20210928140341797" revision="0" tags="$:/bookmarks $:/tags/ViewToolbar" title="$:/bookmarks/button">
+<div bag="default" caption="Bookmark" created="20210928120601334" description="Add a bookmark" hint="Add a bookmark" modified="20210928142623580" revision="0" tags="$:/bookmarks $:/tags/ViewToolbar" title="$:/bookmarks/button">
 <pre>\whitespace trim
 &lt;$button class=tc-btn-invisible tooltip={{$:/bookmarks/button!!hint}}&gt;
 &lt;$action-listops  $tiddler=&lt;&lt;currentTiddler&gt;&gt; $tags=&quot;+[toggle[bookmark]]&quot; /&gt;
@@ -656,7 +668,7 @@ button .star-empty .tc-image-star path{
 fill:none;
 }</pre>
 </div>
-<div bag="default" created="20210908152838707" modified="20210928140411564" revision="0" title="$:/config/AutoSave">
+<div bag="default" created="20210908152838707" modified="20210929133835943" revision="0" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
 <div bag="default" created="20210908160520283" modified="20210908160521340" revision="0" title="$:/config/flibbles/relink-titles/relink/$:/plugins/flibbles/relink-titles/rules/directory">
@@ -710,7 +722,7 @@ fill:none;
 <div bag="default" created="20210922023330100" modified="20210923190340060" revision="0" title="$:/config/ViewToolbarButtons/Visibility/$:/SaveToGitHub/Button/Private">
 <pre>hide</pre>
 </div>
-<div created="20210923190343412" modified="20210923190352177" title="$:/config/ViewToolbarButtons/Visibility/$:/Tasker/ui/Buttons/tasker">
+<div created="20210923190343412" modified="20210928142646044" title="$:/config/ViewToolbarButtons/Visibility/$:/Tasker/ui/Buttons/tasker">
 <pre>show</pre>
 </div>
 <div bag="default" created="20210906233330670" modified="20210907003013911" revision="0" title="$:/config/WikiParserRules/Inline/wikilink">
@@ -10589,6 +10601,36 @@ fill:none;
 <div bag="default" created="20210908182003239" modified="20210922211150420" revision="0" tags="$:/tags/Image" title="$:/core/images/locked-padlock">
 <pre>&lt;svg width=&quot;22pt&quot; height=&quot;22pt&quot; class=&quot;tc-image-locked-padlock tc-image-button&quot; viewBox=&quot;0 0 128 128&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M96.472 64H105v32.01C105 113.674 90.674 128 73.001 128H56C38.318 128 24 113.677 24 96.01V64h8c.003-15.723.303-47.731 32.16-47.731 31.794 0 32.305 32.057 32.312 47.731zm-15.897 0H48.44c.002-16.287.142-32 15.719-32 15.684 0 16.977 16.136 16.415 32zM67.732 92.364A8.503 8.503 0 0064.5 76a8.5 8.5 0 00-3.498 16.25l-5.095 22.77H72.8l-5.07-22.656z&quot;/&gt;&lt;/svg&gt;</pre>
 </div>
+<div caption="{{$:/core/images/info-button}} {{$:/language/Buttons/Info/Caption}}" created="20210928142708391" description="{{$:/language/Buttons/Info/Hint}}" modified="20210928142708391" tags="$:/tags/ViewToolbar" title="$:/core/ui/Buttons/info">
+<pre>\whitespace trim
+\define button-content()
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
+{{$:/core/images/info-button}}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
+&lt;span class=&quot;tc-btn-text&quot;&gt;
+&lt;$text text={{$:/language/Buttons/Info/Caption}}/&gt;
+&lt;/span&gt;
+&lt;/$list&gt;
+\end
+&lt;$reveal state=&quot;$:/config/TiddlerInfo/Mode&quot; type=&quot;match&quot; text=&quot;popup&quot;&gt;
+&lt;$button popup=&lt;&lt;tiddlerInfoState&gt;&gt; tooltip={{$:/language/Buttons/Info/Hint}} aria-label={{$:/language/Buttons/Info/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt; selectedClass=&quot;tc-selected&quot;&gt;
+&lt;$macrocall $name=&quot;button-content&quot; mode=&quot;inline&quot;/&gt;
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;$reveal state=&quot;$:/config/TiddlerInfo/Mode&quot; type=&quot;match&quot; text=&quot;sticky&quot;&gt;
+&lt;$reveal state=&lt;&lt;tiddlerInfoState&gt;&gt; type=&quot;match&quot; text=&quot;&quot; default=&quot;&quot;&gt;
+&lt;$button set=&lt;&lt;tiddlerInfoState&gt;&gt; setTo=&quot;yes&quot; tooltip={{$:/language/Buttons/Info/Hint}} aria-label={{$:/language/Buttons/Info/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt; selectedClass=&quot;tc-selected&quot;&gt;
+&lt;$macrocall $name=&quot;button-content&quot; mode=&quot;inline&quot;/&gt;
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;$reveal state=&lt;&lt;tiddlerInfoState&gt;&gt; type=&quot;nomatch&quot; text=&quot;&quot; default=&quot;&quot;&gt;
+&lt;$button set=&lt;&lt;tiddlerInfoState&gt;&gt; setTo=&quot;&quot; tooltip={{$:/language/Buttons/Info/Hint}} aria-label={{$:/language/Buttons/Info/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt; selectedClass=&quot;tc-selected&quot;&gt;
+&lt;$macrocall $name=&quot;button-content&quot; mode=&quot;inline&quot;/&gt;
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;/$reveal&gt;</pre>
+</div>
 <div bag="default" created="20210910123934410" hide-preview="yes" modified="20210910132032444" revision="0" tags="$:/tags/EditTemplate" title="$:/core/ui/EditTemplate/body">
 <pre>\define lingo-base() $:/language/EditTemplate/Body/
 \define config-visibility-title()
@@ -10649,18 +10691,22 @@ $:/config/EditorToolbarButtons/Visibility/$(currentTiddler)$
 <div created="20210923164244623" modified="20210923201339940" tags="" title="$:/favicon.ico" type="text/vnd.tiddlywiki">
 <pre>&lt;$vars svg={{$:/core/images/theme-button}} fill={{{[&lt;fill&gt;]:reduce[{$:/palette}getindex&lt;currentTiddler&gt;match[inherit]then[foreground]else&lt;currentTiddler&gt;]:reduce[{$:/palette}getindex&lt;currentTiddler&gt;else&lt;currentTiddler&gt;]:reduce[&lt;currentTiddler&gt;is[blank]then[$:/palettes/Vanilla]getindex[foreground]else&lt;currentTiddler&gt;]+[search-replace[#],[#]]}}}&gt;&lt;$text text={{{[[&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;]][&lt;fill&gt;][[&quot; width=&quot;22pt&quot; height=&quot;22pt&quot;&gt;]][&lt;svg&gt;][[&lt;/svg&gt;]]+[join[]]}}} /&gt;&lt;/$vars&gt;</pre>
 </div>
-<div status="complete" title="$:/Import">
+<div modified="20210928145412273" status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/ThemeTweaks/style/fonts]]</pre>
+# [[Tags 1,2,3,4]]</pre>
 </div>
 <div bag="default" revision="0" title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div bag="default" created="20210921232125203" modified="20210928140405300" revision="0" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
-<pre>Added a bookmark button</pre>
+<div bag="default" created="20210921232125203" modified="20210929133827749" revision="0" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
+<pre>Added tags
+
+hide-title
+hide-subtitle
+hide-tags</pre>
 </div>
-<div bag="default" created="20210906233615248" modified="20210927234029303" revision="0" tags="" title="$:/palette">
+<div bag="default" created="20210906233615248" modified="20210928145113950" revision="0" tags="" title="$:/palette">
 <pre>$:/palettes/GruvboxDark</pre>
 </div>
 <div bag="default" created="20210907010728393" description="A clean white palette to let you focus" modified="20210923004503310" name="Blanca" revision="0" tags="$:/tags/Palette $:/ThemeTweaks/SwitchPalette/tags PalettePreview" title="$:/palettes/Blanca" type="application/x-tiddler-dictionary">
@@ -14042,7 +14088,7 @@ See:
 &lt;/span&gt;
 &lt;/$button&gt;</pre>
 </div>
-<div bag="default" caption="GitHub permalink" created="20210921232322676" description="Button to get the GitHub Page url of a tiddler. TODO : add a proper icon" hint="Click to copy the GitHub Page url of this tiddler to the clipboard" modified="20210923191943359" revision="0" tags="$:/SaveToGitHub $:/tags/ViewToolbar" task="todo" title="$:/SaveToGitHub/Button/GitHubPermalink">
+<div bag="default" caption="GitHub permalink" created="20210921232322676" description="Button to get the GitHub Page url of a tiddler. " hint="Click to copy the GitHub Page url of this tiddler to the clipboard" modified="20210928142506526" revision="0" tags="$:/SaveToGitHub $:/tags/ViewToolbar" title="$:/SaveToGitHub/Button/GitHubPermalink">
 <pre>\whitespace trim
 &lt;$vars separator-start=&quot;:[[&quot; separator-end=&quot;]]&quot;&gt;
 &lt;$set name=GithubPageTiddlerUrl filter=&quot;
@@ -14070,7 +14116,7 @@ param=&lt;&lt;GithubPageTiddlerUrl&gt;&gt; tooltip={{!!hint}}&gt;
 &lt;/$set&gt;
 &lt;/$vars&gt;</pre>
 </div>
-<div bag="default" caption="GitHub permaview" created="20210922001530951" description="Button to get the ~GitHub Page url of this story. TODO : add a proper icon" hint="Click to copy the ~GitHub Page url of this story to the clipboard" modified="20210923191955949" revision="0" tags="$:/SaveToGitHub $:/tags/ViewToolbar" task="todo" title="$:/SaveToGitHub/Button/GitHubPermaView">
+<div bag="default" caption="GitHub permaview" created="20210922001530951" description="Button to get the ~GitHub Page url of this story. TODO : add a proper icon" hint="Click to copy the ~GitHub Page url of this story to the clipboard" modified="20210928142459775" revision="0" tags="$:/SaveToGitHub $:/tags/ViewToolbar" task="todo" title="$:/SaveToGitHub/Button/GitHubPermaView">
 <pre>\whitespace trim
 &lt;$vars separator=&quot;]][[&quot; separator-start=&quot;:[[&quot; separator-end=&quot;]]&quot;&gt;
 &lt;$set name=GithubPageTiddlerUrl filter=&quot;
@@ -14096,7 +14142,7 @@ param=&lt;&lt;GithubPageTiddlerUrl&gt;&gt; tooltip={{!!hint}}&gt;
 &lt;/$set&gt;
 &lt;/$vars&gt;</pre>
 </div>
-<div bag="default" caption="Private" created="20210922022754002" description="Mark the tiddler as private." hint="Click to set the tiddler to private" modified="20210923190220678" revision="0" tags="$:/SaveToGitHub $:/tags/EditToolbar $:/tags/ViewToolbar" title="$:/SaveToGitHub/Button/Private">
+<div bag="default" caption="Private" created="20210922022754002" description="Mark the tiddler as private." hint="Click to set the tiddler to private" modified="20210928142451496" revision="0" tags="$:/SaveToGitHub $:/tags/EditToolbar $:/tags/ViewToolbar" title="$:/SaveToGitHub/Button/Private">
 <pre>\whitespace trim
 &lt;$button class=tc-btn-invisible tooltip={{$:/SaveToGitHub/Button/Private!!hint}}&gt;
 &lt;$action-listops  $tiddler=&lt;&lt;currentTiddler&gt;&gt; $tags=&quot;+[toggle[private]]&quot; /&gt;
@@ -14591,10 +14637,10 @@ padding:.5em;
     &lt;$list filter=&quot;[all[current]has[description]]&quot;&gt; - &lt;span style=&quot;font-style:italic;&quot;&gt;{{!!description}}&lt;/span&gt;&lt;/$list&gt;
 &lt;/li&gt;</pre>
 </div>
-<div bag="default" created="20210906233115255" modified="20210922221930605" revision="0" tags="" title="$:/SiteSubtitle">
+<div bag="default" created="20210906233115255" modified="20210929132925202" revision="0" tags="" title="$:/SiteSubtitle">
 <pre>Small tweaks for &lt;a href=&quot;https://tiddlywiki.com/&quot;&gt;~TiddlyWiki&lt;/a&gt;</pre>
 </div>
-<div bag="default" created="20210906233004035" modified="20210927152332072" revision="0" tags="$:/SiteTitle" title="$:/SiteTitle">
+<div bag="default" created="20210906233004035" modified="20210929132848831" revision="0" tags="$:/SiteTitle" title="$:/SiteTitle">
 <pre>\whitespace trim
 &lt;a href={{{[subfilter{$:/SaveToGitHub/GithubPageUrlFilter}]}}} class=&quot;site-title-link no-icon&quot;&gt;~TiddlyTweaks&lt;/a&gt;</pre>
 </div>
@@ -14687,32 +14733,32 @@ padding-bottom: 10px;
 &lt;/$reveal&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20210927151324591" modified="20210928132720132" title="$:/state/advancedsearch/currentTab">
+<div created="20210927151324591" modified="20210928151957202" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20210927093445210" modified="20210927093445210" title="$:/state/plugin-info-575017246-$:/plugins/danielo515/2click2edit--543222777">
 <pre>contents</pre>
 </div>
-<div created="20210923165147348" modified="20210927221706495" title="$:/state/showeditpreview">
+<div created="20210923165147348" modified="20210928152013615" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210923195039440" modified="20210928140253240" title="$:/state/sidebar">
+<div created="20210923195039440" modified="20210929133714009" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20210927151324591" modified="20210928132720132" title="$:/state/tab--1498284803">
+<div created="20210927151324591" modified="20210928151957202" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20210923190323173" modified="20210927234310323" title="$:/state/tab--1963855381">
 <pre>$:/core/ui/ControlPanel/Toolbars</pre>
 </div>
-<div bag="default" created="20210923145356267" modified="20210927234306822" revision="1" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Appearance</pre>
+<div bag="default" created="20210923145356267" modified="20210929133209467" revision="1" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Settings</pre>
 </div>
-<div created="20210923162159858" modified="20210928140357466" title="$:/state/tab/sidebar--595412856">
+<div created="20210923162159858" modified="20210929133757132" title="$:/state/tab/sidebar--595412856">
 <pre>$:/SaveToGitHub/Settings</pre>
 </div>
-<div created="20210923190359522" modified="20210927234312426" title="$:/state/tabs/controlpanel/toolbars-1345989671">
-<pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
+<div created="20210923190359522" modified="20210928142206927" title="$:/state/tabs/controlpanel/toolbars-1345989671">
+<pre>$:/core/ui/ControlPanel/Toolbars/ViewToolbar</pre>
 </div>
 <div bag="default" revision="1" title="$:/status/IsAnonymous">
 <pre>yes</pre>
@@ -15200,12 +15246,20 @@ subFilter=&lt;&lt;subFilter&gt;&gt;
 <div bag="default" created="20210907011026232" description="Various theme tweaks to improve the look and feel of TW (according to me)" list="$:/ThemeTweaks $:/ThemeTweaks/button/right_story $:/ThemeTweaks/caption/right_story $:/ThemeTweaks/font/style/Roboto_Slab $:/ThemeTweaks/icon/external_link $:/ThemeTweaks/icon/warning $:/ThemeTweaks/svg/style/external_link $:/ThemeTweaks/style/fold_banner $:/ThemeTweaks/style/fonts $:/ThemeTweaks/style/hide-until-hover $:/ThemeTweaks/style/right_story $:/ThemeTweaks/style/sidebar $:/ThemeTweaks/style/texte-align $:/ThemeTweaks/style/tiddler_controls $:/ThemeTweaks/style/warning" modified="20210923184132624" revision="0" tagging="after" tags="$:/ThemeTweaks $:/TiddlyTweaks" title="$:/ThemeTweaks">
 <pre></pre>
 </div>
-<div bag="default" caption="{{$:/core/images/right-arrow}} {{$:/ThemeTweaks/caption/right_story}}" created="20210728115549996" description="Move tiddler to right column" modified="20210922205710630" revision="0" tags="$:/tags/Macro $:/tags/ViewToolbar $:/tags/EditToolbar $:/ThemeTweaks" title="$:/ThemeTweaks/button/right_story">
+<div bag="default" caption="Move tiddler to the right" created="20210728115549996" description="Move tiddler to right column" modified="20210928142527474" revision="0" tags="$:/tags/Macro $:/tags/ViewToolbar $:/tags/EditToolbar $:/ThemeTweaks" title="$:/ThemeTweaks/button/right_story">
 <pre>\whitespace trim
-\define right-story-toggle() &lt;$action-listops $field=&quot;tags&quot; $subfilter=&quot;+[toggle[$:/right-story]]&quot;/&gt;
-&lt;$button actions=&lt;&lt;right-story-toggle&gt;&gt; class=&quot;tc-btn-invisible display&quot; tooltip={{$:/ThemeTweaks/caption/right_story}}&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot; tooltip={{$:/ThemeTweaks/caption/right_story}}&gt;
+&lt;$action-listops $tiddler=&lt;&lt;currentTiddler&gt;&gt; $tags=&quot;+[toggle[$:/right-story]]&quot;/&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot; variable=_&gt;
 &lt;$list filter=&quot;[all[current]tag[$:/right-story]]&quot;&gt;{{$:/core/images/left-arrow}}&lt;/$list&gt;
 &lt;$list filter=&quot;[all[current]!tag[$:/right-story]]&quot;&gt;{{$:/core/images/right-arrow}}&lt;/$list&gt;
+&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
+&lt;span class=&quot;tc-btn-text&quot;&gt;
+&lt;$text text=&quot; &quot;/&gt;
+&lt;$text text={{$:/ThemeTweaks/caption/right_story}}/&gt;
+&lt;/span&gt;
+&lt;/$list&gt;
 &lt;/$button&gt;</pre>
 </div>
 <div bag="default" created="20210730135105270" modified="20210907180810917" revision="0" tags="$:/ThemeTweaks" title="$:/ThemeTweaks/caption/right_story">
@@ -15393,7 +15447,7 @@ margin-left:1ch;
 margin-right:1ch;
 }</pre>
 </div>
-<div bag="default" contrast="&lt;$macrocall $name=&quot;contrastcolour&quot; target=&lt;&lt;tag-background&gt;&gt; fallbackTarge=&lt;&lt;color tag-background&gt;&gt; colourA=&lt;&lt;color foreground&gt;&gt; colourB=&lt;&lt;color background&gt;&gt;/&gt;" created="20210917130124992" description="todo : add contrastcolour macro support for better contrast with Blanca, add css for overriding default icon when an icon is already set" modified="20210923011141909" revision="0" tags="$:/ThemeTweaks $:/tags/Stylesheet $:/right-story" task="todo" title="$:/ThemeTweaks/style/tags">
+<div bag="default" contrast="&lt;$macrocall $name=&quot;contrastcolour&quot; target=&lt;&lt;tag-background&gt;&gt; fallbackTarge=&lt;&lt;color tag-background&gt;&gt; colourA=&lt;&lt;color foreground&gt;&gt; colourB=&lt;&lt;color background&gt;&gt;/&gt;" created="20210917130124992" description="todo : add contrastcolour macro support for better contrast with Blanca, add css for overriding default icon when an icon is already set" modified="20210929133736062" revision="0" tags="$:/ThemeTweaks $:/tags/Stylesheet $:/right-story" task="todo" title="$:/ThemeTweaks/style/tags">
 <pre>\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline html
 &lt;pre&gt;
 
@@ -15433,6 +15487,7 @@ button.tc-tag-label, span.tc-tag-label{
 }
 
 .tc-tagged-hide-title .tc-title,
+.tc-tagged-hide-subtitle .tc-subtitle,
 .tc-tagged-hide-tags .tc-tags-wrapper
 {
 display:none;
@@ -15522,11 +15577,10 @@ margin-right:1ch;
 <div bag="default" created="20210922143046823" list="$:/ThemeTweaks/svg/style/external_link $:/ThemeTweaks/svg/url $:/ThemeTweaks/svg/style/system_images $:/ThemeTweaks/svg/wikipedia" modified="20210922145556648" revision="0" tagging="after" tags="$:/ThemeTweaks" title="$:/ThemeTweaks/svg">
 <pre></pre>
 </div>
-<div created="20210928131422906" modified="20210928133510572" tags="$:/ThemeTweaks $:/ThemeTweaks/svg $:/tags/Image" title="$:/ThemeTweaks/svg/star">
-<pre>&lt;svg width=&quot;22pt&quot; height=&quot;22pt&quot; class=&quot;tc-image-star tc-image-button&quot; viewBox=&quot;0 0 128 128&quot;&gt;
-&lt;path d=&quot;M6 48h42L61 8c1-3 5-3 6 0l13 40h42c3 0 4 4 2 6L90 78l13 40c1 3-3 6-5 4L64 97l-34 25c-2 2-6-1-5-4l13-40L4 54c-2-2-1-6 2-6z&quot;/&gt;&lt;/svg&gt;</pre>
+<div created="20210928131422906" modified="20210928140625847" tags="$:/ThemeTweaks $:/ThemeTweaks/svg $:/tags/Image $:/bookmarks" title="$:/ThemeTweaks/svg/star">
+<pre>&lt;svg width=&quot;22pt&quot; height=&quot;22pt&quot; class=&quot;tc-image-star tc-image-button&quot; viewBox=&quot;0 0 128 128&quot;&gt;&lt;path d=&quot;M6 48h42L61 8c1-3 5-3 6 0l13 40h42c3 0 4 4 2 6L90 78l13 40c1 3-3 6-5 4L64 97l-34 25c-2 2-6-1-5-4l13-40L4 54c-2-2-1-6 2-6z&quot;/&gt;&lt;/svg&gt;</pre>
 </div>
-<div bag="default" created="20210613102831878" description="https://tiddlywiki.com https://github.com" modified="20210922145536661" revision="0" tagging-tiddler="" tags="$:/ThemeTweaks $:/tags/Stylesheet $:/ThemeTweaks/svg" title="$:/ThemeTweaks/svg/style/external_link">
+<div bag="default" created="20210613102831878" description="https://tiddlywiki.com https://github.com" modified="20210929133403543" revision="0" tagging-tiddler="" tags="$:/ThemeTweaks $:/tags/Stylesheet $:/ThemeTweaks/svg" title="$:/ThemeTweaks/svg/style/external_link">
 <pre>\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline html
 &lt;pre&gt;
 
@@ -15536,7 +15590,7 @@ a[href]:not(.no-icon, .tc-tiddlylink, .tc-btn-invisible){
 
 /*Default icon for external links*/
 
-a:not(.tc-tiddlylink,.no-icon,.tc-btn-invisible):after, a.tc-tiddlylink-external:after, .icon-svg:after {
+a:not([href^=&quot;#&quot;],.tc-tiddlylink,.no-icon,.tc-btn-invisible):after, .icon-svg:after {
     content: &quot; &quot;;
     margin-left:.5ch;
     display: inline-block;
@@ -15548,32 +15602,35 @@ a:not(.tc-tiddlylink,.no-icon,.tc-btn-invisible):after, a.tc-tiddlylink-external
 
 &lt;$vars fill=&quot;external-link-foreground&quot;&gt;
 
-a:not(.tc-tiddlylink,.no-icon,.tc-btn-invisible):after {&lt;$vars svg=&quot;$:/core/images/open-window&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
+a:not([href^=&quot;#&quot;],.tc-tiddlylink,.no-icon,.tc-btn-invisible):after {&lt;$vars svg=&quot;$:/core/images/open-window&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
 a[href*=&quot;tiddlywiki.&quot;]:not(a.no-icon):after {&lt;$vars svg=&quot;$:/core/icon&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
 a[href*=&quot;github.&quot;]:not(a.no-icon):after {&lt;$vars svg=&quot;$:/core/images/github&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
 a[href*=&quot;wikipedia.&quot;]:not(a.no-icon):after {&lt;$vars svg=&quot;$:/ThemeTweaks/svg/wikipedia&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
+a[href^=&quot;mailto&quot;]:not(a.no-icon):after {&lt;$vars svg=&quot;$:/core/images/mail&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
 
 &lt;/$vars&gt;
 
 &lt;$vars fill=&quot;external-link-foreground-visited&quot;&gt;
 
-a:not(.tc-tiddlylink,.no-icon,.tc-btn-invisible):visited:after {&lt;$vars svg=&quot;$:/core/images/open-window&quot;&gt; {{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt; }
+a:not([href^=&quot;#&quot;],.tc-tiddlylink,.no-icon,.tc-btn-invisible):visited:after {&lt;$vars svg=&quot;$:/core/images/open-window&quot;&gt; {{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt; }
 a[href*=&quot;tiddlywiki.&quot;]:not(a.no-icon):visited:after {&lt;$vars svg=&quot;$:/core/icon&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
 a[href*=&quot;github.&quot;]:not(a.no-icon):visited:after {&lt;$vars svg=&quot;$:/core/images/github&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
 a[href*=&quot;wikipedia.&quot;]:not(a.no-icon):visited:after {&lt;$vars svg=&quot;$:/ThemeTweaks/svg/wikipedia&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
+a[href^=&quot;mailto&quot;]:not(a.no-icon):visited:after {&lt;$vars svg=&quot;$:/core/images/mail&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
 
 &lt;/$vars&gt;
 
 &lt;$vars fill=&quot;external-link-foreground-hover&quot;&gt;
 
-a:not(.tc-tiddlylink,.no-icon,.tc-btn-invisible):hover:after{&lt;$vars svg=&quot;$:/core/images/open-window&quot;&gt; {{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
+a:not([href^=&quot;#&quot;],.tc-tiddlylink,.no-icon,.tc-btn-invisible):hover:after{&lt;$vars svg=&quot;$:/core/images/open-window&quot;&gt; {{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
 a[href*=&quot;tiddlywiki.&quot;]:not(a.no-icon):hover:after {&lt;$vars svg=&quot;$:/core/icon&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
 a[href*=&quot;github.&quot;]:not(a.no-icon):hover:after {&lt;$vars svg=&quot;$:/core/images/github&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
 a[href*=&quot;wikipedia.&quot;]:not(a.no-icon):hover:after {&lt;$vars svg=&quot;$:/ThemeTweaks/svg/wikipedia&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
+a[href^=&quot;mailto&quot;]:not(a.no-icon):hover:after {&lt;$vars svg=&quot;$:/core/images/mail&quot;&gt;{{||$:/ThemeTweaks/svg/url}}&lt;/$vars&gt;}
 
 &lt;/$vars&gt;
 
-a:not(.tc-tiddlylink,.no-icon,.tc-btn-invisible):hover, a.icon-svg:hover{
+a:not([href^=&quot;#&quot;],.tc-tiddlylink,.no-icon,.tc-btn-invisible):hover, a.icon-svg:hover{
 color:&lt;&lt;color external-link-foreground-hover&gt;&gt;;
 }</pre>
 </div>
@@ -15829,10 +15886,47 @@ span.transclude-edit:hover .transclude-edit-button{
 	fill:&lt;&lt;color foreground&gt;&gt;;
 }</pre>
 </div>
+<div created="20210927083038866" modified="20210928151728171" source="https://groups.google.com/g/tiddlywiki/c/KkrcyHz6cC0/m/Fv6BJzWnBAAJ" tags="[[filter operator]] tip" title="Comma separated parameters">
+<pre>```
+{{{ [[Tag 1],[Tag 2],[Tag 3],[Tag 4]] }}}
+```
+
+{{{ [[Tag 1],[Tag 2],[Tag 3],[Tag 4]] }}}
+
+```
+{{{ [[Tag 1][Tag 2][Tag 3][Tag 4]] }}}
+```
+
+{{{ [[Tag 1][Tag 2][Tag 3][Tag 4]] }}}
+
+;Implicit OR (tiddlers with one or more of the tags)
+
+```
+{{{ [tag[Tag 1],[Tag 2],[Tag 3],[Tag 4]] }}}
+```
+
+{{{ [tag[Tag 1],[Tag 2],[Tag 3],[Tag 4]] }}}
+
+;Implicit AND (tiddlers with at least all of the tags)
+```
+{{{ [[Tag 1][Tag 2][Tag 3][Tag 4]tagging[]]  }}}
+```
+
+{{{ [[Tag 1][Tag 2][Tag 3][Tag 4]tagging[]]  }}}
+
+;Strict AND (tiddlers with all of the tags and only those tags)
+
+```
+{{{ [[Tag 1][Tag 2][Tag 3][Tag 4]tagging[]] :filter[tags[]count[]match[4]] }}}
+
+```
+
+{{{ [[Tag 1][Tag 2][Tag 3][Tag 4]tagging[]] :filter[tags[]count[]match[4]] }}}</pre>
+</div>
 <div bag="default" created="20210922215428269" description="todo : add the filter" filter="" modified="20210922220333450" revision="0" tags="" title="Export this wiki settings">
 <pre>&lt;$macrocall $name=&quot;openTiddlers&quot; filter={{!!filter}} text=&quot;Drag to import the settings&quot;/&gt;</pre>
 </div>
-<div bag="default" created="20210908150922338" description-task="See http://j.d.tiddlyspot.com/ for a better layout" modified="20210928121249770" revision="0" tags="pinned" task="todo" title="Index">
+<div bag="default" created="20210908150922338" description-task="See http://j.d.tiddlyspot.com/ for a better layout" modified="20210928142032245" revision="0" tags="pinned" task="todo" title="Index">
 <pre>!Welcome
 
 I use this wiki to quickly add tweaks I often use into new tiddlywikis. Some are mine, other not - see the source field of the tiddler. This is a cleaner version of my other wiki, https://telumire.github.io/TW-tips/. 
@@ -15879,13 +15973,25 @@ To add all the tiddlers tagged with $:/Tasker :
 <div created="20210927093219321" modified="20210927093321252" tags="" task="todo" title="Spider graph with vanilla TW">
 <pre>see https://Telumire.github.io/TW-tips/index.html#:%5B%5B(svg-spider)%5D%5D</pre>
 </div>
+<div created="20210928145422092" modified="20210928145428950" tags="[[Tag 1]] [[Tag 2]] [[Tag 3]]" title="Tags 1,2,3">
+<pre></pre>
+</div>
+<div created="20210927083214147" modified="20210928151728172" tags="[[Comma separated parameters]] [[Tag 1]] [[Tag 2]] [[Tag 3]]" title="Tags 1,2,3 + another">
+<pre></pre>
+</div>
+<div created="20210927083400638" modified="20210928145412272" tags="[[Tag 1]] [[Tag 2]] [[Tag 3]] [[Tag 4]]" title="Tags 1,2,3,4">
+<pre></pre>
+</div>
+<div created="20210927083455853" modified="20210928151728172" tags="[[Tag 1]] [[Tag 2]] [[Tag 3]] [[Tag 4]] [[Comma separated parameters]]" title="Tags 1,2,3,4 + another">
+<pre></pre>
+</div>
 <div created="20210927233510946" modified="20210927233622054" tags="tip" title="Tags used for the UI">
 <pre>{{{ [search:title[$:/tags]] }}}</pre>
 </div>
 <div bag="default" created="20210907001351123" list="$:/showInfo/search/template $:/ThemeTweaks/SwitchPalette/button $:/Tasker/ui/Buttons/tasker" modified="20210922211459578" revision="0" title="task">
 <pre></pre>
 </div>
-<div created="20210927092924031" modified="20210927093040769" tagging="after" tags="pinned" title="Tips">
+<div created="20210927092924031" modified="20210928144554703" tagging-tiddler="tip" tags="pinned" title="Tips">
 <pre>Here are some useful tips &amp; tricks.</pre>
 </div>
 <div created="20210927220036920" modified="20210927220143910" tags="" task="todo" title="Todo : Custom theme for TW">
