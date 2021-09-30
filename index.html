@@ -301,6 +301,8 @@ Error message and password prompt
 
 <li>$:/SaveToGitHub/style/site_title</li>
 
+<li>$:/SaveToGitHub/style/title</li>
+
 <li>$:/showInfo</li>
 
 <li>$:/showInfo/description/template</li>
@@ -362,6 +364,12 @@ Error message and password prompt
 <li>$:/spoiler/template/hide</li>
 
 <li>$:/state/advancedsearch/currentTab</li>
+
+<li>$:/state/commander/reveal/$:/plugins/kookma/commander/log/ui-607722857</li>
+
+<li>$:/state/commander/snr/select-tiddler</li>
+
+<li>$:/state/compInspect/temp/commander/selectState-tiddler</li>
 
 <li>$:/state/plugin-info-575017246-$:/plugins/danielo515/2click2edit--543222777</li>
 
@@ -668,7 +676,7 @@ button .star-empty .tc-image-star path{
 fill:none;
 }</pre>
 </div>
-<div bag="default" created="20210908152838707" modified="20210929133835943" revision="0" title="$:/config/AutoSave">
+<div bag="default" created="20210908152838707" modified="20210930142536698" revision="0" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
 <div bag="default" created="20210908160520283" modified="20210908160521340" revision="0" title="$:/config/flibbles/relink-titles/relink/$:/plugins/flibbles/relink-titles/rules/directory">
@@ -10691,20 +10699,16 @@ $:/config/EditorToolbarButtons/Visibility/$(currentTiddler)$
 <div created="20210923164244623" modified="20210923201339940" tags="" title="$:/favicon.ico" type="text/vnd.tiddlywiki">
 <pre>&lt;$vars svg={{$:/core/images/theme-button}} fill={{{[&lt;fill&gt;]:reduce[{$:/palette}getindex&lt;currentTiddler&gt;match[inherit]then[foreground]else&lt;currentTiddler&gt;]:reduce[{$:/palette}getindex&lt;currentTiddler&gt;else&lt;currentTiddler&gt;]:reduce[&lt;currentTiddler&gt;is[blank]then[$:/palettes/Vanilla]getindex[foreground]else&lt;currentTiddler&gt;]+[search-replace[#],[#]]}}}&gt;&lt;$text text={{{[[&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;]][&lt;fill&gt;][[&quot; width=&quot;22pt&quot; height=&quot;22pt&quot;&gt;]][&lt;svg&gt;][[&lt;/svg&gt;]]+[join[]]}}} /&gt;&lt;/$vars&gt;</pre>
 </div>
-<div modified="20210928145412273" status="complete" title="$:/Import">
+<div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[Tags 1,2,3,4]]</pre>
+# [[$:/SaveToGitHub/style/title]]</pre>
 </div>
 <div bag="default" revision="0" title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div bag="default" created="20210921232125203" modified="20210929133827749" revision="0" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
-<pre>Added tags
-
-hide-title
-hide-subtitle
-hide-tags</pre>
+<div bag="default" created="20210921232125203" modified="20210930142532563" revision="0" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
+<pre>Added lock icon to private tiddlers</pre>
 </div>
 <div bag="default" created="20210906233615248" modified="20210928145113950" revision="0" tags="" title="$:/palette">
 <pre>$:/palettes/GruvboxDark</pre>
@@ -14348,6 +14352,24 @@ background: center / contain no-repeat var(`--`url);
 &lt;/pre&gt;
 &lt;/$reveal&gt;</pre>
 </div>
+<div created="20210930142431580" modified="20210930142513908" tags="$:/SaveToGitHub $:/tags/Stylesheet" title="$:/SaveToGitHub/style/title">
+<pre>&lt;$reveal default={{{[{$:/SaveToGitHub/private/state}match[yes]]}}} type=&quot;match&quot; text=&quot;yes&quot;&gt;
+
+&lt;pre&gt;
+
+/*Display the lock icon on the private tiddler title if $:/SaveToGitHub/private/state is set to private*/
+[data-tags*=&quot;private&quot;] .tc-title:before{
+content:&quot; &quot;;
+height:  0.72em;width: 0.72em;
+display:inline-flex;
+margin-right: .2ch;
+background: center / contain no-repeat var(`--`url);
+&lt;$vars svg={{$:/core/images/locked-padlock}} fill=&quot;primary&quot;&gt; {{||$:/ThemeTweaks/svg/url}} &lt;/$vars&gt;
+}
+&lt;/pre&gt;
+
+&lt;/$reveal&gt;</pre>
+</div>
 <div bag="default" created="20210907002326014" description="Tiddlers that shows a bit more information and utilities to ease search." modified="20210922204500829" revision="0" tagging="after" tags="$:/showInfo $:/TiddlyTweaks" title="$:/showInfo">
 <pre></pre>
 </div>
@@ -14736,13 +14758,22 @@ padding-bottom: 10px;
 <div created="20210927151324591" modified="20210928151957202" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
+<div created="20210930142504729" modified="20210930142504729" title="$:/state/commander/reveal/$:/plugins/kookma/commander/log/ui-607722857">
+<pre>open</pre>
+</div>
+<div created="20210930142502422" modified="20210930142502422" title="$:/state/commander/snr/select-tiddler">
+<pre></pre>
+</div>
+<div created="20210930142502422" modified="20210930142502422" title="$:/state/compInspect/temp/commander/selectState-tiddler">
+<pre></pre>
+</div>
 <div created="20210927093445210" modified="20210927093445210" title="$:/state/plugin-info-575017246-$:/plugins/danielo515/2click2edit--543222777">
 <pre>contents</pre>
 </div>
 <div created="20210923165147348" modified="20210928152013615" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210923195039440" modified="20210929133714009" title="$:/state/sidebar">
+<div created="20210923195039440" modified="20210930142254510" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20210927151324591" modified="20210928151957202" title="$:/state/tab--1498284803">
@@ -14775,7 +14806,7 @@ padding-bottom: 10px;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="Index $:/TiddlyTweaks Tips" title="$:/StoryList">
+<div created="20210930142255893" list="$:/SaveToGitHub/style/title" modified="20210930142333300" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20210923144105193" list="$:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/plugins/kookma/commander/buttons/pagecontrol $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/refresh $:/core/ui/Buttons/more-page-actions $:/SaveToGitHub/Button $:/ThemeTweaks/SwitchPalette/button" modified="20210927234325710" revision="0" title="$:/tags/PageControls" type="text/vnd.tiddlywiki">
