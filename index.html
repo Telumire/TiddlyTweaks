@@ -479,6 +479,10 @@ Error message and password prompt
 
 <li>$:/ThemeTweaks/BottomLeftBar/style</li>
 
+<li>$:/ThemeTweaks/BottomRightBar</li>
+
+<li>$:/ThemeTweaks/BottomRightBar/style</li>
+
 <li>$:/ThemeTweaks/button/right_story</li>
 
 <li>$:/ThemeTweaks/caption/right_story</li>
@@ -633,7 +637,7 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div caption="bookmarks" created="20210928134659548" description="A very simple bookmark manager" modified="20210928140700318" tagging="after" tags="$:/tags/SideBar $:/TiddlyTweaks $:/bookmarks" title="$:/bookmarks">
+<div caption="{{$:/ThemeTweaks/svg/star}}" created="20210928134659548" description="A very simple bookmark manager" modified="20211002233223740" tagging="after" tags="$:/tags/SideBar $:/TiddlyTweaks $:/bookmarks" title="$:/bookmarks">
 <pre>&lt;ul style=&quot;list-style:none;&quot;&gt;
 &lt;$list filter=&quot;[tag[bookmark]sort[title]]&quot;&gt;
 &lt;li&gt;{{||$:/bookmarks/button}} - &lt;$link/&gt;&lt;/li&gt;
@@ -702,7 +706,7 @@ button .star-empty .tc-image-star path{
 fill:none;
 }</pre>
 </div>
-<div bag="default" created="20210908152838707" modified="20211002213338710" revision="0" title="$:/config/AutoSave">
+<div bag="default" created="20210908152838707" modified="20211002233704662" revision="0" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
 <div bag="default" created="20210908160520283" modified="20210908160521340" revision="0" title="$:/config/flibbles/relink-titles/relink/$:/plugins/flibbles/relink-titles/rules/directory">
@@ -10728,7 +10732,7 @@ $:/config/EditorToolbarButtons/Visibility/$(currentTiddler)$
 <div created="20210923164244623" modified="20210923201339940" tags="" title="$:/favicon.ico" type="text/vnd.tiddlywiki">
 <pre>&lt;$vars svg={{$:/core/images/theme-button}} fill={{{[&lt;fill&gt;]:reduce[{$:/palette}getindex&lt;currentTiddler&gt;match[inherit]then[foreground]else&lt;currentTiddler&gt;]:reduce[{$:/palette}getindex&lt;currentTiddler&gt;else&lt;currentTiddler&gt;]:reduce[&lt;currentTiddler&gt;is[blank]then[$:/palettes/Vanilla]getindex[foreground]else&lt;currentTiddler&gt;]+[search-replace[#],[#]]}}}&gt;&lt;$text text={{{[[&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;]][&lt;fill&gt;][[&quot; width=&quot;22pt&quot; height=&quot;22pt&quot;&gt;]][&lt;svg&gt;][[&lt;/svg&gt;]]+[join[]]}}} /&gt;&lt;/$vars&gt;</pre>
 </div>
-<div created="20211001231029099" modified="20211001235556970" tagging="after" tags="$:/TiddlyTweaks $:/footer $:/tags/RawMarkupWikified/BottomBody" title="$:/footer">
+<div created="20211001231029099" modified="20211002214533635" tagging="after" tags="$:/TiddlyTweaks $:/footer $:/tags/RawMarkupWikified/BottomBody" title="$:/footer">
 <pre>`&lt;footer&gt;`
 &lt;$list filter=&quot;[tag[$:/tags/footer]]&quot;&gt;
 
@@ -10769,7 +10773,7 @@ height:1em;
 <div bag="default" created="20210921232125203" modified="20210930142532563" revision="0" title="$:/language/ControlPanel/Saving/GitService/CommitMessage">
 <pre>Added lock icon to private tiddlers</pre>
 </div>
-<div bag="default" created="20210906233615248" modified="20211001230238517" revision="0" tags="" title="$:/palette">
+<div bag="default" created="20210906233615248" modified="20211002222451736" revision="0" tags="" title="$:/palette">
 <pre>$:/palettes/GruvboxDark</pre>
 </div>
 <div bag="default" created="20210907010728393" description="A clean white palette to let you focus" modified="20210923004503310" name="Blanca" revision="0" tags="$:/tags/Palette $:/ThemeTweaks/SwitchPalette/tags PalettePreview" title="$:/palettes/Blanca" type="application/x-tiddler-dictionary">
@@ -14814,8 +14818,8 @@ padding-bottom: 10px;
 &lt;/$reveal&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20210927151324591" modified="20211002194208018" title="$:/state/advancedsearch/currentTab">
-<pre>$:/core/ui/AdvancedSearch/Filter</pre>
+<div created="20210927151324591" modified="20211002221923938" title="$:/state/advancedsearch/currentTab">
+<pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20210930142504729" modified="20210930142504729" title="$:/state/commander/reveal/$:/plugins/kookma/commander/log/ui-607722857">
 <pre>open</pre>
@@ -14835,11 +14839,11 @@ padding-bottom: 10px;
 <div created="20210923165147348" modified="20211001225647769" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210923195039440" modified="20211002213337194" title="$:/state/sidebar">
+<div created="20210923195039440" modified="20211002233702773" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20210927151324591" modified="20211002194208018" title="$:/state/tab--1498284803">
-<pre>$:/core/ui/AdvancedSearch/Filter</pre>
+<div created="20210927151324591" modified="20211002221923939" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20210923190323173" modified="20210927234310323" title="$:/state/tab--1963855381">
 <pre>$:/core/ui/ControlPanel/Toolbars</pre>
@@ -14850,8 +14854,8 @@ padding-bottom: 10px;
 <div created="20211001074505439" modified="20211001074512671" title="$:/state/tab-27159977">
 <pre>$:/core/ui/TiddlerInfo/Listed</pre>
 </div>
-<div created="20210923162159858" modified="20211002003411744" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20210923162159858" modified="20211002233208051" title="$:/state/tab/sidebar--595412856">
+<pre>$:/showInfo/search/SystemImage</pre>
 </div>
 <div created="20210923190359522" modified="20210928142206927" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/ViewToolbar</pre>
@@ -14871,7 +14875,7 @@ padding-bottom: 10px;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="$:/footer" title="$:/StoryList">
+<div created="20211002233109518" list="Index $:/TiddlyTweaks $:/bookmarks Tips" modified="20211002233109518" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210825225717443" description="todo: floating arrow as seen here https://codepen.io/ig_design/pen/yrwgwO" modified="20211002194228034" tags="$:/ThemeTweaks $:/tags/BottomLeftBar bookmark $:/ThemeTweaks/BottomLeftBar" task="doing" title="$:/tags/BottomLeftBar/to top">
@@ -15369,6 +15373,20 @@ subFilter=&lt;&lt;subFilter&gt;&gt;
 padding: 8px;
 }</pre>
 </div>
+<div created="20211002221949195" modified="20211002222433879" tagging="after" tags="$:/ThemeTweaks $:/tags/TopRightBar $:/ThemeTweaks/BottomRightBar" title="$:/ThemeTweaks/BottomRightBar">
+<pre>&lt;span class=&quot;tc-bottombar-right&quot;&gt;&lt;$list filter=&quot;[tag[$:/tags/BottomRightBar]]&quot;&gt;&lt;$transclude/&gt;&lt;/$list&gt;&lt;/span&gt;</pre>
+</div>
+<div created="20211002222107780" modified="20211002223023712" tags="$:/tags/Stylesheet $:/ThemeTweaks $:/ThemeTweaks/BottomRightBar" title="$:/ThemeTweaks/BottomRightBar/style" type="text/css">
+<pre>.tc-topbar.tc-topbar-right .tc-bottombar-right{
+	position:fixed;
+	right:0;
+	bottom: 0;
+}
+
+.tc-topbar.tc-topbar-right .tc-bottombar-right&gt;*{
+padding: 8px;
+}</pre>
+</div>
 <div bag="default" caption="Move tiddler to the right" created="20210728115549996" description="Move tiddler to right column" modified="20210928142527474" revision="0" tags="$:/tags/Macro $:/tags/ViewToolbar $:/tags/EditToolbar $:/ThemeTweaks" title="$:/ThemeTweaks/button/right_story">
 <pre>\whitespace trim
 &lt;$button class=&quot;tc-btn-invisible&quot; tooltip={{$:/ThemeTweaks/caption/right_story}}&gt;
@@ -15504,7 +15522,7 @@ body {
 	}
 }</pre>
 </div>
-<div bag="default" created="20210727201506053" description="Alternative : https://giffmex.org/stroll/empty.html#%24%3A%2Fplugins%2Fsq%2FStories" modified="20210923152617856" revision="1" tags="$:/tags/Stylesheet $:/ThemeTweaks" title="$:/ThemeTweaks/style/right_story" type="text/css">
+<div bag="default" created="20210727201506053" description="Alternative : https://giffmex.org/stroll/empty.html#%24%3A%2Fplugins%2Fsq%2FStories" modified="20211002225144620" revision="1" tags="$:/tags/Stylesheet $:/ThemeTweaks" title="$:/ThemeTweaks/style/right_story" type="text/css">
 <pre>/*prevent backdrop and frontdrop from generating columns*/
 .story-backdrop, .story-frontdrop {
 display:contents;
@@ -15534,7 +15552,7 @@ padding-bottom:10px;
 max-width:960px;
 }
 
-.tc-tiddler-edit-frame {
+.tc-tiddler-edit-frame, [data-tags*=&quot;full-width&quot;] {
 grid-column:1/span 3;
 max-width:100vw;
 }
@@ -15918,7 +15936,7 @@ fill={{{[&lt;fill&gt;]:reduce[{$:/palette}getindex&lt;currentTiddler&gt;match[in
 <div bag="default" created="20210811020158840" modified="20210923184724058" revision="0" tagging="after" tags="$:/ThemeTweaks/SwitchPalette $:/ThemeTweaks" title="$:/ThemeTweaks/SwitchPalette">
 <pre></pre>
 </div>
-<div bag="default" caption="{{$:/ThemeTweaks/SwitchPalette/image}} Switch palette" created="20201210171047824" description="Choose a colour palette" modified="20211002193715921" revision="0" source="[[modified from https://nicolas.petton.fr/tw/notebook.html]]" tags="$:/tags/PageControls $:/ThemeTweaks/SwitchPalette $:/tags/TopLeftBar" task="doing" title="$:/ThemeTweaks/SwitchPalette/button" type="text/vnd.tiddlywiki">
+<div bag="default" caption="{{$:/ThemeTweaks/SwitchPalette/image}} Switch palette" created="20201210171047824" description="Choose a colour palette" modified="20211002222657599" revision="0" source="[[modified from https://nicolas.petton.fr/tw/notebook.html]]" tags="$:/ThemeTweaks/SwitchPalette $:/tags/BottomRightBar $:/tags/PageControls" task="doing" title="$:/ThemeTweaks/SwitchPalette/button" type="text/vnd.tiddlywiki">
 <pre>\whitespace trim
 &lt;$vars 
 palettes=&quot;[all[tiddlers+shadows]tag[$:/ThemeTweaks/SwitchPalette/tags]]&quot; 
@@ -18922,7 +18940,7 @@ if(typeof(exports) !== "undefined") {
 <!--~~ Raw markup for the bottom of the body section ~~-->
 <footer>
 
-Last updated 36 hours ago
+Last updated 38 hours ago
 
 </footer>
 </body>
