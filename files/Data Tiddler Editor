@@ -1,0 +1,94 @@
+\define get-input-focus-selector() [data-tiddler-title="$(storyTiddler)$"] input.tc-add-index-name
+\define add-entry()
+<$action-setfield 
+$index={{!!index-name}} 
+$value={{!!index-value}} 
+$tiddler=<<storyTiddler>>
+/>
+<$action-sendmessage $message="tm-focus-selector" $param=<<get-input-focus-selector>>/>
+<$action-setfield index-name="" index-value=""
+/>
+\end
+<$list filter="[is[current]!is[shadow]!has[plugin-type]get[type]match[application/json]]" variable=_><$tiddler tiddler={{{[<qualify>addprefix[$:/temp/]]}}} >
+<table class="grid2col no-border">
+<!-- for alphabetical order, use [<storyTiddler>indexes[]]-->
+<$list filter="""[<storyTiddler>get[text]split[{]split[}]split[,]split[:]!is[blank]]:reduce[<index>remainder[2]match[0]then<currentTiddler>addsuffix[{]addprefix<accumulator>]+[split[{]!is[blank]trim[]trim["]]""" variable=i>
+<tr>
+<td>
+<$button class="tc-btn-invisible" tooltip="delete entry">
+<$action-setfield $tiddler=<<storyTiddler>> $index=<<i>>/>
+{{$:/core/images/delete-button}}
+</$button>
+<$button class="tc-btn-invisible" tooltip="copy entry data">
+<$action-setfield 
+index-name=<<i>>
+index-value={{{ [<storyTiddler>getindex<i>] }}}
+/>
+{{$:/core/images/copy-clipboard}}
+</$button>
+<<i>>
+</td><td><$edit-text index=<<i>> tag=input tiddler=<<storyTiddler>>/></td>
+</tr>
+</$list>
+</table>
+
+<hr/>
+
+<$keyboard key="enter" actions=<<add-entry>>>
+<table class="grid2col no-border">
+<tr>
+<td>
+<$button actions=<<add-entry>>> Add
+</$button>
+<$edit-text tag="input" field="index-name" default="" placeholder="Name" class="tc-add-index-name"/>
+</td>
+<td>
+<$edit-text tag="input" field="index-value" default="" placeholder="Value"/>
+</td>
+</tr>
+</table>
+</$keyboard>
+</$tiddler>
+
+<!--~~~~Styling~~~~-->
+
+<style scoped>
+[data-tiddler-title="<<currentTiddler>>"] .tc-tiddler-body{
+display:none;
+}
+table.no-border, table.no-border td {
+border: 0;
+}
+
+table.grid2col{
+display:grid;
+width:100%;
+grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+}
+
+table.grid2col :is(tbody,thead,tr,details,summary){
+display:contents;
+}
+
+table.grid2col td[colspan="2"]{
+grid-column: 1 / span 2;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+table.grid2col td[colspan="2"]>*{
+padding:.5ch;
+}
+
+table.grid2col td {
+display:flex;
+gap: 1ch;
+}
+
+table.grid2col td input{
+max-width: 100%;
+flex:1;
+}
+</style>
+</$list>
